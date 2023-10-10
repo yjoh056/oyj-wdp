@@ -1,0 +1,147 @@
+.wrap {
+    overflow-x: hidden;
+    margin: 0 auto;
+    width: 100%;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center
+    }
+}
+
+.header {
+    width: 100%;
+    padding: 3rem;
+
+    &-inner {
+        display: flex;
+        width: 100%;
+        height: 6rem;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            max-width: 15rem;
+
+        }
+    }
+
+    .menu-btn {
+        display: inline-block;
+        vertical-align: middle;
+        width: 28px;
+        height: 30px;
+
+        position: relative;
+
+        span {
+            margin-top: 0;
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 100%;
+            height: 2px;
+            display: block;
+            background: #000;
+            transition: all .3s cubic-bezier(.3, 0, .3, 1);
+            -webkit-transition: all .3s cubic-bezier(.3, 0, .3, 1);
+        }
+
+        span:last-child {
+            top: auto;
+            bottom: 8px;
+        }
+
+
+    }
+}
+
+.main {
+    margin: auto;
+    width: 100%;
+    max-width: 1300px;
+
+    &-container {
+        height: 51rem;
+        position: relative;
+    }
+
+    &-hero-banner {
+        position: absolute;
+        top: 15%;
+
+        .hero-banner {
+            &-btn {
+                margin-top: 5rem;
+
+                p {
+                    font-size: 2rem;
+                    padding: 2rem 1rem;
+                }
+            }
+        }
+
+    }
+
+    &-photo {
+        & {
+            position: absolute;
+            width: 600px;
+            height: 700px;
+            right: 0;
+            top: 0;
+
+            @include mq('md') {
+                width: 350px;
+                height: 400px;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .circle {
+            position: relative;
+            width: 680px;
+            height: 680px;
+            z-index: 2;
+            background: $color-primary;
+            border-radius: 100%;
+            -webkit-border-radius: 100%;
+        }
+    }
+}
+
+.infor {
+    margin: auto;
+    width: 100%;
+    max-width: 1300px;
+    margin-top: 20rem;
+
+    &-container {
+        width: 100%;
+        height: 90rem;
+
+        .inner-title {
+            text-align: center;
+        }
+    }
+
+    &-cards {
+        margin-top: 5rem;
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+
+        .card {
+            width: 50%;
+            padding: 3rem;
+            border: 1px solid $txt-color-primary;
+        }
+    }
+}

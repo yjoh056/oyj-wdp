@@ -1,0 +1,17 @@
+@mixin mq($screen-width) {
+    @if $screen-width == 'lg' {
+        @media screen and (min-width: 900px) and (max-width:1400px) {
+            @content; //at-rules 전달하는 내용으로 실행
+        }
+    }
+    @else if $screen-width == 'md' {
+        @media screen and (min-width:701px) and (max-width:899px) {
+            @content;
+        }
+    }
+    @else if $screen-width == 'sm' {
+        @media screen and (max-width:700px) {
+            @content;
+        }
+    }
+}

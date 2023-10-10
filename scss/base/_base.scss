@@ -1,0 +1,31 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+@import url(./reset.css);
+
+
+$primary-font-family:"Pretendard Variable";
+$primary-font-size:1.6rem;
+$primary-font-weight:400;
+
+$px50: 50px;
+$per20: 20%;
+$col1: 65px;
+$gu1: 30px;
+$unit1: $col1 + $gu1;
+
+$url-images: "/images/";
+
+html {
+    overflow-y: scroll;
+    /* 기본폰트값 10px로 수정(rem단위사용) */
+    font-size: 62.5%;
+    line-height: 1.75;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: #333;
+    font-size: 1.6rem;
+    background-color: $bg-color;
+}
