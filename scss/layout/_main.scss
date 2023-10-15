@@ -97,7 +97,7 @@
                 width: 350px;
                 height: 400px;
             }
-            
+
             @include mq('sm') {
                 width: 300px;
                 height: 350px;
@@ -147,6 +147,31 @@
             width: 50%;
             padding: 3rem;
             border: 1px solid $txt-color-primary;
+
+            &-content {
+                padding: 0 5rem 1em 0;
+                display: flex;
+                gap: 3rem;
+
+                &:nth-of-type(1) {
+                    padding-top: 5rem;
+                }
+
+                span {
+                    margin: 0;
+                    color: #090a0c;
+                    flex: 0 0 90px;
+                    border-right: 1px solid #c1c1c1;
+                    font-family: "Montserrat", sans-serif;
+                    text-align: left;
+                }
+            }
+
+            &-title {
+                display: block;
+                font-family: "Montserrat", sans-serif;
+                letter-spacing: -0.05em;
+            }
         }
     }
 }
