@@ -15,7 +15,8 @@ body {
   font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: #333;
   font-size: 1.6rem;
-  background-color: #ffffff;
+  background-color: #FFFFF4;
+  background: #FFFFF4;
 }
 
 .h1,
@@ -130,6 +131,7 @@ b {
   margin: auto;
   width: 100%;
   max-width: 1300px;
+  height: 70rem;
 }
 .main-container {
   height: 51rem;
@@ -138,6 +140,16 @@ b {
 .main-hero-banner {
   position: absolute;
   top: 15%;
+}
+.main-hero-banner-title {
+  display: block;
+  height: 100px;
+}
+.main-hero-banner .word {
+  margin: auto;
+  color: #000000;
+  font: 900 normal 4em/1.5 "Pretendard Variable", sans-serif;
+  text-shadow: 1px 2px #B4FC93, 2px 4px #B4FC93, 3px 6px #B4FC93, 4px 8px #B4FC93, 5px 10px #B4FC93, 6px 12px #B4FC93;
 }
 .main-hero-banner .hero-banner-btn {
   margin-top: 5rem;
@@ -185,10 +197,10 @@ b {
   width: 100%;
   max-width: 1300px;
   margin-top: 20rem;
+  height: 70rem;
 }
 .infor-container {
   width: 100%;
-  height: 90rem;
 }
 .infor-container .inner-title {
   text-align: center;
@@ -224,6 +236,10 @@ b {
   display: block;
   font-family: "Montserrat", sans-serif;
   letter-spacing: -0.05em;
+}
+
+.resume {
+  height: 70rem;
 }
 
 .hero-banner-btn .btn {

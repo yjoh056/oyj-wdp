@@ -24,7 +24,6 @@
 
         .logo {
             max-width: 15rem;
-
         }
     }
 
@@ -63,7 +62,6 @@
     width: 100%;
     max-width: 1300px;
     height: 70rem;
-
     &-container {
         height: 51rem;
         position: relative;
@@ -72,7 +70,16 @@
     &-hero-banner {
         position: absolute;
         top: 15%;
-
+        &-title{
+            display: block;
+            height: 100px;
+        }
+        .word {
+            margin: auto;
+            color: $color-black;
+            font: 900 normal 4em/1.5 "Pretendard Variable", sans-serif;
+            text-shadow: 1px 2px $color-secondary, 2px 4px $color-secondary, 3px 6px $color-secondary, 4px 8px $color-secondary, 5px 10px $color-secondary, 6px 12px $color-secondary;
+          }
         .hero-banner {
             &-btn {
                 margin-top: 5rem;
