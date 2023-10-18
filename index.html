@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오예주 포트폴리오</title>
     <!-- 필수는 og 태그 -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yjoh056.github.io/oyj-wdp/">
-<meta property="og:title" content="디자인으로 세상을 빛내다 웹 디자이너&퍼블리셔 오예주입니다">
-<meta property="og:image" content="images/og.png">
-<meta property="og:description" content="웹디자인 포트폴리오 사이트입니다.">
-<meta property="og:site_name" content="오예주 포트폴리오">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yjoh056.github.io/oyj-wdp/">
+    <meta property="og:title" content="디자인으로 세상을 빛내다 웹 디자이너&퍼블리셔 오예주입니다">
+    <meta property="og:image" content="images/og.png">
+    <meta property="og:description" content="웹디자인 포트폴리오 사이트입니다.">
+    <meta property="og:site_name" content="오예주 포트폴리오">
 
-<!-- 필수는 아니지만, 추천하는 og 태그 -->
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    <!-- 필수는 아니지만, 추천하는 og 태그 -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <link rel="stylesheet" href="css/index.css">
     <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
@@ -32,14 +32,31 @@
                         <span></span>
                         <span></span>
                     </a>
+                    <nav>
+                        <ul class="gnb">
+                            <li class="on"><a href="#section1">section1</a></li>
+                            <li><a href="#section2">section2</a></li>
+                            <li><a href="#section3">section3</a></li>
+                            <li><a href="#section4">section4</a></li>
+                            <li><a href="#section5">section5</a></li>
+                        </ul>
+
+                    </nav>
                 </div>
             </header>
+
+            <ul class="sideNav">
+                <li class="on"><a href="#section1">1</a></li>
+                <li><a href="#section2">2</a></li>
+                <li><a href="#section3">3</a></li>
+                <li><a href="#section4">4</a></li>
+            </ul>
             <main class="main" id="main">
                 <div class="main-container">
                     <div class="main-hero-banner">
                         <div class="main-hero-banner-text">
                             <div class="main-hero-banner-title h1 title">디자인으로<br> 세상을 빛내다</div>
-                            <div class="hero-banner-title h3 subtitle">웹 디자인&퍼블리셔 오예주입니다.</div>
+                            <div class="hero-banner-title h3 sub-title">웹 디자인&퍼블리셔 오예주입니다.</div>
                             <div class="hero-banner-btn en-font">
                                 <p class="h3">make a WEB world!</p>
                                 <div class="hero-banner-btn-wrap">
@@ -53,6 +70,7 @@
                     </div>
                     <div class="main-photo">
                         <img src="./images/main-photo.png" alt="" class="main-photo-im">
+                        <span class="big-circle"></span>
                         <span class="circle dot1"></span>
                         <span class="circle dot2"></span>
                         <div class="main-infor en-font h4">
@@ -67,7 +85,7 @@
             </main>
             <section class="infor" id="section1">
                 <div class="infor-container">
-                    <div class="inner-title en-font">
+                    <div class="infer-title en-font">
                         <h2 class="h2">WHO AM I</h2>
                         <p class="sub-title h4"><span>My </span>Information</p>
                     </div>
@@ -95,25 +113,25 @@
                         <div class="card experience">
                             <span class="card-title h5">Experience | Education</span>
                             <div class="card-content">
-                                <span class="card-content-title">2023.11</span>
+                                <span class="card-content-title">2023</span>
                                 <div class="card-content-txt">그린컴퓨터 아카데미 <br>UI/UX 반응형
-                                    웹디자인/웹퍼블리셔 양성과정 760시간 수료</div>
+                                    웹디자인/웹퍼블리셔 <br>양성과정 760시간 수료</div>
                             </div>
                             <div class="card-content">
                                 <span class="card-content-title">2023-2021</span>
-                                <div class="card-content-txt">boldi</div>
+                                <div class="card-content-txt">boldi - 퍼포먼스팀&제작팀/ 디자이너 </div>
                             </div>
                             <div class="card-content">
                                 <span class="card-content-title">2021-2019</span>
-                                <div class="card-content-txt">COQ</div>
+                                <div class="card-content-txt">COQ - 마케팅팀/ 디자이너</div>
                             </div>
                             <div class="card-content">
                                 <span class="card-content-title">2019-2016</span>
-                                <div class="card-content-txt">MAKESTAR</div>
+                                <div class="card-content-txt">MAKESTAR - 기획팀&개발팀 / 디자이너</div>
                             </div>
                             <div class="card-content">
                                 <span class="card-content-title">2019-2011</span>
-                                <div class="card-content-txt">명지대학교 디자인학부 영상디자인전공</div>
+                                <div class="card-content-txt">명지대학교 - 디자인학부 영상디자인전공</div>
                             </div>
 
                         </div>
@@ -127,20 +145,64 @@
                         <p class="sub-title h4"><span>My </span>History</p>
                     </div>
                     <div class="resume-list">
-                        <div class="resume-list-title h3">
+                        <div class="resume-list-title h3 en-font">
                             Experience
                         </div>
-                        <ul class="resume-list-1">
-                            <li>
+                        <ul>
+                            <li class="resume-list-li ex1">
                                 <table>
-                                    <tr>
-                                        <th class="h4">Cotents Design, Marketing Design, Performance Design</th>
-                                        <td class="h5">2023-2021</td>
+                                    <tr class="resume-list-tt1">
+                                        <th class="h4" colspan="6">Cotents Design, Marketing Design, Performance Design
+                                        </th>
+                                        <td></td>
                                     </tr>
                                     <tr>
-                                        <th  class="h5">boldi</th>
-                                        <td>퍼포먼스 DA디자인(GDN, 네이버, 다음, 카카오 등), <br>
+                                        <th class="h5 company" colspan="2">boldi </th>
+                                        <td colspan="4" rowspan="2">Tool : photoshop, Illustrator<br>
+                                            퍼포먼스 DA디자인(GDN, 네이버, 다음, 카카오 등),<br>
                                             자사 홈페이지& 외부쇼핑몰 상품 상세 페이지 및 관련 이미지 제작.</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="h5" colspan="1">2023-2021</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="resume-list-li ex2">
+                                <table>
+                                    <tr class="resume-list-tt1">
+                                        <th class="h4" colspan="6">Cotents Design, Marketing Design</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="h5 company" colspan="2" rowspan="2">COQ</th>
+                                        <td colspan="4" rowspan="2">Tool : photoshop, Illustrator<br>
+                                            컨텐츠 디자인, Bi제작, 배너 및 썸네일제작, 인포그래픽 이미지 제작,<br> 블로그 포스팅 등
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="h5" colspan="1">2021-2019</th>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="resume-list-li ex3">
+                                <table>
+                                    <tr class="resume-list-tt1">
+                                        <th class="h4" colspan="6">web Disgn, Cotents Design</th>
+
+                                    </tr>
+                                    <tr>
+                                        <th class="h5 company" colspan="2" rowspan="2">MAKESTAR</th>
+                                        <td colspan="4" rowspan="2">Tool : photoshop, Illustrator, AfterEffect, asana,
+                                            slack, Google Drive, NAS<br>
+                                            컨텐츠 디자인, 상세페이지 디자인, 웹디자인 일부, 사진보정, MD디자인,<br> 마케팅디자인, 회원서비스디자인 등</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="h5" colspan="1">2016-2018</th>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 </table>
                             </li>

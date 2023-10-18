@@ -60,7 +60,7 @@ h4 {
 h5 {
   margin: 0 0 3rem 0;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p {
@@ -142,10 +142,75 @@ body::-webkit-scrollbar-button {
   bottom: 8px;
 }
 
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1em 1.4em;
+  width: 80%;
+}
+nav .sticky {
+  background: rgba(255, 0, 100, 0.6);
+  position: fixed;
+  z-index: 222;
+}
+nav .gnb {
+  display: flex;
+  margin: auto;
+}
+nav .gnb li {
+  flex: 1 1 200px;
+}
+nav .gnb li a {
+  color: #000000;
+  display: inline-block;
+  padding: 0.2rem;
+  text-align: center;
+  line-height: 2rem;
+  height: 2rem;
+  position: relative;
+}
+
+/* sideNav */
+.sideNav {
+  position: fixed;
+  top: 30%;
+  right: 5%;
+  z-index: 999;
+}
+.sideNav li {
+  position: relative;
+}
+.sideNav li a {
+  display: block;
+  padding: 1em;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  border: 3px solid #DAFEC9;
+}
+.sideNav li.on a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #8ffb5d;
+  border: transparent;
+  z-index: -1;
+  color: #fff;
+}
+
 .main {
   width: 100%;
   max-width: 1300px;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 .main-container {
   margin-top: 5rem;
@@ -165,11 +230,14 @@ body::-webkit-scrollbar-button {
   font-size: 10rem;
   background-image: url(/images/green-back.png);
   background-blend-mode: color;
-  background-position: 85% 50%;
+  background-position: 98% 75%;
   -webkit-background-clip: text;
           background-clip: text;
   position: relative;
   line-height: 10rem;
+}
+.main-hero-banner-title.sub-title {
+  margin-top: 2rem;
 }
 .main-hero-banner-text {
   position: absolute;
@@ -193,27 +261,23 @@ body::-webkit-scrollbar-button {
 }
 .main-photo {
   position: absolute;
-  right: 0;
+  right: 10%;
   translate: all 0.5s;
   display: flex;
 }
-@media screen and (min-width: 701px) and (max-width: 899px) {
-  .main-photo {
-    width: 320px;
-    height: 370px;
-  }
-}
-@media screen and (max-width: 700px) {
-  .main-photo {
-    width: 500px;
-    height: 600px;
-  }
+.main-photo .big-circle {
+  position: absolute;
+  bottom: 20px;
+  width: 512px;
+  height: 512px;
+  border-radius: 50%;
+  border: 30px solid #8ffb5d;
 }
 .main-photo-im {
   display: block;
   width: 512px;
   height: 606px;
-  border-radius: 50%;
+  border-radius: 48%;
   overflow: hidden;
   position: relative;
 }
@@ -283,18 +347,19 @@ body::-webkit-scrollbar-button {
 
 section {
   min-height: 100vh;
-  text-align: center;
   background-color: linear-gradient(0deg, rgb(245, 255, 216) 0%, rgb(255, 255, 244) 77%, rgb(255, 255, 255) 100%);
   margin: 20vw auto;
+  padding-top: 10rem;
 }
-
+section .sub-title span {
+  color: #8ffb5d;
+}
+section .sub-title {
+  margin-bottom: 10rem;
+}
 section:last-of-type {
   margin: 0 auto;
   min-height: 50vh;
-}
-
-.sub-title span {
-  color: #8ffb5d;
 }
 
 .infor {
@@ -307,7 +372,7 @@ section:last-of-type {
 .infor-container {
   width: 100%;
 }
-.infor-container .inner-title {
+.infor-container .infer-title {
   text-align: center;
 }
 .infor-cards {
@@ -317,7 +382,8 @@ section:last-of-type {
   width: 100%;
 }
 .infor-cards .card {
-  padding: 3rem;
+  padding: 6rem 6rem 3rem;
+  line-height: 1.75;
   border: 1px solid #424242;
 }
 .infor-cards .card h3 {
@@ -352,9 +418,35 @@ section:last-of-type {
   flex-basis: 60%;
 }
 
+.resume-title {
+  text-align: center;
+  line-height: 1.75;
+}
 .resume-list {
   display: flex;
   flex-direction: column;
+}
+.resume-list-title {
+  border-bottom: 5px solid;
+}
+.resume-list-li {
+  display: block;
+  padding: 5rem 3rem;
+  border-bottom: 1px solid;
+  line-height: 3rem;
+}
+.resume-list .company {
+  display: block;
+  width: 100px;
+}
+.resume-list th {
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  padding-right: 1.5rem;
+  width: 150px;
+}
+.resume-list th.h4 {
+  padding-bottom: 3rem;
 }
 .resume-list-title {
   width: 100%;

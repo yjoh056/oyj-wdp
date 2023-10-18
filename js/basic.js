@@ -1,3 +1,6 @@
+$(() => {
+
+//title effect
 $(document).ready(function () {
   let mouseX, mouseY;
   const ww = $(window).width();
@@ -7,7 +10,8 @@ $(document).ready(function () {
   const i1InitialLeft = parseFloat($(".i1").css("left"));
   const i2InitialTop = parseFloat($(".i2").css("top"));
   const i2InitialLeft = parseFloat($(".i2").css("left"));
-
+  
+  //photo icon
   $(document).mousemove(function (e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
@@ -26,3 +30,48 @@ $(document).ready(function () {
   });
 });
 
+//nav
+const win = $(window);
+const gnb = $('.gnb li');
+const sections = $('section');
+const sideNav = $('.sideNav>li');
+
+function scrollToSection(index){
+    let section = sections.eq(index);
+    console.log(section);
+    let offset = section.offset().top;
+    $('html,body').stop().animate({ scrollTop: offset }, 1000, 'easeOutCirc');
+}
+
+gnb.on({
+	click: function (e) {
+		e.preventDefault();
+		let index = $(this).index();
+        scrollToSection(index);
+	},
+});
+sideNav.on({
+	click: function (e) {
+		e.preventDefault();
+		let index = $(this).index();
+		scrollToSection(index);
+	},
+});
+win.on('scroll', function () {
+	let sct = win.scrollTop();
+	sections.each(function (i) {
+		if (sct >= sections.eq(i).offset().top - 300) {
+			gnb.removeClass('on')
+			gnb.eq(i).addClass('on').siblings().removeClass('on');
+			sideNav.eq(i).addClass('on').siblings().removeClass('on');
+			sections.eq(i).addClass('on').siblings().removeClass('on');
+
+		}
+	});
+
+	sct > 400 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
+});
+
+
+
+});//jQuery
