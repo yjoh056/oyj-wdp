@@ -7,4 +7,5 @@ $color-black: #000000;
 $color-purple: #7A5DFB;
 $bg-color: #FFFFF4;
 $bg-color-secondary: #F8FFE3;
-$bg-gradient: linear-gradient(180deg,rgba(255,255,255,.15),rgba(255,255,255,0));
+$bg-gradient: linear-gradient(0deg, rgba(245,255,216,1) 0%, rgba(255,255,244,1) 77%, rgba(255,255,255,1) 100%);
+$bg-gradient-secondary: linear-gradient(45deg, hsla(175, 79%, 63%, 1) 0%, hsla(82, 96%, 57%, 1) 100%);
