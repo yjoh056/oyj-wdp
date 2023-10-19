@@ -5,7 +5,7 @@ $(document).ready(function () {
   const wh = $(window).height();
   let traX, traY;
   const i1InitialTop = parseFloat($(".i1").css("top"));
-  const i1InitialLeft = parseFloat($(".i1").css("left"));
+  const i1InitialRight = parseFloat($(".i1").css("right"));
   const i2InitialTop = parseFloat($(".i2").css("top"));
   const i2InitialLeft = parseFloat($(".i2").css("left"));
 
@@ -19,9 +19,9 @@ $(document).ready(function () {
     $(".title").css({ "background-position": traX + "%" + traY + "%" });
     newX = ((2 * mouseX) / ww) - 0.5;
     newY = ((2 * mouseY) / wh) - 0.5;
-    const newTop = i1InitialTop - (-newY * 50);
-    const newRight = i1InitialLeft - (newX * 5);
-    const newTop2 = i2InitialTop - (newY * 50);
+    const newTop = i1InitialTop - (newY * 50);
+    const newRight = i1InitialRight - (newX * 5);
+    const newTop2 = i2InitialTop - (-newY * 50);
     const newLeft = i2InitialLeft - (newX * 5);
     $(".i1").css({ "top": newTop + "px", "right": newRight + "px" });
     $(".i2").css({ "top": newTop2 + "px", "left": newLeft + "px" });
@@ -73,4 +73,16 @@ win.on('scroll', function () {
   });
 
   sct > 800 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
+});
+
+
+// resume
+const resumeLis = $('.resume-list-item');
+const resumeBtn = $('.resume-kind:before')
+resumeLis.find('.resume-list-table').hide();
+resumeLis.find('active')
+resumeLis.find('.ex-list-table').hide();
+resumeBtn.on('click',function () { 
+  
+  
 });

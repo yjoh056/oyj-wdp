@@ -104,7 +104,7 @@ nav {
 
         li {
             display: block;
-            padding: 1rem 3rem;
+            padding: 1.5rem 3rem;
             border-radius: 56px;
 
             &.on a {
@@ -212,19 +212,16 @@ nav {
     &-container {
         margin-top: 5rem;
         width: 100%;
-        height: 51rem;
         display: flex;
         flex-direction: column;
+        position: relative;
 
         @include mq('md') {
-
             flex-direction: column;
-            justify-content: center;
         }
 
         @include mq('sm') {
             flex-direction: column;
-            justify-content: center;
         }
     }
 
@@ -235,18 +232,19 @@ nav {
 
         @include mq('md') {
             width: 100%;
+            text-align: center;
         }
 
         @include mq('sm') {
             width: 100%;
+            text-align: center;
         }
 
         &-title {
             &.title {
                 font-weight: 800;
                 color: transparent;
-                font-size: 10rem;
-                background-image: url($url-images/green-back.png);
+                background-image: url("#{$url-images}/green-back.png");
                 background-blend-mode: color;
                 background-position: 98% 75%;
                 background-clip: text;
@@ -263,18 +261,58 @@ nav {
 
     }
 
+    .image-wrap {
+        width: 100%;
+        position: absolute;
+        left: 60%;
+
+        @include mq('md') {
+            position: static;
+            flex-direction: column;
+            height: 73vw;
+            bottom: 0;
+            padding: 5rem 10rem;
+        }
+
+        @include mq('sm') {
+            position: static;
+            flex-direction: column;
+            height: 73vw;
+            bottom: 0;
+            padding: 5rem 10rem;
+        }
+    }
+
     &-photo {
         & {
-            right: -5%;
-            translate: all 0.5s;
-            position: absolute;
+            position: relative;
+            text-align: center;
+            height: 56vw;
+
+            @include mq('md') {
+                height: 62vw;
+            }
+
+            @include mq('sm') {
+                height: 62vw;
+            }
 
             &-infor {
                 & {
-                    top: 448px;
-                    left: -100px;
+                    position: absolute;
+                    top: 45%;
+                    left: -6%;
                     z-index: 12;
                     font-weight: 500;
+
+                    @include mq('md') {
+                        top: 85%;
+                    }
+
+                    @include mq('sm') {
+                        top: 85%;
+                    }
+
                 }
 
                 ul {
@@ -285,6 +323,14 @@ nav {
                         height: 30rem;
                         position: relative;
                         z-index: 5;
+
+                        @include mq('md') {
+                            justify-content: space-evenly;
+                        }
+
+                        @include mq('sm') {
+                            justify-content: space-evenly;
+                        }
                     }
 
                     li {
@@ -296,28 +342,41 @@ nav {
                             background-color: $bg-color;
                             line-height: 6rem;
                             font-weight: 700;
+                            transition: position 0.3s cubic-bezier(.36, .64, .55, .59);
+                            box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
                         }
 
                         &.i1 {
                             position: absolute;
                             top: -81px;
-                            right: 352px;
+                            right: 211px;
 
                             @include mq('md') {
-                                top: 34px;
-                                right: 352px;
+                                top: -98px;
+                                right: 177px;
                             }
 
                             @include mq('sm') {
-                                top: 34px;
-                                right: 352px;
+                                top: -98px;
+                                right: 177px;
                             }
                         }
 
                         &.i2 {
                             position: absolute;
                             top: -152px;
-                            left: -152px;
+                            left: -150px;
+
+                            @include mq('md') {
+                                top: -163px;
+                                left: 71px;
+                            }
+
+                            @include mq('sm') {
+                                top: -163px;
+                                left: 71px;
+                            }
+
                         }
 
                         &.on {
@@ -327,28 +386,18 @@ nav {
                 }
             }
 
-            @include mq('md') {
-                position: inherit;
-                margin: auto;
-                width: 512px;
-            }
-
-            @include mq('sm') {
-                position: inherit;
-                margin: auto;
-                width: 512px;
-            }
-
-
         }
 
         &-frame {
             position: absolute;
-            bottom: 283px;
-            width: 512px;
-            height: 512px;
+            top: 7%;
+            left: 0;
+            display: block;
+            width: 50rem;
+            height: 50rem;
             border-radius: 50%;
             border: 30px solid #8ffb5d;
+            z-index: -3;
         }
 
         &-im {
@@ -357,13 +406,10 @@ nav {
             height: 606px;
             border-radius: 50%;
             overflow: hidden;
-            position: relative;
-            bottom: -20px;
         }
 
-        img {
-            z-index: 1;
-        }
+
+
 
         .dot3 {
             top: 430px;
@@ -374,6 +420,15 @@ nav {
     &-btn {
         margin-top: 5rem;
 
+        @include mq('md') {
+
+            text-align: center;
+        }
+
+        @include mq('sm') {
+            text-align: center;
+        }
+
         p {
             font-size: 2rem;
             padding: 2rem 1rem;
@@ -383,12 +438,22 @@ nav {
             & {
                 display: flex;
                 align-items: center;
+
+                @include mq('md') {
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                @include mq('sm') {
+                    text-align: center;
+                    justify-content: center;
+                }
             }
 
             span {
                 display: block;
                 margin: 3rem 0;
-                width: 3px;
+                width: 40px;
                 height: 2px;
                 background-color: $color-secondary;
             }
@@ -401,13 +466,13 @@ nav {
     }
 
     .dot1 {
-        top: 60px;
-        right: 40%;
+        top: 0;
+        right: 52%;
     }
 
     .dot2 {
-        top: 467px;
-        right: 26%;
+        top: 30%;
+        right: 97%;
     }
 
 
@@ -417,11 +482,11 @@ nav {
 .big-circle {
     width: 185px !important;
     height: 185px !important;
-    background-image: url(/images/light-dot-lg.png) !important;
+    background-image: url("#{$url-images}/light-dot-lg.png") !important;
 }
 
 .circle {
-    background-image: url(/images/light-dot.png);
+    background-image: url("#{$url-images}/light-dot.png");
     position: absolute;
     background-repeat: no-repeat;
     background-position: center center;
@@ -433,8 +498,9 @@ nav {
 
 section {
     background-color: $bg-gradient;
-    padding-top: 10vw;
+    padding-top: 5vw;
     padding-bottom: 10vw;
+    width: 100vw;
 
     .section-title {
         text-align: center;
@@ -465,89 +531,168 @@ section {
 
     &-container {
         width: 100%;
+        max-width: 1500px;
     }
 
     &-cards {
-        margin-top: 5rem;
+        padding: 2rem 0 0 12rem;
         display: flex;
         width: 100%;
+        justify-content: space-around;
 
-        .card {
-            line-height: 1.75;
-            width: 50%;
-
-            h3 {
-                text-align: left;
-            }
-
-            .dot5 {
-                left: 0;
-            }
-
-            &-content {
-                padding: 0 5rem 1em 0;
-                display: flex;
-                gap: 3rem;
-
-                span {
-                    color: #090a0c;
-                    flex: 0 0 120px;
-                    border-right: 1px solid #c1c1c1;
-                    font-family: "Montserrat", sans-serif;
-                    text-align: left;
-                }
-
-            }
-
-            &-title {
-                display: block;
-                font-family: "Montserrat", sans-serif;
-                letter-spacing: -0.05em;
-                text-align: left;
-            }
+        @include mq('md') {
+            flex-direction: column;
         }
 
-    }
-}
-
-.resume {
-
-    &-list {
-        & {
-            display: flex;
+        @include mq('sm') {
             flex-direction: column;
+        }
+    }
+
+    .card {
+        line-height: 1.75;
+        justify-content: center;
+
+        @include mq('md') {
+            width: 100%;
+            padding: 5rem 10rem;
+        }
+
+        @include mq('sm') {
+            width: 100%;
+        }
+
+        &.intro {
+            flex-basis: 50%;
+        }
+
+        &.experience {
+            flex-basis: 50%;
+        }
+
+        h3 {
+            text-align: left;
+        }
+
+        .dot5 {
+            left: 0;
+        }
+
+        &-content {
+            padding: 0 5rem 1em 0;
+            display: flex;
+            gap: 3rem;
+
+            span {
+                color: #090a0c;
+                flex: 0 0 120px;
+                border-right: 1px solid #c1c1c1;
+                font-family: "Montserrat", sans-serif;
+                text-align: left;
+            }
 
         }
 
         &-title {
-            border-bottom: 5px solid;
-        }
-
-        &-li {
             display: block;
-            padding: 5rem 3rem;
-            border-bottom: 1px solid;
-            line-height: 3rem;
-        }
-
-        .company {
-            display: block;
-            width: 100px;
-        }
-
-        .resume-kind {
-            font-weight: 700;
-        }
-
-        th {
             font-family: "Montserrat", sans-serif;
-            padding-right: 1.5rem;
-            width: 150px;
+            letter-spacing: -0.05em;
+            text-align: left;
+        }
+    }
 
-            &.h4 {
-                padding-bottom: 3rem;
+
+}
+
+.resume {
+    &-container {
+        width: 100%;
+        max-width: 1360px;
+        margin: auto;
+    }
+
+    &-wrap {
+        display: flex;
+    }
+
+    &-list {
+        & {
+            max-width: 680px;
+            width: 100%;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-title {
+            padding-bottom: 3rem;
+            border-bottom: 3px solid;
+            text-align: center;
+        }
+
+
+        &-item {
+            display: block;
+            padding: 2rem 3rem;
+            border-bottom: 1px solid;
+            line-height: 1.5;
+            position: relative;
+
+            .resume-kind {
+                display: block;
+                font-weight: 700;
+
+                &::before {
+                    content: '+';
+                    width: 48px;
+                    height: 48px;
+                    position: absolute;
+                    right: -24px;
+                    bottom: -26px;
+                    text-align: center;
+                    font-size: 36px;
+                    font-weight: 500;
+                    line-height: 48px;
+                    transform: translateY(-10%);
+                    background-color: $color-white;
+                    border-radius: 50%;
+                    border: 2px solid #000;
+                    box-shadow: 5px 5px rgb(0 0 0/20%);
+                    transition: all 1.2s cubic-bezier(.3, 0, .3, 1);
+                }
+            }
+
+            table {
+                width: 100%;
+                margin: 2rem 0;
+            }
+
+            .resume-list-table {
+                th {
+                    width: 147px;
+                    padding-right: 3rem;
+                }
+            }
+
+            .ex-list-table {
+                th {
+                    width: 454px;
+                    padding-right: 3rem;
+                    text-align: left;
+                }
+            }
+
+            th,
+            td {
+                padding-bottom: 1rem;
+            }
+
+            td.en-font {
+                font-weight: 400;
             }
         }
+
+
 
     }
 

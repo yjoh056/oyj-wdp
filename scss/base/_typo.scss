@@ -13,9 +13,23 @@ h1 {
     line-height: 1.2;
 
     font: {
-        size: 10rem;
+        size: 100px;
         weight: 800;
     }
+
+    @include mq('lg') {
+        font-size: 80px;
+    }
+
+    @include mq('md') {
+        font-size: 100px;
+    }
+
+    @include mq('sm') {
+        font-size: 80px;
+    }
+
+
 }
 
 .h2,
@@ -30,8 +44,9 @@ h2 {
 .h3,
 h3 {
     margin: 0 0 2rem 0;
+
     font: {
-        size: 5.52rem;
+        size: 5rem;
         weight: 500;
     }
 }
@@ -40,20 +55,32 @@ h3 {
 h4 {
     font: {
         size: 4.32rem;
-        weight: 400;
+        weight: 600;
     }
 }
 
 .h5,
 h5 {
     margin: 0 0 3rem 0;
+
     font: {
-        size: 3.6rem;
+        size: 2.4rem;
         weight: 600;
     }
 }
 
+.h6,
+h6 {
+    margin: 0 0 3rem 0;
+
+    font: {
+        size: 2.1rem;
+        weight: 500;
+    }
+}
+
 p {
+    font-size: 16px;
     margin: 0 0 2rem 0;
 }
 
@@ -62,7 +89,7 @@ b {
     font-weight: 400;
 }
 
-.en-font{
+.en-font {
     font-family: "Montserrat", sans-serif;
     letter-spacing: -0.05em;
 }
