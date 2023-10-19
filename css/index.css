@@ -298,7 +298,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   font-weight: 800;
   color: transparent;
   font-size: 10rem;
-  background-image: url(/images/green-back.png);
+  background-image: url(../images/green-back.png);
   background-blend-mode: color;
   background-position: 98% 75%;
   -webkit-background-clip: text;
