@@ -1,15 +1,13 @@
     .btn {
         & {
             cursor: pointer;
-            padding: 1rem 3rem;
-            border-radius: 3rem;
-            margin-top: 1rem;
+            padding: 0 3rem;
+            border-radius: 5rem;
             text-decoration: none;
             display: inline-block;
-            border: 3px solid $txt-color-secondary;
+            border: 2px solid $txt-color-secondary;
             transition: all .5s;
-            line-height: 3.5rem;
-            height: 6rem;
+            line-height: 6rem;
             position: relative;
 
             font : {

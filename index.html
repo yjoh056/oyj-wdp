@@ -18,8 +18,6 @@
     <meta property="og:image:height" content="630">
 
     <link rel="stylesheet" href="css/index.css">
-    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
-    <script src="js/basic.js"></script>
 </head>
 
 <body>
@@ -32,67 +30,65 @@
                         <span></span>
                         <span></span>
                     </a>
-                    <nav>
-                        <ul class="gnb">
-                            <li class="on"><a href="#section1">section1</a></li>
-                            <li><a href="#section2">section2</a></li>
-                            <li><a href="#section3">section3</a></li>
-                            <li><a href="#section4">section4</a></li>
-                            <li><a href="#section5">section5</a></li>
-                        </ul>
 
-                    </nav>
                 </div>
             </header>
-
+            <nav>
+                <ul class="gnb en-font">
+                    <li class="on"><a href="#section1">Who Am I</a></li>
+                    <li><a href="#section2">Resume</a></li>
+                    <li><a href="#section3">Skill</a></li>
+                    <li><a href="#section4">Project</a></li>
+                    <li><a href="#section5">Portfolio</a></li>
+                </ul>
+            </nav>
             <ul class="sideNav">
-                <li class="on"><a href="#section1">1</a></li>
-                <li><a href="#section2">2</a></li>
-                <li><a href="#section3">3</a></li>
-                <li><a href="#section4">4</a></li>
+                <li class="on"><a href="#section1">W</a></li>
+                <li><a href="#section2">R</a></li>
+                <li><a href="#section3">S</a></li>
+                <li><a href="#section4">P</a></li>
+                <li><a href="#section5">P</a></li>
             </ul>
             <main class="main" id="main">
                 <div class="main-container">
                     <div class="main-hero-banner">
-                        <div class="main-hero-banner-text">
-                            <div class="main-hero-banner-title h1 title">디자인으로<br> 세상을 빛내다</div>
-                            <div class="hero-banner-title h3 sub-title">웹 디자인&퍼블리셔 오예주입니다.</div>
-                            <div class="hero-banner-btn en-font">
-                                <p class="h3">make a WEB world!</p>
-                                <div class="hero-banner-btn-wrap">
-                                    <a class="btn">Resume</a><span></span>
-                                    <a class="btn black-btn">GitHub</a>
-                                </div>
-                                <span class="circle dot3"></span>
-                            </div>
-                        </div>
-
+                        <div class="main-hero-banner-title h1 title">디자인으로<br> 세상을 빛내다</div>
+                        <div class="hero-banner-title h3 sub-title">웹 디자인&퍼블리셔 오예주입니다.</div>
                     </div>
                     <div class="main-photo">
-                        <img src="./images/main-photo.png" alt="" class="main-photo-im">
-                        <span class="big-circle"></span>
-                        <span class="circle dot1"></span>
+                        <img class="main-photo-im" src="./images/main-photo.png" alt="">
+                        <span class="main-photo-frame"></span>
+                        <span class="circle dot3"></span>
+                        <span class="circle dot1 big-circle"></span>
                         <span class="circle dot2"></span>
-                        <div class="main-infor en-font h4">
+                        <div class="main-photo-infor en-font h5">
                             <ul>
-                                <li class="i1">Web Designer</li>
+                                <li class="i1 on">Web Designer</li>
                                 <li class="i2">Web Publisher</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="main-btn en-font">
+                        <p class="h3">make a WEB world!</p>
+                        <div class="hmain-btn-wrap">
+                            <a class="btn" href="#">Resume</a><span></span>
+                            <a class="btn black-btn" href="https://github.com/yjoh056" target="_blank">GitHub</a>
+                        </div>
+                        <span class="circle dot4 big-circle"></span>
                     </div>
 
                 </div>
             </main>
             <section class="infor" id="section1">
                 <div class="infor-container">
-                    <div class="infer-title en-font">
+                    <div class="infer-title en-font section-title">
                         <h2 class="h2">WHO AM I</h2>
                         <p class="sub-title h4"><span>My </span>Information</p>
                     </div>
                     <div class="infor-cards">
-                        <div class="card intro">
+                        <div class="card">
                             <span class="card-title h5">Introduce</span>
-                            <h3 class="en-font">Oh Ye Ju</h3>
+                            <div class="h3 en-font">Oh Ye Ju</div>
                             <div class="card-content">
                                 <span class="card-content-title">Name</span>
                                 <div class="card-content-txt">오예주</div>
@@ -109,6 +105,7 @@
                                 <span class="card-content-title">Lisence</span>
                                 <div class="card-content-txt">2종 보통</div>
                             </div>
+                            <span class="circle dot5 big-circle"></span>
                         </div>
                         <div class="card experience">
                             <span class="card-title h5">Experience | Education</span>
@@ -140,7 +137,7 @@
             </section>
             <section class="resume" id="section2">
                 <div class="resume-container">
-                    <div class="resume-title en-font">
+                    <div class="resume-title en-font section-title">
                         <h2 class="h2">Resume</h2>
                         <p class="sub-title h4"><span>My </span>History</p>
                     </div>
@@ -150,9 +147,10 @@
                         </div>
                         <ul>
                             <li class="resume-list-li ex1">
+                                <span class="h3 en-font resume-kind">Cotents Design, Marketing Design, Performance Designs</span>
                                 <table>
                                     <tr class="resume-list-tt1">
-                                        <th class="h4" colspan="6">Cotents Design, Marketing Design, Performance Design
+                                        <th class="h4" colspan="6">
                                         </th>
                                         <td></td>
                                     </tr>
@@ -212,15 +210,34 @@
             </section>
             <section class="skill" id="section3">
                 <div class="skill-container">
-                    <div class="skill-title en-font">
+                    <div class="skill-title en-font section-title">
                         <h2 class="h2">Skill</h2>
                         <p class="sub-title h4"><span>My </span>Talant</p>
                     </div>
+                    <div class="skill-list">
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                        <div class="skill-list-item"></div>
+                    </div>
                 </div>
             </section>
-            <section class="portfolio" id="section4">
+            <section class="project" id="section4">
+                <div class="project-container">
+                    <div class="project-title en-font section-title">
+                        <h2 class="h2">PROJECT</h2>
+                        <p class="sub-title h4"><span>My </span>cases</p>
+                    </div>
+                </div>
+            </section>
+            <section class="portfolio" id="section5">
                 <div class="portfolio-container">
-                    <div class="portfolio-title en-font">
+                    <div class="portfolio-title en-font section-title">
                         <h2 class="h2">PORTFOLIO</h2>
                         <p class="sub-title h4"><span>My </span>cases</p>
                     </div>
@@ -228,7 +245,7 @@
             </section>
             <section class="end" id="section5">
                 <div class="end-container">
-                    <div class="end-title en-font">
+                    <div class="end-title en-font section-title">
                         <h2 class="h2">Thank you</h2>
                         <p class="sub-title h4"><span>Appreciate </span>your Atention</p>
                     </div>
@@ -239,6 +256,10 @@
             <footer id="footer"></footer>
         </div>
     </div>
+    
+    <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="js/basic.js"></script>
 </body>
 
 </html>
