@@ -1,4 +1,6 @@
+//
 //title effect
+//
 $(document).ready(function () {
   let mouseX, mouseY;
   const ww = $(window).width();
@@ -33,7 +35,9 @@ mainInf.on('mouseenter', function () {
   $(this).addClass('on');
 })
 
-//nav
+//
+//nav scroll
+//
 const win = $(window);
 const gnb = $('.gnb li');
 const sections = $('section');
@@ -53,6 +57,7 @@ gnb.on({
     scrollToSection(index);
   },
 });
+
 sideNav.on({
   click: function (e) {
     e.preventDefault();
@@ -60,6 +65,7 @@ sideNav.on({
     scrollToSection(index);
   },
 });
+
 win.on('scroll', function () {
   let sct = win.scrollTop();
   sections.each(function (i) {
@@ -73,10 +79,55 @@ win.on('scroll', function () {
   });
 
   sct > 800 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
+
+  //
+  //skill scroll
+  //
+  const pogressWrap = $('.skill-list-item');
+  const animationOST = $('.skill').offset().top - 600;
+  let isAni = false;
+
+  $(window).on('scroll', function () {
+    if (sct >= animationOST && !isAni) {
+      progressAnimaition();
+    }
+  });
+  function progressAnimaition() {
+    pogressWrap.each(function () {
+      const $this = $(this);
+      const progressBar = $this.find('.bar');
+      const progressText = $this.find('.rate');
+      const progressRate = progressText.attr('data-rate')
+      const progressDot = $this.find('.progress-dot');
+
+      progressBar.stop().animate({ width: `${progressRate}%` }, 2000);
+
+      $({ rate: 0, left: 0 }).stop().animate(
+        { rate: progressRate, left: `${progressRate}%` },
+        {
+          duration: 2000,
+          step: function () {
+            let nowRate = this.rate;
+            let nowLeft = this.left;
+            progressText.text(Math.floor(nowRate) + '%');
+            progressDot.css('left', nowLeft + '%');
+          },
+          complete: function () {
+            isAnimation = true;
+          }
+        }
+      );
+    });
+  }
+
+  
 });
 
 
+
+//
 // resume
+//
 const resumeLis = $('.resume-list-item');
 const resumeBtns = $('.resume-kind, .ex-list-table-btn'); // .
 const resumeTable = $('.resume-list-table');
@@ -87,22 +138,16 @@ resumeTable.hide();
 exTable.hide();
 
 // 첫 번째 테이블을 열린 상태로 초기화
-const firstTable = resumeLis.first().find('.resume-list-table, .ex-list-table'); 
+const firstTable = resumeLis.first().find('.resume-list-table, .ex-list-table');
 firstTable.show();
 
 // 클릭 이벤트 핸들러
 resumeBtns.on('click', function () {
   const listItem = $(this).closest('.resume-list-item');
+  const table = listItem.find('.resume-list-table, .ex-list-table');
 
-  if (!listItem.hasClass('active')) {
-    listItem.addClass('active');
-    const table = listItem.find('.resume-list-table, .ex-list-table');
-    table.hide();
-  } else {
-    resumeLis.removeClass('active');
-    const table = listItem.find('.resume-list-table, .ex-list-table');
-    table.show();
-  }
+  listItem.toggleClass('active');
+  table.toggle();
 });
 
 

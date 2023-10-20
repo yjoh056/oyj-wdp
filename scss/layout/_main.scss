@@ -614,6 +614,7 @@ section {
     &-wrap {
         display: flex;
         flex-direction: row;
+
         @include mq('md') {
             flex-direction: column;
             align-items: center;
@@ -648,6 +649,11 @@ section {
             border-bottom: 1px solid;
             line-height: 1.5;
             position: relative;
+
+            &.active .resume-kind:before {
+                content: '-';
+                line-height: 40px;
+            }
 
             .resume-kind {
                 display: block;
@@ -709,5 +715,67 @@ section {
 
     &-list-title {
         width: 100%;
+    }
+}
+
+.skill {
+    &-container {
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        &-item {
+            width: 400px;
+        }
+    }
+
+    &-box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .progress-bar {
+        position: relative;
+        height: 3px;
+        margin: 3em auto;
+        background-color: #eaeaea;
+        z-index: -2;
+    }
+
+    .progress-bar .bar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $txt-color-primary;
+        z-index: -1;
+        width: 0;
+    }
+
+    .progress-bar .progress-dot {
+        border: 2px solid #000;
+        border-radius: 50%;
+        background-color: $color-primary;
+        box-shadow: 5px 5px rgba(0, 0, 0, .2);
+        position: absolute;
+        left: 0px;
+        top: -12px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .progress-bar .rate {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        bottom: 0;
+        line-height: 30px;
+        font-size: 1.2em;
+        z-index: 10;
     }
 }

@@ -646,6 +646,19 @@ section:last-of-type {
 }
 .resume-wrap {
   display: flex;
+  flex-direction: row;
+}
+@media screen and (min-width: 701px) and (max-width: 899px) {
+  .resume-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .resume-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .resume-list {
   max-width: 680px;
@@ -665,6 +678,10 @@ section:last-of-type {
   border-bottom: 1px solid;
   line-height: 1.5;
   position: relative;
+}
+.resume-list-item.active .resume-kind:before {
+  content: "-";
+  line-height: 40px;
 }
 .resume-list-item .resume-kind {
   display: block;
@@ -710,6 +727,59 @@ section:last-of-type {
 }
 .resume-list-title {
   width: 100%;
+}
+
+.skill-container {
+  max-width: 1300px;
+  margin: auto;
+}
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.skill-list-item {
+  width: 400px;
+}
+.skill-box {
+  display: flex;
+  justify-content: space-between;
+}
+.skill .progress-bar {
+  position: relative;
+  height: 3px;
+  margin: 3em auto;
+  background-color: #eaeaea;
+  z-index: -2;
+}
+.skill .progress-bar .bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #424242;
+  z-index: -1;
+  width: 0;
+}
+.skill .progress-bar .progress-dot {
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #8ffb5d;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0px;
+  top: -12px;
+  width: 25px;
+  height: 25px;
+}
+.skill .progress-bar .rate {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  line-height: 30px;
+  font-size: 1.2em;
+  z-index: 10;
 }
 
 .btn {
