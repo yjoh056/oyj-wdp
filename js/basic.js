@@ -78,11 +78,31 @@ win.on('scroll', function () {
 
 // resume
 const resumeLis = $('.resume-list-item');
-const resumeBtn = $('.resume-kind:before')
-resumeLis.find('.resume-list-table').hide();
-resumeLis.find('active')
-resumeLis.find('.ex-list-table').hide();
-resumeBtn.on('click',function () { 
-  
-  
+const resumeBtns = $('.resume-kind, .ex-list-table-btn'); // .
+const resumeTable = $('.resume-list-table');
+let resumeBtn = [];
+
+const exTable = $('.ex-list-table');
+resumeTable.hide();
+exTable.hide();
+
+// 첫 번째 테이블을 열린 상태로 초기화
+const firstTable = resumeLis.first().find('.resume-list-table, .ex-list-table'); 
+firstTable.show();
+
+// 클릭 이벤트 핸들러
+resumeBtns.on('click', function () {
+  const listItem = $(this).closest('.resume-list-item');
+
+  if (!listItem.hasClass('active')) {
+    listItem.addClass('active');
+    const table = listItem.find('.resume-list-table, .ex-list-table');
+    table.hide();
+  } else {
+    resumeLis.removeClass('active');
+    const table = listItem.find('.resume-list-table, .ex-list-table');
+    table.show();
+  }
 });
+
+
