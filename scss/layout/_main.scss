@@ -155,55 +155,87 @@ nav {
 }
 
 /* sideNav */
-.sideNav {
-    position: fixed;
-    top: 30%;
-    right: 5%;
-    z-index: 999;
+.side-menu {
+    .sideNav {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 95%;
 
-    li {
-        position: relative;
+        li {
+            position: relative;
+
+            a {
+                display: block;
+                position: relative;
+                line-height: 4rem;
+                width: 4rem;
+                height: 4rem;
+                color: #fff;
+                text-align: center;
+                margin-bottom: 1em;
+                border-radius: 50%;
+                border: 3px solid $color-third;
+            }
+        }
+
+        li.on {
+            a:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background: $color-primary;
+                border: transparent;
+                z-index: -1;
+                color: #fff;
+            }
+        }
+
+        @include mq('md') {
+            display: none;
+        }
+
+        @include mq('sm') {
+            display: none;
+        }
+    }
+
+    .sideNav-top {
+        position: fixed;
+        left: 90%;
+        bottom: 10%;
+
+        &::before {
+            content: '';
+            width: 2.3rem;
+            height: 3rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 8rem;
+            background: url(/images/top-arrow.png)center center no-repeat;
+        }
 
         a {
             display: block;
             position: relative;
             line-height: 6rem;
-            width: 6rem;
-            height: 6rem;
-            color: #fff;
+           
+            color: $txt-color-primary;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 1em;
             border-radius: 50%;
-            border: 3px solid $color-third;
+           
         }
-    }
-
-    li.on {
-        a:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: $color-primary;
-            border: transparent;
-            z-index: -1;
-            color: #fff;
-        }
-    }
-
-    @include mq('md') {
-        display: none;
-    }
-
-    @include mq('sm') {
-        display: none;
     }
 }
 
-
+/* main */
 .main {
     width: 100%;
     max-width: 1300px;
@@ -262,7 +294,6 @@ nav {
     }
 
     .image-wrap {
-        width: 100%;
         position: absolute;
         left: 60%;
 
@@ -288,7 +319,7 @@ nav {
             position: relative;
             text-align: center;
             height: 56vw;
-
+            max-width: 513px;
             @include mq('md') {
                 height: 62vw;
             }
@@ -496,6 +527,7 @@ nav {
     z-index: -1;
 }
 
+/* sections */
 section {
     background-color: $bg-gradient;
     padding-top: 5vw;
@@ -523,7 +555,7 @@ section {
 
 }
 
-
+/* section 1 */
 .infor {
     margin: auto;
     width: 100%;
@@ -604,6 +636,7 @@ section {
 
 }
 
+/* section 2 */
 .resume {
     &-container {
         width: 100%;
@@ -718,6 +751,7 @@ section {
     }
 }
 
+/* section 3 */
 .skill {
     &-container {
         max-width: 1300px;
@@ -777,5 +811,42 @@ section {
         line-height: 30px;
         font-size: 1.2em;
         z-index: 10;
+    }
+}
+
+/* section 4 */
+.project {
+    &-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        max-width: 1300px;
+        margin: auto;
+    }
+
+    &-frame {
+        flex-basis: 40%;
+
+        img {
+            max-width: 700px;
+        }
+    }
+
+    &-sub {
+        flex-basis: 60%;
+        padding: 1rem 4rem;
+
+        &-btn {
+            display: flex;
+
+            span {
+                display: block;
+                margin: 3rem 0;
+                width: 40px;
+                height: 2px;
+                background-color: $color-secondary;
+            }
+        }
+
     }
 }

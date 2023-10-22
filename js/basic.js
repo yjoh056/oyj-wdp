@@ -42,6 +42,8 @@ const win = $(window);
 const gnb = $('.gnb li');
 const sections = $('section');
 const sideNav = $('.sideNav>li');
+const topBtn = $('.sideNav-top');
+
 
 function scrollToSection(index) {
   let section = sections.eq(index);
@@ -55,73 +57,100 @@ gnb.on({
     e.preventDefault();
     let index = $(this).index();
     scrollToSection(index);
+    progressAnimaition();
   },
 });
-
 sideNav.on({
   click: function (e) {
     e.preventDefault();
     let index = $(this).index();
     scrollToSection(index);
+    progressAnimaition();
   },
 });
 
+topBtn.stop().fadeOut();
+topBtn.on('click', function (e) {
+  e.preventDefault();
+  $('html, body').stop().animate({ scrollTop: 0 }, 2000, 'easeOutCubic', function() {
+    topBtn.fadeOut(); 
+  });
+});
+
+
 win.on('scroll', function () {
   let sct = win.scrollTop();
+
   sections.each(function (i) {
     if (sct >= sections.eq(i).offset().top - 300) {
-      gnb.removeClass('on')
+      gnb.removeClass('on');
       gnb.eq(i).addClass('on').siblings().removeClass('on');
       sideNav.eq(i).addClass('on').siblings().removeClass('on');
       sections.eq(i).addClass('on').siblings().removeClass('on');
+      if ( i >= 1 ) {
+        topBtn.stop().fadeIn();
+      } 
+      if (i === 3) {
+        progressAnimaition();
+      }
 
     }
+
   });
 
   sct > 800 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
 
-  //
-  //skill scroll
-  //
-  const pogressWrap = $('.skill-list-item');
-  const animationOST = $('.skill').offset().top - 600;
-  let isAni = false;
-
-  $(window).on('scroll', function () {
-    if (sct >= animationOST && !isAni) {
-      progressAnimaition();
-    }
-  });
-  function progressAnimaition() {
-    pogressWrap.each(function () {
-      const $this = $(this);
-      const progressBar = $this.find('.bar');
-      const progressText = $this.find('.rate');
-      const progressRate = progressText.attr('data-rate')
-      const progressDot = $this.find('.progress-dot');
-
-      progressBar.stop().animate({ width: `${progressRate}%` }, 2000);
-
-      $({ rate: 0, left: 0 }).stop().animate(
-        { rate: progressRate, left: `${progressRate}%` },
-        {
-          duration: 2000,
-          step: function () {
-            let nowRate = this.rate;
-            let nowLeft = this.left;
-            progressText.text(Math.floor(nowRate) + '%');
-            progressDot.css('left', nowLeft + '%');
-          },
-          complete: function () {
-            isAnimation = true;
-          }
-        }
-      );
-    });
-  }
-
-  
 });
+
+// skill scroll
+const pogressWrap = $('.skill-list-item');
+const animationOST = $('.skill').offset().top - 600;
+let isAnimation = false;
+
+win.on("scroll", function () {
+  let sct2 = win.scrollTop();
+
+  if (sct2 >= animationOST && !isAnimation) {
+    progressAnimaition();
+    isAnimation = true;
+  }
+});
+
+
+function progressAnimaition() {
+
+  pogressWrap.each(function () {
+
+    const $this = $(this);
+    const progressBar = $this.find('.bar');
+    const progressText = $this.find('.rate');
+    const progressRate = progressText.attr("data-rate");
+    const progressDot = $this.find('.progress-dot');
+
+    progressBar.stop().width(0);
+
+    progressBar.stop().animate({ width: `${progressRate}%` }, 2000);
+
+    $({ rate: 0, left: 0 }).stop().animate(
+      { rate: progressRate, left: `${progressRate}%` },
+      {
+        duration: 2000,
+        step: function () {
+          var nowRate = this.rate;
+          var nowLeft = this.left;
+          progressText.text(Math.floor(nowRate) + '%');
+          progressDot.css("left", Math.floor(nowLeft) + "%");
+        },
+        complete: function () {
+          isAnimation = true;
+        }
+      }
+    );
+
+  });
+}
+
+
 
 
 

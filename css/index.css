@@ -236,34 +236,34 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 
 /* sideNav */
-.sideNav {
+.side-menu .sideNav {
   position: fixed;
-  top: 30%;
-  right: 5%;
-  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 95%;
 }
-.sideNav li {
+.side-menu .sideNav li {
   position: relative;
 }
-.sideNav li a {
+.side-menu .sideNav li a {
   display: block;
   position: relative;
-  line-height: 6rem;
-  width: 6rem;
-  height: 6rem;
+  line-height: 4rem;
+  width: 4rem;
+  height: 4rem;
   color: #fff;
   text-align: center;
   margin-bottom: 1em;
   border-radius: 50%;
   border: 3px solid #DAFEC9;
 }
-.sideNav li.on a:before {
+.side-menu .sideNav li.on a:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 60px;
-  height: 60px;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background: #8ffb5d;
   border: transparent;
@@ -271,16 +271,42 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   color: #fff;
 }
 @media screen and (min-width: 701px) and (max-width: 899px) {
-  .sideNav {
+  .side-menu .sideNav {
     display: none;
   }
 }
 @media screen and (max-width: 700px) {
-  .sideNav {
+  .side-menu .sideNav {
     display: none;
   }
 }
+.side-menu .sideNav-top {
+  position: fixed;
+  left: 90%;
+  bottom: 10%;
+}
+.side-menu .sideNav-top::before {
+  content: "";
+  width: 2.3rem;
+  height: 3rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8rem;
+  background: url(/images/top-arrow.png) center center no-repeat;
+}
+.side-menu .sideNav-top a {
+  display: block;
+  position: relative;
+  line-height: 6rem;
+  color: #424242;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1em;
+  border-radius: 50%;
+}
 
+/* main */
 .main {
   width: 100%;
   max-width: 1300px;
@@ -335,7 +361,6 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   margin-top: 2rem;
 }
 .main .image-wrap {
-  width: 100%;
   position: absolute;
   left: 60%;
 }
@@ -361,6 +386,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   position: relative;
   text-align: center;
   height: 56vw;
+  max-width: 513px;
 }
 @media screen and (min-width: 701px) and (max-width: 899px) {
   .main-photo {
@@ -546,6 +572,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   z-index: -1;
 }
 
+/* sections */
 section {
   background-color: linear-gradient(0deg, rgb(245, 255, 216) 0%, rgb(255, 255, 244) 77%, rgb(255, 255, 255) 100%);
   padding-top: 5vw;
@@ -568,6 +595,7 @@ section:last-of-type {
   min-height: 50vh;
 }
 
+/* section 1 */
 .infor {
   margin: auto;
   width: 100%;
@@ -639,6 +667,7 @@ section:last-of-type {
   text-align: left;
 }
 
+/* section 2 */
 .resume-container {
   width: 100%;
   max-width: 1360px;
@@ -729,6 +758,7 @@ section:last-of-type {
   width: 100%;
 }
 
+/* section 3 */
 .skill-container {
   max-width: 1300px;
   margin: auto;
@@ -780,6 +810,35 @@ section:last-of-type {
   line-height: 30px;
   font-size: 1.2em;
   z-index: 10;
+}
+
+/* section 4 */
+.project-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1300px;
+  margin: auto;
+}
+.project-frame {
+  flex-basis: 40%;
+}
+.project-frame img {
+  max-width: 700px;
+}
+.project-sub {
+  flex-basis: 60%;
+  padding: 1rem 4rem;
+}
+.project-sub-btn {
+  display: flex;
+}
+.project-sub-btn span {
+  display: block;
+  margin: 3rem 0;
+  width: 40px;
+  height: 2px;
+  background-color: #B4FC93;
 }
 
 .btn {
