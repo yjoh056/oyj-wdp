@@ -47,7 +47,7 @@ const topBtn = $('.sideNav-top');
 
 function scrollToSection(index) {
   let section = sections.eq(index);
-  console.log(section);
+  // console.log(section);
   let offset = section.offset().top;
   $('html,body').stop().animate({ scrollTop: offset }, 1000, 'easeOutCirc');
 }
@@ -58,6 +58,7 @@ gnb.on({
     let index = $(this).index();
     scrollToSection(index);
     progressAnimaition();
+    pipScroll();
   },
 });
 sideNav.on({
@@ -66,14 +67,15 @@ sideNav.on({
     let index = $(this).index();
     scrollToSection(index);
     progressAnimaition();
+    pipScroll();
   },
 });
 
 topBtn.stop().fadeOut();
 topBtn.on('click', function (e) {
   e.preventDefault();
-  $('html, body').stop().animate({ scrollTop: 0 }, 2000, 'easeOutCubic', function() {
-    topBtn.fadeOut(); 
+  $('html, body').stop().animate({ scrollTop: 0 }, 2000, 'easeOutCubic', function () {
+    topBtn.fadeOut();
   });
 });
 
@@ -87,9 +89,9 @@ win.on('scroll', function () {
       gnb.eq(i).addClass('on').siblings().removeClass('on');
       sideNav.eq(i).addClass('on').siblings().removeClass('on');
       sections.eq(i).addClass('on').siblings().removeClass('on');
-      if ( i >= 1 ) {
+      if (i >= 1) {
         topBtn.stop().fadeIn();
-      } 
+      }
       if (i === 3) {
         progressAnimaition();
       }
@@ -180,3 +182,56 @@ resumeBtns.on('click', function () {
 });
 
 
+//
+//project
+//
+function pipScroll(param) {
+  const boxes = $('.project-frame');
+
+  boxes.each(function() {
+    const box = $(this);
+    const device = box.find('.mockup.pc');
+    const screen = device.find('.screen');
+    const mask = device.find('.mask');
+    const hightDifference = screen.innerHeight() - mask.innerHeight();
+
+    box.on({
+      mouseenter: function () {
+        screen.stop().animate({ top: -hightDifference }, 2000);
+      },
+      mouseleave: function () {
+        screen.stop().animate({ top: 0 }, 2000);
+      }
+    });
+  });
+}
+
+win.on('resize', function () {
+  pipScroll();
+});
+
+//
+//portfolio
+//
+function filterImages(category) {
+  const gridItems = document.querySelectorAll('.work-item');
+
+  gridItems.forEach(function(item) {
+    const itemCategory = item.getAttribute('data-category');
+
+    if (category === 'all' || category === itemCategory) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function showAllImages() {
+   const gridItems = document.querySelectorAll('.work-item');
+
+   gridItems.forEach(function(item) {
+     item.style.display = 'block';
+     item.classList.add('active');
+   });
+}
