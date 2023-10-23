@@ -188,13 +188,13 @@ resumeBtns.on('click', function () {
 function pipScroll(param) {
   const boxes = $('.project-frame');
 
-  boxes.each(function() {
+  boxes.each(function () {
     const box = $(this);
     const device = box.find('.mockup.pc');
     const screen = device.find('.screen');
     const mask = device.find('.mask');
     const hightDifference = screen.innerHeight() - mask.innerHeight();
-
+console.log(screen.innerHeight);
     box.on({
       mouseenter: function () {
         screen.stop().animate({ top: -hightDifference }, 2000);
@@ -213,10 +213,20 @@ win.on('resize', function () {
 //
 //portfolio
 //
+
+const pfBtns = $('.portfolio-box-filter-links').find('button');
+pfBtns.on('click', function () {
+  pfBtns.removeClass('active');
+  $(this).addClass('active');
+});
+
+
+
 function filterImages(category) {
+  const grid = document.querySelector('.portfolio-box-work');
   const gridItems = document.querySelectorAll('.work-item');
 
-  gridItems.forEach(function(item) {
+  gridItems.forEach(function (item) {
     const itemCategory = item.getAttribute('data-category');
 
     if (category === 'all' || category === itemCategory) {
@@ -228,10 +238,10 @@ function filterImages(category) {
 }
 
 function showAllImages() {
-   const gridItems = document.querySelectorAll('.work-item');
+  const gridItems = document.querySelectorAll('.work-item');
 
-   gridItems.forEach(function(item) {
-     item.style.display = 'block';
-     item.classList.add('active');
-   });
+  gridItems.forEach(function (item) {
+    item.style.display = 'block';
+  });
 }
+
