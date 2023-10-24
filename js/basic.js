@@ -200,7 +200,7 @@ console.log(screen.innerHeight);
         screen.stop().animate({ top: -hightDifference }, 2000);
       },
       mouseleave: function () {
-        screen.stop().animate({ top: 0 }, 2000);
+        screen.stop().animate({ top: 0 }, 1000);
       }
     });
   });
