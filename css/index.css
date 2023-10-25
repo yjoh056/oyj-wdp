@@ -89,6 +89,7 @@ h6 {
 
 p {
   font-size: 16px;
+  line-height: 1.5;
   margin: 0 0 2rem 0;
 }
 
@@ -293,7 +294,8 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   left: 50%;
   transform: translateX(-50%);
   bottom: 8rem;
-  background: url(/images/top-arrow.png) center center no-repeat;
+  background: url("../images/top-arrow.png") center center no-repeat;
+  cursor: pointer;
 }
 .side-menu .sideNav-top a {
   display: block;
@@ -509,56 +511,56 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   top: 430px;
   right: 467px;
 }
-.main-photo-btn {
+.main-btn {
   margin-top: 5rem;
 }
 @media screen and (min-width: 701px) and (max-width: 899px) {
-  .main-photo-btn {
+  .main-btn {
     text-align: center;
   }
 }
 @media screen and (max-width: 700px) {
-  .main-photo-btn {
+  .main-btn {
     text-align: center;
   }
 }
-.main-photo-btn p {
+.main-btn p {
   font-size: 2rem;
   padding: 2rem 1rem;
 }
-.main-photo-btn-wrap {
+.main-btn-wrap {
   display: flex;
   align-items: center;
 }
 @media screen and (min-width: 701px) and (max-width: 899px) {
-  .main-photo-btn-wrap {
+  .main-btn-wrap {
     text-align: center;
     justify-content: center;
   }
 }
 @media screen and (max-width: 700px) {
-  .main-photo-btn-wrap {
+  .main-btn-wrap {
     text-align: center;
     justify-content: center;
   }
 }
-.main-photo-btn-wrap span {
+.main-btn-wrap span {
   display: block;
   margin: 3rem 0;
   width: 40px;
   height: 2px;
   background-color: #B4FC93;
 }
-.main-photo-btn .dot4 {
-  left: 10%;
-}
-.main-photo .dot1 {
+.main .dot1 {
   top: 0;
   right: 52%;
 }
-.main-photo .dot2 {
+.main .dot2 {
   top: 30%;
   right: 97%;
+}
+.main .dot4 {
+  left: 10%;
 }
 .main .big-circle {
   width: 185px !important;
@@ -1014,7 +1016,7 @@ section:last-of-type {
   padding: 0.5rem 1.5rem;
   background-color: #ffffff;
   margin-right: 3.5rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 .project-sub-txt .sub-txt-title::before {
   margin-top: -1px;
@@ -1028,11 +1030,13 @@ section:last-of-type {
 }
 .project-sub-infor {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
-.project-sub-infor p {
-  line-height: 1.5;
-  margin: 0;
+.project-sub-infor .infor-item {
+  text-align: center;
+}
+.project-sub-infor .infor-item p {
+  margin: 1rem 0;
 }
 .project-sub-infor .infor-title {
   color: #4BE006;

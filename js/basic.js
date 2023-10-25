@@ -36,21 +36,32 @@ mainInf.on('mouseenter', function () {
 })
 
 //
-//nav scroll
+//scroll section(nev/gnb)
 //
 const win = $(window);
+const speed = Math.floor(win.height() * 0.9);
 const gnb = $('.gnb li');
 const sections = $('section');
 const sideNav = $('.sideNav>li');
 const topBtn = $('.sideNav-top');
+const pogressWrap = $('.skill-list-item');
+let isAnimation = false;
+let winSCT;
+let topArr = [];
 
 
 function scrollToSection(index) {
   let section = sections.eq(index);
-  // console.log(section);
   let offset = section.offset().top;
   $('html,body').stop().animate({ scrollTop: offset }, 1000, 'easeOutCirc');
 }
+sections.each(function (i, section) {
+  setTimeout(() => {
+      $(section).addClass(`bg${i + 1}`);
+  }, i * 1000);
+  const sectionTop = $(this).offset().top;
+  topArr.push(sectionTop);
+});
 
 gnb.on({
   click: function (e) {
@@ -76,49 +87,37 @@ topBtn.on('click', function (e) {
   e.preventDefault();
   $('html, body').stop().animate({ scrollTop: 0 }, 2000, 'easeOutCubic', function () {
     topBtn.fadeOut();
+    isAnimation = false;
   });
 });
 
 
 win.on('scroll', function () {
-  let sct = win.scrollTop();
-
+  winSCT = win.scrollTop();
   sections.each(function (i) {
-    if (sct >= sections.eq(i).offset().top - 300) {
+    if (winSCT >= sections.eq(i).offset().top - 300) {
       gnb.removeClass('on');
       gnb.eq(i).addClass('on').siblings().removeClass('on');
       sideNav.eq(i).addClass('on').siblings().removeClass('on');
       sections.eq(i).addClass('on').siblings().removeClass('on');
-      if (i >= 1) {
+      if (winSCT > topArr[1] - speed) {
         topBtn.stop().fadeIn();
       }
-      if (i === 3) {
+      if (winSCT > topArr[2] - speed && !isAnimation) {
         progressAnimaition();
+        isAnimation = true;
       }
 
     }
 
   });
 
-  sct > 800 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
+  winSCT > 800 ? $('nav').addClass('sticky') : $('nav').removeClass('sticky');
 
 });
+
 
 // skill scroll
-const pogressWrap = $('.skill-list-item');
-const animationOST = $('.skill').offset().top - 600;
-let isAnimation = false;
-
-win.on("scroll", function () {
-  let sct2 = win.scrollTop();
-
-  if (sct2 >= animationOST && !isAnimation) {
-    progressAnimaition();
-    isAnimation = true;
-  }
-});
-
-
 function progressAnimaition() {
 
   pogressWrap.each(function () {
@@ -187,7 +186,6 @@ resumeBtns.on('click', function () {
 //
 function pipScroll(param) {
   const boxes = $('.project-frame');
-
   boxes.each(function () {
     const box = $(this);
     const device = box.find('.mockup.pc');

@@ -218,7 +218,8 @@ nav {
             left: 50%;
             transform: translateX(-50%);
             bottom: 8rem;
-            background: url(/images/top-arrow.png)center center no-repeat;
+            background: url("#{$url-images}/top-arrow.png")center center no-repeat;
+            cursor: pointer;
         }
 
         a {
@@ -238,9 +239,11 @@ nav {
 
 /* main */
 .main {
-    width: 100%;
-    max-width: 1300px;
-    padding-bottom: 10vw;
+    & {
+        width: 100%;
+        max-width: 1300px;
+        padding-bottom: 10vw;
+    }
 
     &-container {
         margin-top: 5rem;
@@ -363,96 +366,94 @@ nav {
 
                         @include mq('sm') {
                             max-width: 60rem;
-                    }
-
-                    li {
-                        & {
-                            display: block;
-                            padding: 0 3rem;
-                            border: 2px solid $color-black;
-                            border-radius: 56px;
-                            background-color: $bg-color;
-                            line-height: 6rem;
-                            font-weight: 700;
-                            transition: position 0.3s cubic-bezier(.36, .64, .55, .59);
-                            box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
-                            @include mq('md') {
-                            }
-    
-                            @include mq('sm') {
-                                font-size: 12px;
-                        }
                         }
 
-                        &.i1 {
-                            position: absolute;
-                            top: -81px;
-                            right: 211px;
+                        li {
+                            & {
+                                display: block;
+                                padding: 0 3rem;
+                                border: 2px solid $color-black;
+                                border-radius: 56px;
+                                background-color: $bg-color;
+                                line-height: 6rem;
+                                font-weight: 700;
+                                transition: position 0.3s cubic-bezier(.36, .64, .55, .59);
+                                box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
 
-                            @include mq('md') {
-                                top: -98px;
-                                right: 177px;
+                                @include mq('md') {}
+
+                                @include mq('sm') {
+                                    font-size: 12px;
+                                }
                             }
 
-                            @include mq('sm') {
-                                top: -98px;
-                                right: 177px;
-                            }
-                        }
+                            &.i1 {
+                                position: absolute;
+                                top: -81px;
+                                right: 211px;
 
-                        &.i2 {
-                            position: absolute;
-                            top: -152px;
-                            left: -150px;
+                                @include mq('md') {
+                                    top: -98px;
+                                    right: 177px;
+                                }
 
-                            @include mq('md') {
-                                top: -163px;
-                                left: 71px;
-                            }
-
-                            @include mq('sm') {
-                                top: -163px;
-                                left: 71px;
+                                @include mq('sm') {
+                                    top: -98px;
+                                    right: 177px;
+                                }
                             }
 
-                        }
+                            &.i2 {
+                                position: absolute;
+                                top: -152px;
+                                left: -150px;
 
-                        &.on {
-                            color: $txt-color-secondary;
+                                @include mq('md') {
+                                    top: -163px;
+                                    left: 71px;
+                                }
+
+                                @include mq('sm') {
+                                    top: -163px;
+                                    left: 71px;
+                                }
+
+                            }
+
+                            &.on {
+                                color: $txt-color-secondary;
+                            }
                         }
                     }
                 }
+
             }
 
-        }
+            &-frame {
+                position: absolute;
+                top: 7%;
+                left: 0;
+                display: block;
+                width: 50rem;
+                height: 50rem;
+                border-radius: 50%;
+                border: 30px solid #8ffb5d;
+                z-index: -3;
 
-        &-frame {
-            position: absolute;
-            top: 7%;
-            left: 0;
-            display: block;
-            width: 50rem;
-            height: 50rem;
-            border-radius: 50%;
-            border: 30px solid #8ffb5d;
-            z-index: -3;
+            }
 
-        }
+            &-im {
+                display: block;
+                width: 512px;
+                height: 606px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
 
-        &-im {
-            display: block;
-            width: 512px;
-            height: 606px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-
-
-
-        .dot3 {
-            top: 430px;
-            right: 467px;
+            .dot3 {
+                top: 430px;
+                right: 467px;
+            }
         }
     }
 
@@ -498,10 +499,6 @@ nav {
             }
         }
 
-        .dot4 {
-            left: 10%;
-        }
-
     }
 
     .dot1 {
@@ -514,27 +511,28 @@ nav {
         right: 97%;
     }
 
+    .dot4 {
+        left: 10%;
+    }
 
+    .big-circle {
+        width: 185px !important;
+        height: 185px !important;
+        background-image: url("#{$url-images}/light-dot-lg.png") !important;
+    }
 
+    .circle {
+        background-image: url("#{$url-images}/light-dot.png");
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        width: 139px;
+        height: 139px;
+        z-index: -1;
+    }
 }
 
-.big-circle {
-    width: 185px !important;
-    height: 185px !important;
-    background-image: url("#{$url-images}/light-dot-lg.png") !important;
-}
-
-.circle {
-    background-image: url("#{$url-images}/light-dot.png");
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    width: 139px;
-    height: 139px;
-    z-index: -1;
-}
-}
 /* sections */
 section {
     background-color: $bg-gradient;
@@ -955,7 +953,7 @@ section {
 
         .screen {
             width: 100%;
-            transition: top 1s cubic-bezier(.17,.45,.69,.83);
+            transition: top 1s cubic-bezier(.17, .45, .69, .83);
         }
 
         .device {
@@ -1022,7 +1020,7 @@ section {
                 padding: 0.5rem 1.5rem;
                 background-color: $color-white;
                 margin-right: 3.5rem;
-                font-weight: 300;
+                font-weight: 400;
 
                 &::before {
                     margin-top: -1px;
@@ -1041,14 +1039,17 @@ section {
 
         &-infor {
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
 
-            p {
-                line-height: 1.5;
-                margin: 0;
+
+            .infor-item{
+                text-align: center;
+                p {
+                    margin: 1rem 0;
+                }
+    
             }
-
-            .infor-title {
+            .infor-title {          
                 color: $txt-color-secondary;
             }
         }
