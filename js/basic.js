@@ -11,6 +11,9 @@ $(document).ready(function () {
   const i2InitialTop = parseFloat($(".i2").css("top"));
   const i2InitialLeft = parseFloat($(".i2").css("left"));
 
+
+
+
   //photo icon
   $(document).mousemove(function (e) {
     mouseX = e.pageX;
@@ -107,6 +110,11 @@ win.on('scroll', function () {
         progressAnimaition();
         isAnimation = true;
       }
+      if (winSCT > topArr[3] - speed && !isAnimation) {
+        if (!sections.eq(3).hasClass('is-animated')) {
+          sections.eq(3).addClass('is-animated');
+        }
+      }
 
     }
 
@@ -175,9 +183,14 @@ firstTable.show();
 resumeBtns.on('click', function () {
   const listItem = $(this).closest('.resume-list-item');
   const table = listItem.find('.resume-list-table, .ex-list-table');
-
+  const resumeKind = listItem.find('.resume-kind');
   listItem.toggleClass('active');
   table.toggle();
+  if (listItem.hasClass('active')) {
+    resumeKind.css('font-weight', '700'); // 활성화된 상태에서는 글꼴 두께를 700으로 설정
+  } else {
+    resumeKind.css('font-weight', ''); // 비활성화된 상태에서는 글꼴 두께를 초기화
+  }
 });
 
 
@@ -192,7 +205,7 @@ function pipScroll(param) {
     const screen = device.find('.screen');
     const mask = device.find('.mask');
     const hightDifference = screen.innerHeight() - mask.innerHeight();
-console.log(screen.innerHeight);
+// console.log(screen.innerHeight);
     box.on({
       mouseenter: function () {
         screen.stop().animate({ top: -hightDifference }, 2000);
@@ -243,3 +256,12 @@ function showAllImages() {
   });
 }
 
+
+const animation = bodymovin.loadAnimation({
+  container: document.getElementById('enjoywebwold'), // Required
+  path: 'website.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+  name: "Hello World", // Name for future reference. Optional.
+})

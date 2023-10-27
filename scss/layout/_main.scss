@@ -39,9 +39,6 @@ body::-webkit-scrollbar-button {
         justify-content: space-between;
         align-items: center;
 
-        .logo {
-            max-width: 15rem;
-        }
     }
 
     .menu-btn {
@@ -692,12 +689,16 @@ section {
 
             &.active .resume-kind:before {
                 content: '-';
-                line-height: 40px;
+                background-color: $bg-color;
+            }
+
+            &.active .resume-kind {
+                font-weight: 700;
             }
 
             .resume-kind {
                 display: block;
-                font-weight: 700;
+                margin: 0;
 
                 &::before {
                     content: '+';
@@ -709,7 +710,7 @@ section {
                     text-align: center;
                     font-size: 36px;
                     font-weight: 500;
-                    line-height: 48px;
+                    line-height: 47px;
                     transform: translateY(-10%);
                     background-color: $color-white;
                     border-radius: 50%;
@@ -725,9 +726,16 @@ section {
             }
 
             .resume-list-table {
+
                 th {
                     width: 147px;
                     padding-right: 3rem;
+                    color: $color-gray;
+                    font-weight: 500;
+
+                    &.company {
+                        color: $txt-color-secondary;
+                    }
                 }
             }
 
@@ -736,6 +744,11 @@ section {
                     width: 454px;
                     padding-right: 3rem;
                     text-align: left;
+
+                    &.h5 {
+                        color: $txt-color-secondary;
+                        font-weight: 400;
+                    }
                 }
             }
 
@@ -864,6 +877,10 @@ section {
         flex-direction: column;
         gap: 20rem;
 
+        img {
+            width: 100%;
+        }
+
         @include mq('md') {
             gap: 10rem;
         }
@@ -874,6 +891,7 @@ section {
 
         .project-box {
             display: flex;
+            width: 100%;
 
             @include mq('md') {
                 flex-flow: column wrap;
@@ -892,8 +910,24 @@ section {
     &-frame {
         flex-basis: 60%;
         position: relative;
-        height: 432px;
         cursor: all-scroll;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: var($txt-color-primary);
+            transition: clip-path 0.3s cubic-bezier(.33, .08, .88, .46);
+            // clip-path: inset(0% 0% 0 100%);
+            z-index: 999;
+        }
+
+        &.is-animaited :before {
+            clip-path: inset(0);
+        }
 
         @include mq('md') {
             flex-basis: auto;
@@ -906,40 +940,22 @@ section {
             margin: 0 0 3rem 0;
         }
 
-        .pc {
-            &::before {
-                content: "main";
-                position: absolute;
-                top: 16px;
-                left: 93px;
-                z-index: 25;
-                font-family: "Montserrat", sans-serif;
-                letter-spacing: -0.05em;
-                font-weight: 700;
-                display: inline-block;
-                width: 16rem;
-                padding: 0.6rem 1rem;
-                color: $txt-color-secondary;
-                cursor: pointer;
-            }
-        }
-
-
         .mockup {
             position: relative;
+            width: 100%;
         }
 
 
 
         .mask {
             position: absolute;
-            top: 72px;
-            left: 0;
-            height: 407px;
+            top: 77px;
+            left: 10px;
+            height: 397px;
             width: 100%;
+            max-width: 748px;
             overflow: hidden;
             z-index: 20;
-            border: 2px solid;
 
             @include mq('md') {
                 height: 330px;
@@ -958,8 +974,6 @@ section {
 
         .device {
             border-radius: 2rem;
-            border: 2px solid $txt-color-primary;
-            box-shadow: 5px 5px 3px rgb(0 0 0/20%);
         }
 
         img {
@@ -977,7 +991,7 @@ section {
 
     &-sub {
         flex-basis: 40%;
-        padding: 1rem 1rem 1rem 5rem;
+        padding: 1rem 1rem 6rem 5rem;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -996,7 +1010,6 @@ section {
 
         &-title {
             display: flex;
-            align-items: baseline;
             gap: 1rem;
 
             .h2 {
@@ -1006,6 +1019,11 @@ section {
             .up {
                 position: absolute;
                 color: $color-primary;
+            }
+
+            p {
+                line-height: 12rem;
+                padding-left: 2rem;
             }
         }
 
@@ -1042,14 +1060,16 @@ section {
             justify-content: space-around;
 
 
-            .infor-item{
+            .infor-item {
                 text-align: center;
+
                 p {
                     margin: 1rem 0;
                 }
-    
+
             }
-            .infor-title {          
+
+            .infor-title {
                 color: $txt-color-secondary;
             }
         }
@@ -1102,12 +1122,13 @@ section {
 
                 &.active {
                     color: $txt-color-secondary;
-                    border-bottom: 1px solid $txt-color-secondary;
+                    border-bottom: 2px solid $txt-color-secondary;
                 }
             }
         }
 
         &-work {
+            max-width: 1200px;
             display: grid;
             grid-template-columns: repeat(4, minmax(300px, 1fr));
             grid-template-rows: min-content;
@@ -1132,18 +1153,15 @@ section {
             }
 
             .work-item {
-                height: 15rem;
-                overflow-y: hidden;
-                padding: 1rem;
+                display: inline-block;
+                height: auto;
+                overflow: hidden;
                 margin: auto;
+                border-top: 2px solid var($txt-color-primary);
 
-                // @include mq('md') {
-                //     width: calc(33.33% - (40px /3));
-                // }
+                @include mq('md') {}
 
-                // @include mq('sm') {
-                //     width: calc(50% - (20px /2));
-                // }
+                @include mq('sm') {}
             }
 
             img {
