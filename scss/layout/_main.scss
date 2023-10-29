@@ -10,6 +10,9 @@
         align-items: center
     }
 }
+.all_scrollFixed{
+    overflow: hidden;
+}
 
 .custom-cursor {
     position: fixed;
@@ -128,7 +131,7 @@ nav {
     &.sticky {
         background: #ffffffbc;
         position: fixed;
-        z-index: 222;
+        z-index: 99;
         border-radius: 56px;
         backdrop-filter: blur(6.4px);
     }
@@ -1227,7 +1230,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     position: fixed;
-    width: 80%;
+    width: 70%;
     height: 80vh;
     top: 100px;
     overflow-y: auto;
