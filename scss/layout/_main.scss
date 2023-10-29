@@ -1194,6 +1194,13 @@ section {
                 height: 100vw;
                 overflow-y: hidden;
             }
+            .pic {
+                transition: transform 0.3s; 
+              }
+              
+              .pic:hover {
+                transform: scale(1.1); 
+              }
 
             .work-item {
                 display: inline-block;

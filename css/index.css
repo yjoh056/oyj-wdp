@@ -1172,6 +1172,12 @@ section:last-of-type {
   height: 100vw;
   overflow-y: hidden;
 }
+.portfolio-box-work .pic {
+  transition: transform 0.3s;
+}
+.portfolio-box-work .pic:hover {
+  transform: scale(1.1);
+}
 .portfolio-box-work .work-item {
   display: inline-block;
   height: auto;
