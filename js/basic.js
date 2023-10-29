@@ -1,3 +1,28 @@
+$(document).on('mousemove', function (e) {
+  $('.custom-cursor').css({
+    top: e.clientY,
+    left: e.clientX
+  });
+});
+
+
+const animation = bodymovin.loadAnimation({
+  container: document.getElementById('lottie'), // Required
+  path: 'logo.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+})
+const scrollAnimation = bodymovin.loadAnimation({
+  container: document.getElementById('msc'), // Required
+  path: 'scroll.json', // Required
+  renderer: 'svg', // Required
+  loop: true, // Optional
+  autoplay: true, // Optional
+})
+
+
+
 //
 //title effect
 //
@@ -109,11 +134,13 @@ win.on('scroll', function () {
       if (winSCT > topArr[2] - speed && !isAnimation) {
         progressAnimaition();
         isAnimation = true;
+        pipScroll();
       }
       if (winSCT > topArr[3] - speed && !isAnimation) {
         if (!sections.eq(3).hasClass('is-animated')) {
           sections.eq(3).addClass('is-animated');
         }
+        
       }
 
     }
@@ -256,12 +283,18 @@ function showAllImages() {
   });
 }
 
+const pics=$(".pic");
+const lightbox=$("#lightbox");
+const lightImg=$("#lightImage");
 
-const animation = bodymovin.loadAnimation({
-  container: document.getElementById('enjoywebwold'), // Required
-  path: 'website.json', // Required
-  renderer: 'svg', // Required
-  loop: true, // Optional
-  autoplay: true, // Optional
-  name: "Hello World", // Name for future reference. Optional.
+pics.on('click',function(){
+    const bigLocation=$(this).attr("data-src");
+    lightImg.load(bigLocation);
+    lightbox.css('display', 'block');
+    $('html').addClass('all_scrollFixed');
+})
+
+lightbox.on('click',function(){
+    lightbox.css('display', 'none');
+    $('html').removeClass('all_scrollFixed');
 })

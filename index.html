@@ -26,7 +26,9 @@
         <div class="wrap-container">
             <header class="header" id="top">
                 <div class="header-inner">
-                    <div class="logo"></div>
+                    <div class="logo">
+                        <div id="lottie"></div>
+                    </div>
                     <a class="menu-btn">
                         <span></span>
                         <span></span>
@@ -56,6 +58,7 @@
                 </div>
             </div>
             <main class="main" id="main">
+                <div class="custom-cursor"><img src="./images/cursor.png" alt="Cursor"></div>
                 <div class="main-container">
                     <div class="main-hero-banner">
                         <div class="main-hero-banner-title h1 title">디자인으로<br> 세상을 빛내다</div>
@@ -84,6 +87,7 @@
                         </div>
                         <span class="circle dot4 big-circle"></span>
                     </div>
+                    <div id="msc"></div>
                 </div>
             </main>
             <section class="infor" id="section1">
@@ -606,55 +610,57 @@
                         </div>
                         <div class="portfolio-box-work woke1">
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g18.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="portfolio/18.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g19.jpg"
-                                    alt="graphics"></div>
+                                    alt="graphics" data-src="portfolio/19.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g20.jpg"
-                                    alt="graphics"></div>
-
-                            <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v2.jpg"
-                                    alt="motion"></div>
-                            <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v10.jpg"
-                                    alt="motion"></div>
-                            <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v15.jpg"
-                                    alt="motion"></div>
+                                    alt="graphics" data-src="portfolio/20.html" class="pic"></div>
                             <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v16.jpg"
-                                    alt="motion"></div>
+                                    alt="motion" data-src="portfolio/16.html" class="pic"></div>
+
+
+                            <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v15.jpg"
+                                    alt="motion" data-src="/images/portfolio/15.html" class="pic"></div>
+
                             <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v17.jpg"
-                                    alt="motion"></div>
-
-
+                                    alt="motion" data-src="/images/portfolio/17.html" class="pic"></div>
+                            <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v2.jpg"
+                                    alt="motion" data-src="/images/portfolio/2.html" class="pic"></div>
+                            <div class="work-item" data-category="motion"><img src="./images/portfolio/thum/v10.jpg"
+                                    alt="motion" data-src="/images/portfolio/10.html" class="pic"></div>
 
                             <div class="work-item" data-category="uiux"><img src="./images/portfolio/thum/u7.jpg"
-                                    alt="uiux"></div>
+                                    alt="uiux" data-src="/images/portfolio/7.html" class="pic"></div>
                             <div class="work-item" data-category="uiux"><img src="./images/portfolio/thum/u8.jpg"
-                                    alt="uiux"></div>
+                                    alt="uiux" data-src="/images/portfolio/8.html" class="pic"></div>
 
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g6.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/6.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g9.jpg"
-                                    alt="graphics"></div>
+                                    alt="graphics" data-src="/images/portfolio/9.html" class="pic"></div>
 
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g14.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/14.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g13.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/13.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g11.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/11.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g12.jpg"
-                                    alt="graphic"></div>
-
+                                    alt="graphic" data-src="/images/portfolio/12.html" class="pic"></div>
 
 
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g1.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/1.html" class="pic"></div>
                             <div class="work-item" data-category="graphic"><img src="./images/portfolio/thum/g3.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/3.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g4.jpg"
-                                    alt="graphics"></div>
+                                    alt="graphics" data-src="/images/portfolio/4.html" class="pic"></div>
                             <div class="work-item" data-category="graphics"><img src="./images/portfolio/thum/g5.jpg"
-                                    alt="graphic"></div>
+                                    alt="graphic" data-src="/images/portfolio/5.html" class="pic"></div>
                         </div>
+                    </div>
+                    <div id="lightbox">
+                        <div id="lightImage"></div>
                     </div>
                 </div>
             </section>
@@ -672,6 +678,9 @@
     <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+        integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/basic.js"></script>
 
 </body>

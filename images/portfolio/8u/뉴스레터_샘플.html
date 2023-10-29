@@ -1,0 +1,462 @@
+<style type="text/css">
+    p {
+        font-family: 'Nanum Gothic', '맑은 고딕', Sans-serif;
+        word-break: keep-all;
+        line-height: 1.5em;
+    }
+
+    .lineDiv {
+        height: 1px;
+        margin: 0 auto;
+        border-bottom: 1px solid black;
+    }
+
+    #emailHeader {
+        padding: 0.5em 0;
+        margin: 0.5em auto;
+        border-bottom: 1px solid black;
+    }
+
+    #description,
+    #newProject,
+    #newUpdate,
+    #footer {
+        text-align: center;
+        font-weight: 600;
+        padding: 0.5em 0;
+        margin: 0.5em auto;
+    }
+
+    #footer p {
+        text-align: center;
+    }
+
+    #emailHeader img {
+        height: 100%;
+    }
+
+    .title1 {
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .title3 {
+        color: #EF007C;
+        font-weight: 600;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .projetItem {
+        margin: 1em auto;
+        padding: 0;
+        border: 1px solid black
+    }
+
+    .projetItem .projectName {
+        padding: 0.6em 0;
+        border: 0;
+        margin: 0 auto;
+        background-color: #ffd544;
+        color: #000000;
+    }
+
+    .projetItem .projectContents {
+        width: 90%;
+        padding: 0.6em 0;
+        border: 0;
+        margin: 0 auto;
+        color: #000000;
+    }
+
+    .projetItem .projectDesc {
+        margin: 0.2em auto;
+        color: black;
+        text-align: left;
+    }
+
+    .projetItem .updateTitle {
+        margin: 0.2em auto;
+        font-weight: 600;
+        color: black;
+        text-align: left;
+
+    }
+
+    .submitBox {
+        width: 60%;
+        padding: 0.4em 0;
+        border: 0;
+        margin: 0.2em auto;
+        background-color: #0080ff;
+        display: table;
+    }
+
+    .submitBox p {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0;
+        margin: 0;
+        color: black;
+    }
+
+    .closingDate {
+        text-align: center;
+        color: red;
+    }
+
+    @media screen and (max-width: 480px) {
+        .lineDiv {
+            width: 90%;
+        }
+        #emailHeader {
+            height: 28px;
+        }
+        #emailContainer {
+            max-width: 478px;
+            font-size: 14px;
+        }
+        div {
+            padding: 2px 0;
+            margin: 2px 0;
+        }
+        #description,
+        #newProject,
+        #newUpdate {
+            font-size: 14px;
+        }
+        #footer p {
+            font-size: 14px;
+        }
+        .title1 {
+            font-size: 18px;
+        }
+        .title3 {
+            font-size: 16px;
+        }
+        .projetItem {
+            width: 90%;
+        }
+        .projetItem .projectName {
+            font-size: 16px;
+        }
+        .projetItem .projectDesc {
+            font-size: 14px;
+        }
+        .projetItem .updateTitle {
+            font-size: 16px;
+        }
+        .submitBox {
+            font-size: 14px;
+        }
+        .closingDate {
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (min-width: 481px) {
+        .lineDiv {
+            width: 80%;
+        }
+        #emailHeader {
+            height: 40px;
+        }
+        #emailContainer {
+            max-width: 720px;
+            font-size: 18px;
+        }
+        div {
+            padding: 4px 0;
+            margin: 4px 0;
+        }
+        #description,
+        #newProject,
+        #newUpdate {
+            font-size: 18px;
+        }
+        #footer p {
+            font-size: 16px;
+        }
+        .title1 {
+            font-size: 24px;
+        }
+        .title3 {
+            font-size: 20px;
+        }
+        .projetItem {
+            width: 80%;
+        }
+        .projetItem .projectName {
+            font-size: 20px;
+        }
+        .projetItem .projectDesc {
+            font-size: 16px;
+        }
+        .projetItem .updateTitle {
+            font-size: 20px;
+        }
+        .submitBox {
+            font-size: 20px;
+        }
+        .closingDate {
+            font-size: 20px;
+        }
+    }
+</style>
+<div id="emailContainer">
+    <div id="emailHeader">
+        <img src="https://www.makestar.co/images/common/logo_en.jpg">
+    </div>
+    <div id="description">
+        <p>안녕하세요, 스타메이커 #NAME#님!<br>이번주에는 어떤 새로운 업데이트가 있었을까요? :)<br>지금 메이크스타에서 좋아하는 스타의 소식을 살펴보세요!</p>
+    </div>
+    <div class="lineDiv"></div>
+    <div id="newProject">
+        <p class="title1">이번주 신규 프로젝트</p>
+        <div class="projetItem">
+    <div class="projectName">ToppDogg 컴백 기념 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_toppdogg/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_toppdogg&utm_content=project&lang=ko" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_toppdogg/info/TD-main2.jpg">
+            
+            <p class="projectDesc">넘치는 에너지와 퍼포먼스로 무장한 힙합 보이그룹 ToppDogg!
+1년만에 더욱 새롭게 돌아온 ToppDogg의 컴백기념프로젝트가 지금 바로 시작됩니다!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">Crayon Pop Winter Party 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_crayonpop/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_crayonpop&utm_content=project&lang=ko" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_crayonpop/info/crayonpop-main-re3.jpg">
+            
+            <p class="projectDesc">깜찍하고 장난기 가득한 걸그룹 Crayon Pop
+그녀들과 함께 하는 Winter Party!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div>
+    </div>
+    <div class="lineDiv"></div>
+    <!-- remove if new projects are exist -->
+    <div id="newUpdate">
+        <p class="title1">현재 진행중인 프로젝트</p>
+        <div class="projetItem">
+    <div class="projectName">STELLAR 싱글 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_stellar_singl/updates/o/24/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_stellar_singl&utm_content=singer_stellar_singl-Special_Live_Broadcast&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_stellar_singl/update/24/SNStum-stll-live5.jpg">
+            <p class="updateTitle">Special Live</p>
+            <p class="projectDesc">스텔라와 함께하는 특별 라이브가 11월11일 금요일(오후 12시)에 여러분을 찾아갑니다!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D--95</p><div class="projetItem">
+    <div class="projectName">Crayon Pop Winter Party 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_crayonpop/updates/o/1/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_crayonpop&utm_content=singer_crayonpop-A_look_at_Crayon_Pop_s_past_M_V_&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_crayonpop/update/1/SNSthum-CPP-open.jpg">
+            <p class="updateTitle">크레용팝의 M/V 살펴보기!</p>
+            <p class="projectDesc">크레용팝의 지난 뮤직비디오와 함께 크레용팝 살펴보기!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-78</p><div class="projetItem">
+    <div class="projectName">BerryGood 싱글 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_berrygood2nd/updates/o/21/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_berrygood2nd&utm_content=singer_berrygood2nd-The_project_has_ended__I__Don_t_Believe__&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_berrygood2nd/update/21/SNSthum-BeG-up21-ko.jpg">
+            <p class="updateTitle">프로젝트 종료라니, 안 믿을래~</p>
+            <p class="projectDesc">베리굿의 프로젝트 종료 인사, 안 믿을래~</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D--10</p><div class="projetItem">
+    <div class="projectName">24K 정규 1집 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_24k/updates/o/20/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_24k&utm_content=singer_24k-___1___________&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_24k/update/20/SNStum20.jpg">
+            <p class="updateTitle">정규 1집 앨범 사진 공개!</p>
+            <p class="projectDesc">24K의 정규 1집 'THE REAL ONE'을 공개합니다!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-4</p><div class="projetItem">
+    <div class="projectName">Brave Girls 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_bravegirls/updates/o/11/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_bravegirls&utm_content=singer_bravegirls-Makestar_Reviews__Brave_Girls_Yujin&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_bravegirls/update/11/thumSNS-BGirlup11-ko.jpg">
+            <p class="updateTitle">메이크스타 검증단! Brave Girls 유진 편</p>
+            <p class="projectDesc">메이크스타 검증단! Brave Girls 유진의 특징 검증!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">Brave Girls 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_bravegirls/updates/o/12/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_bravegirls&utm_content=singer_bravegirls-Makestar_Reviews___Eunji&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_bravegirls/update/12/SNSthum-Brg-up12-ko.jpg">
+            <p class="updateTitle">메이크스타 검증단! 은지 편</p>
+            <p class="projectDesc">메이크스타 검증단! Brave Girls 은지의 유연성 검증!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">Brave Girls 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_bravegirls/updates/o/13/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_bravegirls&utm_content=singer_bravegirls-Mission_event__&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_bravegirls/update/13/SNStum-BrG-up13-event.jpg">
+            <p class="updateTitle">미션 수행 이벤트!!</p>
+            <p class="projectDesc">프로젝트 200%달성되면 BraveGirls가 스타메이커분들이 보내주신 미션을 수행합니다~</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">Brave Girls 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_bravegirls/updates/o/14/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_bravegirls&utm_content=singer_bravegirls-Makestar_Reviews__Brave_Girls_Hyeran&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_bravegirls/update/14/SNSthum-BrG-up14-ko.jpg">
+            <p class="updateTitle">메이크스타 검증단! Brave Girls 혜란 편</p>
+            <p class="projectDesc">메이크스타 검증단! Brave Girls 혜란의 취미 검증!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">Brave Girls 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_bravegirls/updates/o/15/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_bravegirls&utm_content=singer_bravegirls-Makestar_Reviews__Brave_Girls_Yuna&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_bravegirls/update/15/SNSthum-BrG-up15-ko.jpg">
+            <p class="updateTitle">메이크스타 검증단! Brave Girls유나</p>
+            <p class="projectDesc">메이크스타 검증단! Brave Girls 유나의 보컬 실력 검증!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-16</p><div class="projetItem">
+    <div class="projectName">Ever Brown 미니 앨범 제작 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_everbrown/updates/o/5/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_everbrown&utm_content=singer_everbrown-EVER_RADIO_Ep_2&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_everbrown/update/5/SNSthum-EB-up5.jpg">
+            <p class="updateTitle">보이는 제2편</p>
+            <p class="projectDesc">에버브라운의 소통하는 라디오! EVER RADIO 2편</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-56</p><div class="projetItem">
+    <div class="projectName">“일급비밀 데뷔하자!” 프로젝트 제2탄</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_topsecret2/updates/o/8/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_topsecret2&utm_content=singer_topsecret2-Shh__Top_Secret_11Q___11A__K_&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_topsecret2/update/8/SNStum-top11-8-ko.jpg">
+            <p class="updateTitle">쉿! 1급비밀 11문 11답 (케이)</p>
+            <p class="projectDesc">일급비밀의 케이의 11문 11답</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">“일급비밀 데뷔하자!” 프로젝트 제2탄</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_topsecret2/updates/o/9/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_topsecret2&utm_content=singer_topsecret2-Special_Event__Be_my_girlfriend_&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_topsecret2/update/9/ko-up9-topsecret2-sns.jpg">
+            <p class="updateTitle">Special Event! '내 여자친구가 되어줘'</p>
+            <p class="projectDesc">일급비밀이 '일급 여자친구' 를 찾습니다!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">“일급비밀 데뷔하자!” 프로젝트 제2탄</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_topsecret2/updates/o/10/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_topsecret2&utm_content=singer_topsecret2-Mug_making_&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_topsecret2/update/10/SNStum-top-up10-3.jpg">
+            <p class="updateTitle">머그컵 만들기 현장!</p>
+            <p class="projectDesc">일급비밀과 명예제작자가 함께한 머그컵 만들기</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><div class="projetItem">
+    <div class="projectName">“일급비밀 데뷔하자!” 프로젝트 제2탄</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_topsecret2/updates/o/11/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_topsecret2&utm_content=singer_topsecret2-Debut_Announcement_&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_topsecret2/update/11/1111.jpg">
+            <p class="updateTitle">데뷔 결정!</p>
+            <p class="projectDesc">2017년 1월 일급비밀 대망의 데뷔 결정 발표!</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-17</p><div class="projetItem">
+    <div class="projectName">JUST JERK PARTY 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/dancer_justjerk/updates/o/3/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=dancer_justjerk&utm_content=dancer_justjerk-Party_line_up__JUST_JERK_CREW&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/dancer_justjerk/update/3/SNSthum3-JJ-up3.jpg">
+            <p class="updateTitle">PARTY 라인업 소개_ JUST JERK CREW</p>
+            <p class="projectDesc">맛보기 영상을 확인하시고, 다음 공개되는 팀도 많은 기대 해주세요~</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-38</p><div class="projetItem">
+    <div class="projectName">ToppDogg 컴백 기념 프로젝트</div>
+    <a target="_blank" href="https://www.makestar.co/projects/singer_toppdogg/updates/o/1/?utm_source=email&utm_medium=newsletter_November_3rd&utm_campaign=singer_toppdogg&utm_content=singer_toppdogg-_Rainy_Day__M_V&lang=ko#tab" style="text-decoration:none">
+        <div class="projectContents">
+            <img style="max-width: 100%; height: auto;" src="https://www.makestar.co/file/project/singer_toppdogg/update/1/SNSthum-TD-open.jpg">
+            <p class="updateTitle">'비가와서 그래' M/V</p>
+            <p class="projectDesc">첫번째 정규 앨범 타이틀곡 Rainy Day</p>
+        </div>
+        <div class="submitBox">
+            <p>지금 바로 참여하러 GO!</p>
+        </div>
+    </a>
+</div><p class="closingDate">프로젝트 마감일까지 D-44</p>
+    </div>
+    <div class="lineDiv"></div>
+
+    <div id="footer">
+        <p class="title3">Make Your Own Star !</p>
+        <p class="title3">
+
+            <a target="_blank" href="https://www.facebook.com/makestar.co"><img src="https://www.makestar.co/file/mail/icons/facebook.png"></a>
+            <a target="_blank" href="https://twitter.com/Makestarcorp"><img src="https://www.makestar.co/file/mail/icons/twitter.png"></a>
+            <a target="_blank" href="http://weibo.com/p/1006065463997911/home?is_all=1#feedtop"><img src="https://www.makestar.co/file/mail/icons/weibo.png"></a>
+            <a target="_blank" href="http://blog.sina.com.cn/makestarco"><img src="https://www.makestar.co/file/mail/icons/cina_blog.png"></a>
+        </p>
+
+
+        <p>본 메일은 이메일 수신동의를 하신 회원들께 발송되는 메일입니다.<br> 본 메일은 회신되지 않으므로 메일 수신을 원치 않으시면 <a href="#UNSUBSCRIBE_LINK#">[수신거부]</a>를 클릭하십시오.</p>
+
+        <div style="width: 100%;margin: 10px 0; border: 1px solid #CBCBCB; vertical-align: middle;">
+            <img width="100%" src="https://www.makestar.co/file/mail/footer/footer-em-ko.jpg">
+        </div>
+    </div>
+
+</div>

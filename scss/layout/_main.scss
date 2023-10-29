@@ -11,6 +11,45 @@
     }
 }
 
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  
+  .custom-cursor img {
+    display: block;
+    width: 40px; 
+    height: auto;
+  }
+  
+
+.logo {
+    position: relative;
+    display: inline-block;
+    width: 106px;
+    height: 95px;
+}
+
+#lottie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#msc {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 207px;
+    height: 148px;
+}
+
 // scroll-bar
 body::-webkit-scrollbar {
     width: 2em;
@@ -176,6 +215,7 @@ nav {
                 border: 3px solid $color-third;
             }
         }
+
 
         li.on {
             a:before {
@@ -1169,4 +1209,27 @@ section {
             }
         }
     }
+}
+
+/* lightBox */
+#lightbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 99;
+}
+
+#lightImage {
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 80%;
+    height: 80vh;
+    top: 100px;
+    overflow-y: auto;
+    z-index: 999;
 }
