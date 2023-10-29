@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gall-wrap {
+            overflow-x: hidden;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20rem;
+            margin: auto;
+        }
+
+        .title{
+            margin-bottom: 5rem;
+        }
+        .grid {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 1rem;
+        }
+
+        .col {
+            display: flex;
+            width: 100%;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .row {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        img {
+            max-width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gall-wrap">
+        <div class="title">
+            <h3 class="en-font">Contents Design</h3>
+            <p>Graphics</p>
+            <p>Tool : Photoshop, Illustrator</p>
+        </div>
+        <div class="col">
+            <div class="row">
+                <img src="./images/portfolio/5g/NCA_story_kr_V2.jpg" alt="">                
+                         
+            </div>
+            <div class="row">
+                <img src="./images/portfolio/5g/story1-bap-bt-ko.jpg" alt="">         
+                <img src="./images/portfolio/5g/story1-bap-bt-en.jpg" alt="">         
+                <img src="./images/portfolio/5g/story1-bap-bt-zh.jpg" alt="">         
+                <img src="./images/portfolio/5g/story1-bap-bt-ja.jpg" alt="">         
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
