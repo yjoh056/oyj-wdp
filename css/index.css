@@ -539,14 +539,14 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   z-index: -3;
   -webkit-clip-path: circle(3.1% at 50% 50%);
           clip-path: circle(3.1% at 50% 50%);
-  transition: -webkit-clip-path 3s;
-  transition: clip-path 3s;
-  transition: clip-path 3s, -webkit-clip-path 3s;
+  transition: -webkit-clip-path 0.5s;
+  transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 .main-photo-frame.transition {
-  transition: -webkit-clip-path 3s;
-  transition: clip-path 3s;
-  transition: clip-path 3s, -webkit-clip-path 3s;
+  transition: -webkit-clip-path 0.5s;
+  transition: clip-path 0.5s;
+  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 .main-photo-im {
   display: block;

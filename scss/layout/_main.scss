@@ -481,10 +481,10 @@ nav {
                 border: 30px solid #8ffb5d;
                 z-index: -3;
                 clip-path: circle(3.1% at 50% 50%);
-                transition: clip-path 3s;
+                transition: clip-path 0.5s;
 
                 &.transition {
-                    transition: clip-path 3s;
+                    transition: clip-path 0.5s;
                 }
             }
 
