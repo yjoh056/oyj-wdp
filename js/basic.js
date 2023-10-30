@@ -1,3 +1,8 @@
+//로딩
+$(window).on('load', function() {
+   $('.loading-overlay').fadeOut('slow');
+});
+
 //cusor
 $(document).on('mousemove', function (e) {
   $('.custom-cursor').css({

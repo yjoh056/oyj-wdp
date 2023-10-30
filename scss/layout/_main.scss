@@ -11,6 +11,21 @@
     }
 }
 
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.loading-spinner {
+    background: url("#{$url-images}/loding.json");
+    
+}
+
+
 .all_scrollFixed {
     overflow: hidden;
 }
@@ -738,7 +753,7 @@ section {
 
             &.active .resume-kind:before {
                 content: '-';
-                background-color: $bg-color;
+                background-color: $color-primary;
             }
 
             &.active .resume-kind {
@@ -1243,7 +1258,7 @@ section {
     left: 50%;
     transform: translateX(-50%);
     position: fixed;
-    width: 70%;
+    width: 80%;
     height: 80vh;
     top: 100px;
     overflow-y: auto;
