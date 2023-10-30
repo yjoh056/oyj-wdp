@@ -17,7 +17,6 @@ body {
   color: #333;
   font-size: 1.6em;
   background-color: #FFFFF4;
-  cursor: url();
 }
 
 .h1,
@@ -143,7 +142,7 @@ b {
 #lottie {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -20px;
   width: 100%;
   height: 100%;
 }
@@ -153,7 +152,7 @@ b {
   bottom: -20%;
   left: 50%;
   transform: translateX(-50%);
-  width: 207px;
+  width: 307px;
   height: 148px;
 }
 
@@ -538,6 +537,16 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   border-radius: 50%;
   border: 30px solid #8ffb5d;
   z-index: -3;
+  -webkit-clip-path: circle(3.1% at 50% 50%);
+          clip-path: circle(3.1% at 50% 50%);
+  transition: -webkit-clip-path 3s;
+  transition: clip-path 3s;
+  transition: clip-path 3s, -webkit-clip-path 3s;
+}
+.main-photo-frame.transition {
+  transition: -webkit-clip-path 3s;
+  transition: clip-path 3s;
+  transition: clip-path 3s, -webkit-clip-path 3s;
 }
 .main-photo-im {
   display: block;

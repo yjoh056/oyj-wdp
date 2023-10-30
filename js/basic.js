@@ -1,9 +1,22 @@
+//cusor
 $(document).on('mousemove', function (e) {
   $('.custom-cursor').css({
     top: e.clientY,
     left: e.clientX
   });
 });
+
+//frame
+changeClipPath();
+function changeClipPath() {
+  const frame = $('.main-photo-frame');  
+  frame.addClass('transition');
+  setInterval(function(){
+      setTimeout(function () {
+    frame.css('clip-path', 'circle(50% at 50% 50%)');
+   },500);
+  });
+}
 
 
 const animation = bodymovin.loadAnimation({
