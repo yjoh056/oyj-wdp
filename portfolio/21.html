@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gall-wrap {
+            overflow-x: hidden;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20rem;
+            margin: auto;
+        }
+
+        .title {
+            margin-bottom: 5rem;
+        }
+
+        .grid {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-top: 1rem;
+        }
+
+        .col {
+            display: flex;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        .row {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-flow: column wrap;
+            gap: 2rem;
+            align-items: center
+        }
+
+        .row img,
+        .col img {
+            max-width: 500px;
+        }
+
+        h6{
+            color: chartreuse;
+        }
+
+        .w100 img {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .h100 img {
+            max-width: 900px;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gall-wrap">
+        <div class="title">
+            <h3 class="en-font">Homepage Design</h3>
+            <p>UI/UX degign guid/Planning</p>
+            <p>Tool : Photoshop, Baseliner, Bootstrap Grid</p>
+            <p>모든 페이지 적용 / 반응형 적용</p>
+        </div>
+        <div class="w100">
+            <p>
+                <h6>Result(Live)</h6>
+                <img src="./images/portfolio/21u/button-web.png" alt="">
+            </p>
+            <p>
+                <h6>Guid (web)</h6>
+                <img src="./images/portfolio/21u/button-guide.png" alt="">
+            </p>
+        </div>
+        <div class="h100">
+            <h6>Guid (mobile)</h6>
+            <img src="./images/portfolio/6u/certificate_2017-guide.png" alt=""></div>
+    </div>
+</body>
+
+</html>

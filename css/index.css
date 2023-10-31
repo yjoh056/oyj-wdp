@@ -121,6 +121,7 @@ b {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .loading-spinner {
@@ -1202,7 +1203,7 @@ section:last-of-type {
 }
 .portfolio-box-work .work-item {
   display: inline-block;
-  height: auto;
+  max-height: 300px;
   overflow: hidden;
   margin: auto;
   border-top: 2px solid var(#424242);
