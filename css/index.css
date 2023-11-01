@@ -1207,6 +1207,7 @@ section:last-of-type {
   overflow: hidden;
   margin: auto;
   border-top: 2px solid var(#424242);
+  position: relative;
 }
 .portfolio-box-work img {
   max-width: 300px;

@@ -1229,6 +1229,7 @@ section {
                 overflow: hidden;
                 margin: auto;
                 border-top: 2px solid var($txt-color-primary);
+                position: relative;
 
                 @include mq('md') {}
 
