@@ -12,7 +12,6 @@ $(document).on('mousemove', function (e) {
 });
 
 //frame
-
 function changeClipPath() {
   const frame = $('.main-photo-frame');  
   frame.addClass('transition');
@@ -24,6 +23,7 @@ function changeClipPath() {
 }
 changeClipPath();
 
+//animation
 const animation = bodymovin.loadAnimation({
   container: document.getElementById('lottie'), // Required
   path: 'logo.json', // Required
@@ -39,8 +39,6 @@ const scrollAnimation = bodymovin.loadAnimation({
   autoplay: true, // Optional
 })
 
-
-
 //
 //title effect
 //
@@ -54,16 +52,12 @@ $(document).ready(function () {
   const i2InitialTop = parseFloat($(".i2").css("top"));
   const i2InitialLeft = parseFloat($(".i2").css("left"));
 
-
-
-
   //photo icon
   $(document).mousemove(function (e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
     traX = ((4 * mouseX) / 570) + 30;
     traY = ((4 * mouseY) / 570) + 40;
-    // console.log(traX);
     $(".title").css({ "background-position": traX + "%" + traY + "%" });
     newX = ((2 * mouseX) / ww) - 0.5;
     newY = ((2 * mouseY) / wh) - 0.5;
@@ -204,10 +198,6 @@ function progressAnimaition() {
   });
 }
 
-
-
-
-
 //
 // resume
 //
@@ -275,8 +265,6 @@ pfBtns.on('click', function () {
   pfBtns.removeClass('active');
   $(this).addClass('active');
 });
-
-
 
 function filterImages(category) {
   const grid = document.querySelector('.portfolio-box-work');
