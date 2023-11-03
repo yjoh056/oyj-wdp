@@ -1037,18 +1037,9 @@ section {
             }
 
             &.p5 {
-                .project-sub-btn {
-                    display: none;
-                }
 
                 .left {
                     flex-basis: 50%;
-
-                    .figma {
-                        cursor: url("#{$url-images}/tourch.gif"),
-                        auto;
-                        margin-bottom: 5rem;
-                    }
                 }
 
                 .right {
@@ -1206,7 +1197,6 @@ section {
     }
 
 
-}
 
 &-sub {
     flex-basis: 40%;
@@ -1325,7 +1315,7 @@ section {
     }
 
 }
-
+}
 
 /* section 5 */
 .portfolio {

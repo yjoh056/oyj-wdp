@@ -1043,15 +1043,8 @@ section:last-of-type {
     margin: 0 3rem;
   }
 }
-.project-wrap .project-box.p5 .project-sub-btn {
-  display: none;
-}
 .project-wrap .project-box.p5 .left {
   flex-basis: 50%;
-}
-.project-wrap .project-box.p5 .left .figma {
-  cursor: url("../images/tourch.gif"), auto;
-  margin-bottom: 5rem;
 }
 .project-wrap .project-box.p5 .right {
   flex-basis: 50%;
@@ -1208,8 +1201,10 @@ section:last-of-type {
 }
 @media screen and (max-width: 700px) {
   .project-sub {
+    align-items: center;
     padding: 0;
     margin: auto;
+    text-align: center;
   }
 }
 .project-sub-title {
@@ -1229,6 +1224,11 @@ section:last-of-type {
 }
 .project-sub-txt {
   font-weight: 600;
+}
+@media screen and (max-width: 700px) {
+  .project-sub-txt p {
+    text-align: center;
+  }
 }
 .project-sub-txt .sub-txt-title {
   position: relative;
@@ -1252,7 +1252,21 @@ section:last-of-type {
 }
 .project-sub-infor {
   display: flex;
-  justify-content: space-around;
+}
+@media screen and (min-width: 1201px) {
+  .project-sub-infor {
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+  .project-sub-infor {
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 700px) {
+  .project-sub-infor {
+    justify-content: space-between;
+  }
 }
 .project-sub-infor .infor-item {
   text-align: center;
@@ -1311,25 +1325,28 @@ section:last-of-type {
 .portfolio-box-work {
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(300px, 1fr));
-  grid-template-rows: min-content;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 2rem;
   justify-content: center;
 }
+@media screen and (min-width: 1201px) {
+  .portfolio-box-work {
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    grid-template-rows: min-content;
+  }
+}
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .portfolio-box-work {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
   }
 }
 @media screen and (max-width: 700px) {
   .portfolio-box-work {
-    grid-template-rows: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, minmax(100px, 1fr));
     -moz-column-gap: 1rem;
          column-gap: 1rem;
     row-gap: 1rem;
-    overflow-x: scroll;
   }
 }
 .portfolio-box-work.work1 {
