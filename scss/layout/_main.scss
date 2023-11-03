@@ -576,6 +576,7 @@ nav {
 
         &-wrap {
             & {
+              
                 display: flex;
                 align-items: center;
 
@@ -1372,8 +1373,8 @@ section {
 
             @include mq('lg') {
                 grid-template-columns: repeat(4, minmax(300px, 1fr));
-                
-            grid-template-rows: min-content;
+
+                grid-template-rows: min-content;
             }
 
             @include mq('md') {
