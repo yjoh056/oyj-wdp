@@ -576,7 +576,7 @@ nav {
 
         &-wrap {
             & {
-              
+
                 display: flex;
                 align-items: center;
 
@@ -1049,31 +1049,36 @@ section {
                 }
 
                 .figma {
+                    position: relative;
                     width: 582px;
-                    height: 744px;
-                    background: url("#{$url-images}/project/s22-frame.png") center center/contain no-repeat;
+                    height: 730px;
                     overflow: hidden;
+                    z-index: 2;
+                    cursor: pointer;
+                    background: url("#{$url-images}/project/s22-frame.png") center center/contain no-repeat;
+
                 }
 
 
                 .crop {
-                    position: relative;
+                    position: absolute;
                     overflow: hidden;
-                    width: 338px;
-                    height: 681px;
-                    top: 34px;
+                    width: 331px;
+                    height: 668px;
+                    top: 33px;
                     left: 50%;
                     border-radius: 11px 11px 15px 20px;
-                    z-index: -23;
-                    transform: translateX(-172px);
+                    z-index: 1;
+                    transform: translateX(-166px);
                 }
 
                 iframe {
+                    display: block;
                     position: absolute;
-                    width: 450px;
-                    height: 926px;
+                    width: 341px;
+                    height: 883px;
                     top: -94px;
-                    left: -51px;
+                    left: -6px;
                 }
             }
 
@@ -1198,123 +1203,126 @@ section {
 
 
 
-&-sub {
-    flex-basis: 40%;
-    padding: 1rem 1rem 6rem 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    margin-left: 1rem;
+    &-sub {
+        & {
+            flex-basis: 40%;
+            padding: 1rem 1rem 6rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            margin-left: 1rem;
 
-    @include mq('md') {
-        padding: 0;
-        margin: auto;
-    }
+            @include mq('md') {
+                padding: 0;
+                margin: auto;
+            }
 
-    @include mq('sm') {
-        align-items: center;
-        padding: 0;
-        margin: auto;
-        text-align: center;
-    }
-
-    &-title {
-        display: flex;
-        gap: 1rem;
-
-        .h2 {
-            color: $color-primary;
-        }
-
-        .up {
-            position: absolute;
-            color: $color-primary;
-        }
-
-        p {
-            line-height: 12rem;
-            padding-left: 2rem;
-        }
-    }
-
-    &-txt {
-        font-weight: 600;
-
-        p {
             @include mq('sm') {
+                align-items: center;
+                padding: 0;
+                margin: auto;
                 text-align: center;
             }
         }
 
-        .sub-txt-title {
-            position: relative;
-            display: inline-block;
-            border: 2px solid $txt-color-primary;
-            border-radius: 5rem;
-            padding: 0.5rem 1.5rem;
-            background-color: $color-white;
-            margin-right: 3.5rem;
-            font-weight: 400;
+        &-title {
+            display: flex;
+            gap: 1rem;
 
-            &::before {
-                margin-top: -1px;
-                content: '';
-                position: absolute;
-                left: 100%;
-                top: 50%;
-                width: 3rem;
-                height: 2px;
-                background-color: $txt-color-primary;
+            .h2 {
+                color: $color-primary;
             }
-        }
 
-
-    }
-
-    &-infor {
-        display: flex;
-
-        @include mq('lg') {
-            justify-content: space-around;
-        }
-
-        @include mq('md') {
-            justify-content: space-between;
-        }
-
-        @include mq('sm') {
-            justify-content: space-between;
-        }
-
-        .infor-item {
-            text-align: center;
+            .up {
+                position: absolute;
+                color: $color-primary;
+            }
 
             p {
-                margin: 1rem 0;
+                line-height: 12rem;
+                padding-left: 2rem;
+            }
+        }
+
+        &-txt {
+            font-weight: 600;
+
+            p {
+                @include mq('sm') {
+                    text-align: center;
+                }
             }
 
+            .sub-txt-title {
+                position: relative;
+                display: inline-block;
+                border: 2px solid $txt-color-primary;
+                border-radius: 5rem;
+                padding: 0.5rem 1.5rem;
+                background-color: $color-white;
+                margin-right: 3.5rem;
+                font-weight: 400;
+
+                &::before {
+                    margin-top: -1px;
+                    content: '';
+                    position: absolute;
+                    left: 100%;
+                    top: 50%;
+                    width: 3rem;
+                    height: 2px;
+                    background-color: $txt-color-primary;
+                }
+            }
+
+
         }
 
-        .infor-title {
-            color: $txt-color-secondary;
+        &-infor {
+            display: flex;
+
+            @include mq('lg') {
+                justify-content: space-around;
+            }
+
+            @include mq('md') {
+                justify-content: space-between;
+            }
+
+            @include mq('sm') {
+                justify-content: space-between;
+            }
+
+            .infor-item {
+                text-align: center;
+
+                p {
+                    margin: 1rem 0;
+                }
+
+            }
+
+            .infor-title {
+                color: $txt-color-secondary;
+            }
         }
+
+        &-btn {
+            display: flex;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            row-gap: 1rem;
+            span {
+                display: block;
+                margin: 3rem 0;
+                width: 4rem;
+                height: 2px;
+                background-color: $color-secondary;
+            }
+        }
+
     }
-
-    &-btn {
-        display: flex;
-        margin-top: 4rem;
-
-        span {
-            display: block;
-            margin: 3rem 0;
-            width: 4rem;
-            height: 2px;
-            background-color: $color-secondary;
-        }
-    }
-
-}
 }
 
 /* section 5 */

@@ -1052,28 +1052,32 @@ section:last-of-type {
   justify-content: center;
 }
 .project-wrap .project-box.p5 .figma {
+  position: relative;
   width: 582px;
-  height: 744px;
-  background: url("../images/project/s22-frame.png") center center/contain no-repeat;
+  height: 730px;
   overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
+  background: url("../images/project/s22-frame.png") center center/contain no-repeat;
 }
 .project-wrap .project-box.p5 .crop {
-  position: relative;
+  position: absolute;
   overflow: hidden;
-  width: 338px;
-  height: 681px;
-  top: 34px;
+  width: 331px;
+  height: 668px;
+  top: 33px;
   left: 50%;
   border-radius: 11px 11px 15px 20px;
-  z-index: -23;
-  transform: translateX(-172px);
+  z-index: 1;
+  transform: translateX(-166px);
 }
 .project-wrap .project-box.p5 iframe {
+  display: block;
   position: absolute;
-  width: 450px;
-  height: 926px;
+  width: 341px;
+  height: 883px;
   top: -94px;
-  left: -51px;
+  left: -6px;
 }
 .project-frame {
   position: relative;
@@ -1280,6 +1284,8 @@ section:last-of-type {
 .project-sub-btn {
   display: flex;
   margin-top: 4rem;
+  flex-wrap: wrap;
+  row-gap: 1rem;
 }
 .project-sub-btn span {
   display: block;
