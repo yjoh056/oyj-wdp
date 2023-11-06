@@ -445,12 +445,14 @@ nav {
                         display: flex;
                         justify-content: space-between;
 
-                        width: 90rem;
-                        height: 30rem;
+
                         position: relative;
                         z-index: 5;
 
-                        @include mq('lg') {}
+                        @include mq('lg') {
+                            width: 90rem;
+                            height: 30rem;
+                        }
 
                         @include mq('md') {
                             width: 100%;
@@ -465,17 +467,22 @@ nav {
                         li {
                             & {
                                 display: block;
-                                padding: 0 3rem;
                                 border: 2px solid $color-black;
                                 border-radius: 56px;
                                 background-color: $bg-color;
-                                line-height: 6rem;
                                 font-weight: 700;
                                 transition: position 0.3s cubic-bezier(.36, .64, .55, .59);
                                 box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
 
+                                @include mq('lg') {
+                                    padding: 0 3rem;
+                                    line-height: 6rem;
+                                }
+
                                 @include mq('md') {
                                     font-size: 2rem;
+                                    padding: 0 2rem;
+                                    line-height: 5rem;
                                 }
 
                                 @include mq('sm') {
@@ -485,8 +492,11 @@ nav {
 
                             &.i1 {
                                 position: absolute;
-                                top: -81px;
-                                right: 211px;
+
+                                @include mq('lg') {
+                                    top: -81px;
+                                    right: 211px;
+                                }
 
                                 @include mq('md') {
                                     top: -98px;
@@ -500,17 +510,19 @@ nav {
 
                             &.i2 {
                                 position: absolute;
-                                top: -152px;
-                                left: -150px;
+
+                                @include mq('lg') {
+                                    top: -152px;
+                                    left: -150px;
+                                }
 
                                 @include mq('md') {
-                                    top: -163px;
-                                    left: 71px;
+                                    top: -356.6154px;
+                                    left: 220.5639px;
                                 }
 
                                 @include mq('sm') {
-                                    top: -163px;
-                                    left: 71px;
+                                    display: none;
                                 }
 
                             }
@@ -1040,12 +1052,16 @@ section {
 
                 .left {
                     flex-basis: 50%;
+                    margin-bottom: 3rem;
                 }
 
                 .right {
                     flex-basis: 50%;
-                    padding-right: 10rem;
                     justify-content: center;
+
+                    @include mq('lg') {
+                        padding-right: 10rem;
+                    }
                 }
 
                 .figma {
@@ -1313,6 +1329,7 @@ section {
             margin-top: 4rem;
             flex-wrap: wrap;
             row-gap: 1rem;
+
             span {
                 display: block;
                 margin: 3rem 0;

@@ -509,10 +509,14 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 .main-photo-infor ul {
   display: flex;
   justify-content: space-between;
-  width: 90rem;
-  height: 30rem;
   position: relative;
   z-index: 5;
+}
+@media screen and (min-width: 1201px) {
+  .main-photo-infor ul {
+    width: 90rem;
+    height: 30rem;
+  }
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .main-photo-infor ul {
@@ -528,18 +532,24 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 .main-photo-infor ul li {
   display: block;
-  padding: 0 3rem;
   border: 2px solid #000000;
   border-radius: 56px;
   background-color: #FFFFF4;
-  line-height: 6rem;
   font-weight: 700;
   transition: position 0.3s cubic-bezier(0.36, 0.64, 0.55, 0.59);
   box-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
 }
+@media screen and (min-width: 1201px) {
+  .main-photo-infor ul li {
+    padding: 0 3rem;
+    line-height: 6rem;
+  }
+}
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .main-photo-infor ul li {
     font-size: 2rem;
+    padding: 0 2rem;
+    line-height: 5rem;
   }
 }
 @media screen and (max-width: 700px) {
@@ -549,8 +559,12 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 .main-photo-infor ul li.i1 {
   position: absolute;
-  top: -81px;
-  right: 211px;
+}
+@media screen and (min-width: 1201px) {
+  .main-photo-infor ul li.i1 {
+    top: -81px;
+    right: 211px;
+  }
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .main-photo-infor ul li.i1 {
@@ -565,19 +579,22 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 .main-photo-infor ul li.i2 {
   position: absolute;
-  top: -152px;
-  left: -150px;
+}
+@media screen and (min-width: 1201px) {
+  .main-photo-infor ul li.i2 {
+    top: -152px;
+    left: -150px;
+  }
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .main-photo-infor ul li.i2 {
-    top: -163px;
-    left: 71px;
+    top: -356.6154px;
+    left: 220.5639px;
   }
 }
 @media screen and (max-width: 700px) {
   .main-photo-infor ul li.i2 {
-    top: -163px;
-    left: 71px;
+    display: none;
   }
 }
 .main-photo-infor ul li.on {
@@ -1045,11 +1062,16 @@ section:last-of-type {
 }
 .project-wrap .project-box.p5 .left {
   flex-basis: 50%;
+  margin-bottom: 3rem;
 }
 .project-wrap .project-box.p5 .right {
   flex-basis: 50%;
-  padding-right: 10rem;
   justify-content: center;
+}
+@media screen and (min-width: 1201px) {
+  .project-wrap .project-box.p5 .right {
+    padding-right: 10rem;
+  }
 }
 .project-wrap .project-box.p5 .figma {
   position: relative;
