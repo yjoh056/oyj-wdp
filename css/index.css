@@ -470,7 +470,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 @media screen and (min-width: 1201px) {
   .main-photo {
-    height: 56vw;
+    height: 46vw;
   }
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
@@ -514,8 +514,8 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 @media screen and (min-width: 1201px) {
   .main-photo-infor ul {
-    width: 90rem;
-    height: 30rem;
+    width: 87rem;
+    height: 13rem;
   }
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {

@@ -413,7 +413,7 @@ nav {
             max-width: 513px;
 
             @include mq('lg') {
-                height: 56vw;
+                height: 46vw;
             }
 
             @include mq('md') {
@@ -457,8 +457,8 @@ nav {
                         z-index: 5;
 
                         @include mq('lg') {
-                            width: 90rem;
-                            height: 30rem;
+                            width: 87rem;
+                            height: 13rem;
                         }
 
                         @include mq('md') {
@@ -1332,7 +1332,7 @@ section {
         }
 
         &-btn {
-            
+
             display: flex;
             margin-top: 4rem;
             flex-wrap: wrap;
