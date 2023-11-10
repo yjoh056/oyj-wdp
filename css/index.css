@@ -1418,6 +1418,7 @@ section:last-of-type {
 #footer .w3_icon {
   text-align: center;
   padding-bottom: 2rem;
+  display: none;
 }
 
 .btn {
