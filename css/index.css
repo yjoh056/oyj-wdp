@@ -701,7 +701,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 
 /* sections */
 section {
-  background-color: linear-gradient(0deg, rgb(245, 255, 216) 0%, rgb(255, 255, 244) 77%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(0deg, rgb(245, 255, 216) 0%, rgb(255, 255, 244) 77%, rgb(255, 255, 255) 100%);
   padding-top: 5vw;
   padding-bottom: 10vw;
   width: 100vw;
@@ -1131,7 +1131,7 @@ section:last-of-type {
   right: 0;
   left: 0;
   bottom: 0;
-  background: var(#424242);
+  background: #424242;
   transition: -webkit-clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46);
   transition: clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46);
   transition: clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46), -webkit-clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46);
@@ -1381,12 +1381,12 @@ section:last-of-type {
   transform: scale(1.1);
 }
 .portfolio-box-work .work-item {
+  position: relative;
   display: inline-block;
   max-height: 300px;
   overflow: hidden;
   margin: auto;
-  border-top: 2px solid var(#424242);
-  position: relative;
+  border-top: 2px solid #424242;
 }
 .portfolio-box-work img {
   max-width: 300px;

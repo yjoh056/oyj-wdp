@@ -655,7 +655,7 @@ nav {
 
 /* sections */
 section {
-    background-color: $bg-gradient;
+    background: $bg-gradient;
     padding-top: 5vw;
     padding-bottom: 10vw;
     width: 100vw;
@@ -1041,8 +1041,6 @@ section {
             display: flex;
             width: 100%;
 
-            @include mq('lg') {}
-
             @include mq('md') {
                 flex-flow: column wrap;
                 align-items: center;
@@ -1135,7 +1133,7 @@ section {
             right: 0;
             left: 0;
             bottom: 0;
-            background: var($txt-color-primary);
+            background: $txt-color-primary;
             transition: clip-path 0.3s cubic-bezier(.33, .08, .88, .46);
             z-index: 999;
         }
@@ -1221,8 +1219,6 @@ section {
             position: inherit;
         }
     }
-
-
 
     &-sub {
         & {
@@ -1422,14 +1418,12 @@ section {
             }
 
             .work-item {
+                position: relative;
                 display: inline-block;
                 max-height: 300px;
                 overflow: hidden;
                 margin: auto;
-                border-top: 2px solid var($txt-color-primary);
-                position: relative;
-
-
+                border-top: 2px solid $txt-color-primary;
             }
 
             img {
