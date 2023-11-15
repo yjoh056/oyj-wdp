@@ -1020,11 +1020,6 @@ section {
         display: flex;
         flex-direction: column;
 
-
-        img {
-            width: 100%;
-        }
-
         @include mq('lg') {
             gap: 20rem;
         }
@@ -1036,6 +1031,11 @@ section {
         @include mq('sm') {
             gap: 15rem;
         }
+
+        img {
+            width: 100%;
+        }
+
 
         .project-box {
             display: flex;
@@ -1216,8 +1216,6 @@ section {
         position: absolute;
         width: 100%;
         top: 0;
-
-        @include mq('md') {}
 
         @include mq('sm') {
             position: inherit;
@@ -1468,6 +1466,5 @@ section {
     .w3_icon {
         text-align: center;
         padding-bottom: 2rem;
-        display: none;
     }
 }

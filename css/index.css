@@ -1024,9 +1024,6 @@ section:last-of-type {
   display: flex;
   flex-direction: column;
 }
-.project-wrap img {
-  width: 100%;
-}
 @media screen and (min-width: 1201px) {
   .project-wrap {
     gap: 20rem;
@@ -1041,6 +1038,9 @@ section:last-of-type {
   .project-wrap {
     gap: 15rem;
   }
+}
+.project-wrap img {
+  width: 100%;
 }
 .project-wrap .project-box {
   display: flex;
@@ -1418,7 +1418,6 @@ section:last-of-type {
 #footer .w3_icon {
   text-align: center;
   padding-bottom: 2rem;
-  display: none;
 }
 
 .btn {
