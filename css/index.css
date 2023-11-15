@@ -701,7 +701,6 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 
 /* sections */
 section {
-  background: linear-gradient(0deg, rgb(245, 255, 216) 0%, rgb(255, 255, 244) 77%, rgb(255, 255, 255) 100%);
   padding-top: 5vw;
   padding-bottom: 10vw;
   width: 100vw;
