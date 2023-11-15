@@ -1132,7 +1132,7 @@ section {
             right: 0;
             left: 0;
             bottom: 0;
-            background: $txt-color-primary;
+            // background: $txt-color-primary;
             transition: clip-path 0.3s cubic-bezier(.33, .08, .88, .46);
             z-index: 999;
         }
