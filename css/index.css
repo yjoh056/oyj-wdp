@@ -120,16 +120,19 @@ b {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   z-index: 9999;
+  transition: all 0.3s;
 }
 
-.loading-spinner {
+#spinner {
   position: fixed;
+  width: 50%;
+  height: 50%;
   top: 50%;
   left: 50%;
-  background: url("../images/loding.json");
   z-index: 99999;
+  transform: translate(-50%, -50%);
 }
 
 .all_scrollFixed {
@@ -458,7 +461,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   .main .image-wrap {
     position: static;
     flex-direction: column;
-    height: 93vw;
+    height: 100%;
     bottom: 0;
     padding: 5rem 10rem;
   }
@@ -602,8 +605,6 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 .main-photo-frame {
   position: absolute;
-  top: 7%;
-  left: 0;
   display: block;
   width: 50rem;
   height: 50rem;
@@ -616,6 +617,28 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   transition: clip-path 0.5s;
   transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
+@media screen and (min-width: 1201px) {
+  .main-photo-frame {
+    top: 7%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+  .main-photo-frame {
+    top: 14%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main-photo-frame {
+    top: 0;
+    width: 25rem;
+    height: 25rem;
+    width: 100%;
+    height: 100%;
+    border: 25px solid #8ffb5d;
+  }
+}
 .main-photo-frame.transition {
   transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
@@ -623,8 +646,10 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 }
 .main-photo-im {
   display: block;
-  width: 512px;
-  height: 606px;
+  max-width: 480px;
+  max-height: 606px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -697,6 +722,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   width: 139px;
   height: 139px;
   z-index: -1;
+  align-items: center;
 }
 
 /* sections */
@@ -953,7 +979,8 @@ section:last-of-type {
 }
 @media screen and (max-width: 700px) {
   .skill-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
     -moz-column-gap: 2rem;
          column-gap: 2rem;
     justify-items: center;
@@ -969,7 +996,7 @@ section:last-of-type {
 }
 @media screen and (max-width: 700px) {
   .skill-list-item {
-    width: 40rem;
+    width: 20rem;
   }
 }
 .skill-box {

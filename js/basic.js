@@ -1,5 +1,13 @@
 $(window).on('load', function () {
-  $('.loading-overlay').fadeOut('slow');
+  $('.loading-overlay').fadeOut('easein');
+  $('.loading-spinner').fadeOut('easein');
+});
+const loadaAni = bodymovin.loadAnimation({
+  container: document.getElementById('spinner'),
+  path: 'loding.json',
+  renderer: 'svg',
+  loop: true,
+  autoplay: true
 });
 
 $(document).on('mousemove', function (e) {

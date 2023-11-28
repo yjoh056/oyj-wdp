@@ -17,16 +17,19 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: rgb(255, 255, 255);
     z-index: 9999;
+    transition: all 0.3s;
 }
 
-.loading-spinner {
+#spinner {
     position: fixed;
+    width: 50%;
+    height: 50%;
     top: 50%;
     left: 50%;
-    background: url("#{$url-images}/loding.json");
     z-index: 99999;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -399,7 +402,7 @@ nav {
         @include mq('sm') {
             position: static;
             flex-direction: column;
-            height: 93vw;
+            height: 100%;
             bottom: 0;
             padding: 5rem 10rem;
         }
@@ -545,8 +548,6 @@ nav {
 
             &-frame {
                 position: absolute;
-                top: 7%;
-                left: 0;
                 display: block;
                 width: 50rem;
                 height: 50rem;
@@ -556,6 +557,25 @@ nav {
                 clip-path: circle(3.1% at 50% 50%);
                 transition: clip-path 0.5s;
 
+                @include mq('lg') {
+                    top: 7%;
+                    width: 100%;
+                }
+
+                @include mq('md') {
+                    top: 14%;
+                    width: 100%;
+                }
+
+                @include mq('sm') {
+                    top: 0;
+                    width: 25rem;
+                    height: 25rem;
+                    width: 100%;
+                    height: 100%;
+                    border: 25px solid #8ffb5d;
+                }
+
                 &.transition {
                     transition: clip-path 0.5s;
                 }
@@ -563,8 +583,10 @@ nav {
 
             &-im {
                 display: block;
-                width: 512px;
-                height: 606px;
+                max-width: 480px;
+                max-height: 606px;
+                width: 100%;
+                height: 100%;
                 border-radius: 50%;
                 overflow: hidden;
             }
@@ -595,7 +617,6 @@ nav {
 
         &-wrap {
             & {
-
                 display: flex;
                 align-items: center;
 
@@ -650,6 +671,7 @@ nav {
         width: 139px;
         height: 139px;
         z-index: -1;
+        align-items: center;
     }
 }
 
@@ -943,7 +965,8 @@ section {
         }
 
         @include mq('sm') {
-            grid-template-columns: 1fr;
+            grid-template-columns:  repeat(2, 1fr);
+            width: 100%;
             column-gap: 2rem;
             justify-items: center
         }
@@ -956,7 +979,7 @@ section {
             }
 
             @include mq('sm') {
-                width: 40rem;
+                width: 20rem;
             }
         }
     }
