@@ -611,11 +611,8 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   border-radius: 50%;
   border: 30px solid #8ffb5d;
   z-index: -3;
-  -webkit-clip-path: circle(3.1% at 50% 50%);
-          clip-path: circle(3.1% at 50% 50%);
-  transition: -webkit-clip-path 0.5s;
+  clip-path: circle(3.1% at 50% 50%);
   transition: clip-path 0.5s;
-  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 @media screen and (min-width: 1201px) {
   .main-photo-frame {
@@ -640,9 +637,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   }
 }
 .main-photo-frame.transition {
-  transition: -webkit-clip-path 0.5s;
   transition: clip-path 0.5s;
-  transition: clip-path 0.5s, -webkit-clip-path 0.5s;
 }
 .main-photo-im {
   display: block;
@@ -1084,6 +1079,7 @@ section:last-of-type {
     flex-flow: column wrap;
     align-items: center;
     margin: 0 3rem;
+    width: 620px;
   }
 }
 .project-wrap .project-box.p5 .left {
@@ -1140,7 +1136,7 @@ section:last-of-type {
   .project-frame {
     width: 650px;
     margin: 0 0 3rem 0;
-    height: 450px;
+    height: 510px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -1157,14 +1153,11 @@ section:last-of-type {
   right: 0;
   left: 0;
   bottom: 0;
-  transition: -webkit-clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46);
   transition: clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46);
-  transition: clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46), -webkit-clip-path 0.3s cubic-bezier(0.33, 0.08, 0.88, 0.46);
   z-index: 999;
 }
 .project-frame.is-animaited :before {
-  -webkit-clip-path: inset(0);
-          clip-path: inset(0);
+  clip-path: inset(0);
 }
 .project-frame .mockup {
   position: relative;
@@ -1215,13 +1208,13 @@ section:last-of-type {
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .project .device {
-    max-width: 800px;
+    max-width: 610px;
     width: 100%;
   }
 }
 @media screen and (max-width: 700px) {
   .project .device {
-    max-width: 610px;
+    max-width: 540px;
     width: 100%;
   }
 }
@@ -1270,8 +1263,9 @@ section:last-of-type {
   color: #8ffb5d;
 }
 .project-sub-title p {
-  line-height: 12rem;
-  padding-left: 2rem;
+  padding-top: 3rem;
+  line-height: 5rem;
+  padding: 2rem 0px 0rem 2rem;
 }
 .project-sub-txt {
   font-weight: 600;

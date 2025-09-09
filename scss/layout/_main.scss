@@ -1073,6 +1073,7 @@ section {
                 flex-flow: column wrap;
                 align-items: center;
                 margin: 0 3rem;
+                width: 620px;
             }
 
             &.p5 {
@@ -1139,7 +1140,7 @@ section {
         @include mq('md') {
             width: 650px;
             margin: 0 0 3rem 0;
-            height: 450px;
+            height: 510px;
         }
 
         @include mq('sm') {
@@ -1222,12 +1223,12 @@ section {
         @include mq('lg') {}
 
         @include mq('md') {
-            max-width: 800px;
+            max-width: 610px;
             width: 100%;
         }
 
         @include mq('sm') {
-            max-width: 610px;
+            max-width: 540px;
             width: 100%;
         }
     }
@@ -1281,7 +1282,7 @@ section {
             p {
                 padding-top: 3rem;
                 line-height: 5rem;
-                padding-left: 2.5rem;
+                padding: 2rem 0px 0rem 2rem;
             }
         }
 
