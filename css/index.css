@@ -642,7 +642,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 .main-photo-im {
   display: block;
   max-width: 480px;
-  max-height: 606px;
+  max-height: 570px;
   width: 100%;
   height: 100%;
   border-radius: 50%;
