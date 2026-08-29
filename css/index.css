@@ -50,7 +50,7 @@ h1 {
 @media screen and (max-width: 700px) {
   .h1,
   h1 {
-    font-size: 80px;
+    font-size: clamp(36px, 11vw, 80px);
   }
 }
 
@@ -807,6 +807,19 @@ section:last-of-type {
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }
+.infor .card-content-txt {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media screen and (max-width: 700px) {
+  .infor .card-content {
+    padding: 0 0 1em 0;
+    gap: 1.5rem;
+  }
+  .infor .card-content span {
+    flex: 0 0 90px;
+  }
+}
 .infor .card-title {
   display: block;
   font-family: "Montserrat", sans-serif;
@@ -970,10 +983,12 @@ section:last-of-type {
 }
 @media screen and (max-width: 700px) {
   .skill-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     width: 100%;
     column-gap: 2rem;
-    justify-items: center;
+    justify-items: stretch;
+    padding: 0 3rem;
+    box-sizing: border-box;
   }
 }
 .skill-list-item {
@@ -986,7 +1001,8 @@ section:last-of-type {
 }
 @media screen and (max-width: 700px) {
   .skill-list-item {
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
   }
 }
 .skill-box {
@@ -1073,8 +1089,11 @@ section:last-of-type {
   .project-wrap .project-box {
     flex-flow: column wrap;
     align-items: center;
-    margin: 0 3rem;
-    width: 620px;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    box-sizing: border-box;
   }
 }
 .project-wrap .project-box.p5 .left {
@@ -1099,6 +1118,12 @@ section:last-of-type {
   cursor: pointer;
   background: url("../images/project/s22-frame.png") center center/contain no-repeat;
 }
+@media screen and (max-width: 700px) {
+  .project-wrap .project-box.p5 .figma {
+    width: 291px;
+    height: 365px;
+  }
+}
 .project-wrap .project-box.p5 .crop {
   position: absolute;
   overflow: hidden;
@@ -1110,6 +1135,14 @@ section:last-of-type {
   z-index: 1;
   transform: translateX(-166px);
 }
+@media screen and (max-width: 700px) {
+  .project-wrap .project-box.p5 .crop {
+    width: 166px;
+    height: 334px;
+    top: 17px;
+    transform: translateX(-83px);
+  }
+}
 .project-wrap .project-box.p5 iframe {
   display: block;
   position: absolute;
@@ -1117,6 +1150,14 @@ section:last-of-type {
   height: 883px;
   top: -94px;
   left: -6px;
+}
+@media screen and (max-width: 700px) {
+  .project-wrap .project-box.p5 iframe {
+    width: 171px;
+    height: 442px;
+    top: -47px;
+    left: -3px;
+  }
 }
 .project-frame {
   position: relative;
@@ -1186,8 +1227,8 @@ section:last-of-type {
   .project-frame .mask {
     height: 312px;
     top: 61px;
-    width: 590px;
-    left: 8px;
+    width: 95%;
+    left: 2.5%;
   }
 }
 .project .screen {

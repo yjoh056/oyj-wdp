@@ -773,6 +773,19 @@ section {
                 text-align: left;
             }
 
+            &-txt {
+                min-width: 0;
+                overflow-wrap: anywhere;
+            }
+
+            @include mq('sm') {
+                padding: 0 0 1em 0;
+                gap: 1.5rem;
+
+                span {
+                    flex: 0 0 90px;
+                }
+            }
         }
 
         &-title {
@@ -965,10 +978,12 @@ section {
         }
 
         @include mq('sm') {
-            grid-template-columns:  repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
             width: 100%;
             column-gap: 2rem;
-            justify-items: center
+            justify-items: stretch;
+            padding: 0 3rem;
+            box-sizing: border-box;
         }
 
         &-item {
@@ -979,7 +994,8 @@ section {
             }
 
             @include mq('sm') {
-                width: 20rem;
+                width: 100%;
+                max-width: 20rem;
             }
         }
     }
@@ -1072,8 +1088,11 @@ section {
             @include mq('sm') {
                 flex-flow: column wrap;
                 align-items: center;
-                margin: 0 3rem;
-                width: 620px;
+                width: 100%;
+                max-width: 620px;
+                margin: 0 auto;
+                padding: 0 3rem;
+                box-sizing: border-box;
             }
 
             &.p5 {
@@ -1101,6 +1120,10 @@ section {
                     cursor: pointer;
                     background: url("#{$url-images}/project/s22-frame.png") center center/contain no-repeat;
 
+                    @include mq('sm') {
+                        width: 291px;
+                        height: 365px;
+                    }
                 }
 
 
@@ -1114,6 +1137,13 @@ section {
                     border-radius: 11px 11px 15px 20px;
                     z-index: 1;
                     transform: translateX(-166px);
+
+                    @include mq('sm') {
+                        width: 166px;
+                        height: 334px;
+                        top: 17px;
+                        transform: translateX(-83px);
+                    }
                 }
 
                 iframe {
@@ -1123,6 +1153,13 @@ section {
                     height: 883px;
                     top: -94px;
                     left: -6px;
+
+                    @include mq('sm') {
+                        width: 171px;
+                        height: 442px;
+                        top: -47px;
+                        left: -3px;
+                    }
                 }
             }
 
@@ -1198,8 +1235,8 @@ section {
             @include mq('sm') {
                 height: 312px;
                 top: 61px;
-                width: 590px;
-                left: 8px;
+                width: 95%;
+                left: 2.5%;
             }
         }
     }
