@@ -297,22 +297,65 @@ function showAllImages() {
   });
 }
 
-// 이미지 클릭 시 라이트박스 열기
-const pics = $(".pic");
+// 이미지 클릭 시 라이트박스 열기 (현재 필터에서 보이는 항목들 안에서 이전/다음 이동 가능)
 const lightbox = $("#lightbox");
 const lightImg = $("#lightImage");
+let lightboxIndex = -1;
 
-pics.on('click', function () {
-  const bigLocation = $(this).attr("data-src");
+// 현재 화면에 보이는(필터 통과한) .pic 목록만 순서대로 반환
+function visiblePics() {
+  return $('.work-item').filter(function () {
+    return $(this).css('display') !== 'none';
+  }).find('.pic').toArray();
+}
+
+function openLightboxAt(index) {
+  const list = visiblePics();
+  if (!list.length) return;
+  lightboxIndex = (index + list.length) % list.length;
+  const bigLocation = $(list[lightboxIndex]).attr('data-src');
   lightImg.load(bigLocation);
   lightbox.css('display', 'block');
   $('html').addClass('all_scrollFixed');
-});
+}
 
-// 라이트박스 닫기
-lightbox.on('click', function () {
+function closeLightbox() {
   lightbox.css('display', 'none');
   $('html').removeClass('all_scrollFixed');
+}
+
+$(document).on('click', '.pic', function () {
+  openLightboxAt(visiblePics().indexOf(this));
+});
+
+$('#lightboxNext').on('click', function (e) {
+  e.stopPropagation();
+  openLightboxAt(lightboxIndex + 1);
+});
+
+$('#lightboxPrev').on('click', function (e) {
+  e.stopPropagation();
+  openLightboxAt(lightboxIndex - 1);
+});
+
+$('#lightboxClose').on('click', function (e) {
+  e.stopPropagation();
+  closeLightbox();
+});
+
+// 빈 배경 클릭 시에만 닫기 (버튼/이미지 클릭은 제외)
+lightbox.on('click', function (e) {
+  if (e.target === this) {
+    closeLightbox();
+  }
+});
+
+// 키보드 탐색: Esc 닫기, 방향키로 이전/다음
+$(document).on('keydown', function (e) {
+  if (lightbox.css('display') !== 'block') return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') openLightboxAt(lightboxIndex + 1);
+  if (e.key === 'ArrowLeft') openLightboxAt(lightboxIndex - 1);
 });
 
 // 이력서 영역 테이블 토글 및 스타일 적용
