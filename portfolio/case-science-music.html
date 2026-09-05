@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선을 넘는 과학:음악편 · 화면설계서 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --color-primary: #8ffb5d;
+            --color-secondary: #B4FC93;
+            --txt-primary: #424242;
+            --txt-secondary: #4BE006;
+            --bg-color: #FFFFF4;
+            --bg-color-secondary: #F8FFE3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .case-header {
+            padding: 4rem 0 3rem;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+        }
+
+        .back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+            margin-bottom: 2.4rem;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: var(--txt-secondary);
+        }
+
+        .case-eyebrow {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-header h1 {
+            margin: 0 0 0.6rem;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .case-sub {
+            margin: 0 0 2.4rem;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem 4rem;
+        }
+
+        .case-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .case-meta span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .case-meta strong,
+        .case-meta div p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 4rem 0 2rem;
+        }
+
+        .case-slide {
+            margin: 0 0 4rem;
+        }
+
+        .case-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
+        }
+
+        .case-kiosk {
+            margin: 0 0 6rem;
+        }
+
+        .case-kiosk-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .case-kiosk-num {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--bg-color);
+            background: var(--txt-primary);
+            border-radius: 999px;
+            padding: 0.3rem 1.1rem;
+            white-space: nowrap;
+        }
+
+        .case-kiosk h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .case-kiosk-flow {
+            margin: 0 0 2rem;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-kiosk .case-slide {
+            margin-bottom: 2rem;
+        }
+
+        .case-footer {
+            padding: 3rem 0 6rem;
+            text-align: center;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--txt-secondary);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-header {
+                padding: 3rem 0 2rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .case-meta {
+                gap: 1.6rem 3rem;
+            }
+
+            .case-kiosk {
+                margin-bottom: 4.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="case-header">
+        <div class="wrap">
+            <a class="back-link" href="../index.html#section4">← 포트폴리오로 돌아가기</a>
+            <span class="case-eyebrow">알마로꼬 Project · Designer Project</span>
+            <h1>선을 넘는 과학:음악편</h1>
+            <p class="case-sub">국립중앙과학관 특별전시 · 화면설계서</p>
+            <div class="case-meta">
+                <div><span>작업기간</span>
+                    <p>2025. 1 ~ 2025. 4</p>
+                </div>
+                <div><span>Tool</span>
+                    <p>Photoshop, Illustrator, Figma</p>
+                </div>
+                <div><span>본인 기여도</span>
+                    <p>100%</p>
+                </div>
+                <div><span>산출물</span>
+                    <p>월그래픽, 홍보배너, 키오스크 UI/UX 4종, 패널, 굿즈</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="case-slide">
+            <img src="../images/project/almaloco/pj04_01.png" alt="선을 넘는 과학:음악편 프로젝트 개요">
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-kiosk-head">
+                <span class="case-kiosk-num">Kiosk 1</span>
+                <h2>작곡 키오스크</h2>
+            </div>
+            <p class="case-kiosk-flow">닉네임 입력 → 장르 선택 → 감정 키워드 선택(최대 3개) → 완성곡 감상</p>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_03.png" alt="작곡 키오스크 UI/UX 설계 배경">
+            </div>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_04.png" alt="작곡 키오스크 화면설계서">
+            </div>
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-kiosk-head">
+                <span class="case-kiosk-num">Kiosk 2</span>
+                <h2>뇌파측정 키오스크</h2>
+            </div>
+            <p class="case-kiosk-flow">측정기 착용 안내 → 뇌파 측정(로딩) → 결과 확인</p>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_05.png" alt="뇌파측정 키오스크 UI/UX 설계 배경">
+            </div>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_06.png" alt="뇌파측정 키오스크 화면설계서">
+            </div>
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-kiosk-head">
+                <span class="case-kiosk-num">Kiosk 3</span>
+                <h2>표정측정 키오스크</h2>
+            </div>
+            <p class="case-kiosk-flow">골전도 이어폰 착용 안내 → 표정 측정 → 결과에 따른 컬러 피드백</p>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_07.png" alt="표정측정 키오스크 UI/UX 설계 배경">
+            </div>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_08.png" alt="표정측정 키오스크 화면설계서">
+            </div>
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-kiosk-head">
+                <span class="case-kiosk-num">Kiosk 4</span>
+                <h2>Music Showcase</h2>
+            </div>
+            <p class="case-kiosk-flow">음악 검색/신청 → 재생 리스트 확인 → 대형 쇼케이스 화면 송출</p>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_09.png" alt="Music Showcase UI/UX 설계 배경">
+            </div>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/pj04_10.png" alt="Music Showcase 화면설계서">
+            </div>
+        </section>
+    </main>
+
+    <footer class="case-footer">
+        <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
+    </footer>
+</body>
+
+</html>

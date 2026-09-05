@@ -1601,5 +1601,26 @@ section:last-of-type {
   z-index: -1;
   filter: blur(10px);
 }
+.btn.black-btn {
+  border-color: #424242;
+}
+.btn.black-btn:before {
+  background: #424242;
+}
+.btn.black-btn:hover {
+  color: #FFFFF4;
+}
+
+.ext:after {
+  content: "";
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  margin-left: 0.7rem;
+  vertical-align: -0.1em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath d='M6 4a1 1 0 000 2h5.586L4.293 13.293a1 1 0 101.414 1.414L13 7.414V13a1 1 0 102 0V5a1 1 0 00-1-1H6z'/%3E%3C/svg%3E") no-repeat center/contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='black'%3E%3Cpath d='M6 4a1 1 0 000 2h5.586L4.293 13.293a1 1 0 101.414 1.414L13 7.414V13a1 1 0 102 0V5a1 1 0 00-1-1H6z'/%3E%3C/svg%3E") no-repeat center/contain;
+}
 
 /*# sourceMappingURL=index.css.map */
