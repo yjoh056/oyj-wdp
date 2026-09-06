@@ -670,6 +670,7 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
 .main-btn-wrap {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .main-btn-wrap {
