@@ -2,6 +2,11 @@
 $(window).on('load', function () {
   $('.loading-overlay').fadeOut('easein');
   $('.loading-spinner').fadeOut('easein');
+
+  // 프로젝트 썸네일 호버 스크롤을 페이지 로드 시 바로 바인딩
+  // (기존에는 GNB/사이드네비 클릭이나 스킬 섹션을 스크롤로 지나가야만 걸렸음)
+  // 이미지 크기 계산이 필요해서 모든 리소스가 로드된 뒤(window load)에 실행
+  pipScroll();
 });
 
 // spinner 로티 애니메이션 로드
@@ -253,11 +258,11 @@ function pipScroll(param) {
     const mask = device.find('.mask');
     const hightDifference = screen.innerHeight() - mask.innerHeight();
 
-    box.on({
-      mouseenter: function () {
+    box.off('mouseenter.pipScroll mouseleave.pipScroll').on({
+      'mouseenter.pipScroll': function () {
         screen.stop().animate({ top: -hightDifference }, 2000);
       },
-      mouseleave: function () {
+      'mouseleave.pipScroll': function () {
         screen.stop().animate({ top: 0 }, 1000);
       }
     });

@@ -33,13 +33,13 @@
         }
 
         .wrap {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 clamp(2rem, 5vw, 4rem);
         }
 
         .case-header {
-            padding: 4rem 0 3rem;
+            padding: 7rem 0 5rem;
             border-bottom: 1px solid rgba(66, 66, 66, 0.12);
         }
 
@@ -53,7 +53,7 @@
             font-weight: 600;
             color: var(--txt-primary);
             opacity: 0.7;
-            margin-bottom: 2.4rem;
+            margin-bottom: 3.2rem;
         }
 
         .back-link:hover {
@@ -68,18 +68,18 @@
             letter-spacing: 0.02em;
             color: var(--txt-secondary);
             text-transform: uppercase;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .case-header h1 {
-            margin: 0 0 0.6rem;
+            margin: 0 0 1rem;
             font-size: 3.4rem;
             font-weight: 800;
             line-height: 1.25;
         }
 
         .case-sub {
-            margin: 0 0 2.4rem;
+            margin: 0 0 3.6rem;
             font-size: 1.6rem;
             color: rgba(66, 66, 66, 0.75);
         }
@@ -87,7 +87,7 @@
         .case-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 2.4rem 4rem;
+            gap: 3rem 5rem;
         }
 
         .case-meta div {
@@ -112,11 +112,11 @@
         }
 
         main {
-            padding: 4rem 0 2rem;
+            padding: 7rem 0 3rem;
         }
 
         .case-slide {
-            margin: 0 0 4rem;
+            margin: 0 0 8rem;
         }
 
         .case-slide img {
@@ -128,14 +128,15 @@
         }
 
         .case-kiosk {
-            margin: 0 0 6rem;
+            margin: 0 0 11rem;
         }
 
         .case-kiosk-head {
             display: flex;
             align-items: baseline;
-            gap: 1.2rem;
-            margin-bottom: 0.6rem;
+            gap: 3rem;
+            margin-bottom: 1rem;
+            flex-direction: column;
         }
 
         .case-kiosk-num {
@@ -152,20 +153,23 @@
             margin: 0;
             font-size: 2rem;
             font-weight: 800;
+            padding-left: 0.5rem;
         }
 
         .case-kiosk-flow {
-            margin: 0 0 2rem;
-            font-size: 1.4rem;
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
             color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
         }
 
         .case-kiosk .case-slide {
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
         .case-footer {
-            padding: 3rem 0 6rem;
+            padding: 6rem 0 9rem;
             text-align: center;
         }
 
@@ -188,7 +192,7 @@
 
         @media screen and (max-width: 700px) {
             .case-header {
-                padding: 3rem 0 2rem;
+                padding: 4.5rem 0 3rem;
             }
 
             .case-header h1 {
@@ -196,11 +200,11 @@
             }
 
             .case-meta {
-                gap: 1.6rem 3rem;
+                gap: 2rem 3.5rem;
             }
 
             .case-kiosk {
-                margin-bottom: 4.5rem;
+                margin-bottom: 7rem;
             }
         }
     </style>

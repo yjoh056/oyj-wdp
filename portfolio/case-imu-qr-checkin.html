@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>우주로 가는 길을 찾다 · 화면설계서 | 오예주 포트폴리오</title>
+    <title>QR 출입 키오스크 · 화면설계서 | 오예주 포트폴리오</title>
     <meta name="robots" content="noindex">
     <style>
         :root {
@@ -127,11 +127,11 @@
             box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
         }
 
-        .case-kiosk {
+        .case-section {
             margin: 0 0 11rem;
         }
 
-        .case-kiosk-head {
+        .case-section-head {
             display: flex;
             align-items: baseline;
             gap: 3rem;
@@ -139,7 +139,7 @@
             flex-direction: column;
         }
 
-        .case-kiosk-num {
+        .case-section-num {
             font-size: 1.3rem;
             font-weight: 800;
             color: var(--bg-color);
@@ -149,14 +149,14 @@
             white-space: nowrap;
         }
 
-        .case-kiosk h2 {
+        .case-section h2 {
             margin: 0;
             font-size: 2rem;
             font-weight: 800;
             padding-left: 0.5rem;
         }
 
-        .case-kiosk-flow {
+        .case-section-desc {
             margin: 0 0 3rem;
             max-width: 640px;
             font-size: 1.5rem;
@@ -164,7 +164,7 @@
             padding-left: 0.5rem;
         }
 
-        .case-kiosk .case-slide {
+        .case-section .case-slide {
             margin-bottom: 3rem;
         }
 
@@ -184,6 +184,7 @@
             font-size: 1.6rem;
             font-weight: 700;
             transition: background-color 0.3s;
+            margin: 0 0.6rem;
         }
 
         .btn:hover {
@@ -203,8 +204,12 @@
                 gap: 2rem 3.5rem;
             }
 
-            .case-kiosk {
+            .case-section {
                 margin-bottom: 7rem;
+            }
+
+            .btn {
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -214,21 +219,21 @@
     <header class="case-header">
         <div class="wrap">
             <a class="back-link" href="../index.html#section4">← 포트폴리오로 돌아가기</a>
-            <span class="case-eyebrow">알마로꼬 Project · Designer Project</span>
-            <h1>우주로 가는 길을 찾다</h1>
-            <p class="case-sub">국가기록원 특별기획전 · 화면설계서</p>
+            <span class="case-eyebrow">IMU Project · UI/UX·퍼블리싱</span>
+            <h1>QR 출입 키오스크</h1>
+            <p class="case-sub">imupos.com 제품 페이지 · 기획 · Figma 디자인 · 퍼블리싱</p>
             <div class="case-meta">
                 <div><span>작업기간</span>
-                    <p>2024. 8. 5 ~ 2024. 11. 11</p>
+                    <p>추후 업데이트</p>
                 </div>
                 <div><span>Tool</span>
-                    <p>Photoshop, Illustrator, Zeplin, Figma</p>
+                    <p>Figma, HTML, CSS, JavaScript, jQuery, Swiper.js</p>
                 </div>
                 <div><span>본인 기여도</span>
                     <p>100%</p>
                 </div>
                 <div><span>산출물</span>
-                    <p>터치모니터 UI/UX 2종, 홍보현수막 7종, 리플릿(3단대문접지), 포스터, 전시 사이니지, 인포그래픽</p>
+                    <p>제품 페이지 기획(카피라이팅), Figma UI 디자인, 반응형 퍼블리싱</p>
                 </div>
             </div>
         </div>
@@ -236,52 +241,63 @@
 
     <main class="wrap">
         <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_01.png" alt="우주로 가는 길을 찾다 프로젝트 개요">
+            <img src="../images/project/imu/qr-checkin/01-hero.jpg" alt="QR 출입 키오스크 제품 페이지 히어로 영역">
         </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_02.png" alt="우주로 가는 길을 찾다 디자인 시스템 - 톤앤매너, 색채 계획, 폰트타입">
-        </section>
-
-        <section class="case-kiosk">
-            <div class="case-kiosk-head">
-                <span class="case-kiosk-num">Kiosk 1</span>
-                <h2>우주선 안 컴퓨터 · 정보보기</h2>
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">01</span>
+                <h2>기획 배경</h2>
             </div>
-            <p class="case-kiosk-flow">3가지 카테고리를 폴더형식으로 묶어 보여주는 방식. 우주선 컨셉에 맞추어 공중에 띄워지는 화면으로 제작, 벽면 태블릿 2대 설치</p>
+            <p class="case-section-desc">아임유의 키오스크·포스 라인업 중 하나인 'QR 출입 키오스크'를 소개하는 신규 제품 페이지. 기존에 없던 페이지를 텍스트 기획부터 Figma
+                디자인, 퍼블리싱까지 전 과정을 혼자 진행했다. 티켓의 QR코드를 스캔해 입장 가능 여부를 확인하고, 방문객이 인력 없이 스스로 입장할 수 있다는 제품의 핵심 가치를 첫 화면에서 바로
+                전달하는 데 집중했다.</p>
             <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_03.png" alt="우주선 안 컴퓨터 키오스크 UI/UX 설계 배경">
-            </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_04.png" alt="우주선 안 컴퓨터 키오스크 화면설계서">
+                <img src="../images/project/imu/qr-checkin/02-intro.jpg" alt="매표소부터 미술관, 시설 출입까지 - 제품 소개 섹션">
             </div>
         </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_05.png" alt="우주선 안 컴퓨터 키오스크 현장 설치 사진">
-        </section>
-
-        <section class="case-kiosk">
-            <div class="case-kiosk-head">
-                <span class="case-kiosk-num">Kiosk 2</span>
-                <h2>우주여행 · 방명록</h2>
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">02</span>
+                <h2>운영 흐름 설계</h2>
             </div>
-            <p class="case-kiosk-flow">전시 마지막 순서, 다른 행성으로 여행을 떠나고 방명록을 남기는 게임무드 컨셉. 조작 시 프로젝터로 송출되는 화면이 변경됨</p>
+            <p class="case-section-desc">키오스크 티켓 발권부터 QR 스캔, 입장까지의 3단계 흐름을 아이콘형 이미지와 화살표로 도식화해, 처음 보는 방문객도 동작 원리를 한눈에 이해할 수
+                있도록 구성했다.</p>
             <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_06.png" alt="우주여행 방명록 키오스크 UI/UX 설계 배경">
-            </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_07.png" alt="우주여행 방명록 키오스크 화면설계서">
+                <img src="../images/project/imu/qr-checkin/03-steps.jpg" alt="키오스크 티켓 발권, QR 티켓 스캔, 방문객 입장 3단계 운영 방법">
             </div>
         </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_08.png" alt="우주여행 방명록 키오스크 및 나의 우주 프로젝터 현장 설치 사진">
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">03</span>
+                <h2>상태별 UI 설계</h2>
+            </div>
+            <p class="case-section-desc">입장 가능(승인) · 입장 불가(중복입장) 등 스캔 결과에 따라 색상과 아이콘이 달라지는 키오스크 화면 UI를 Swiper 캐러셀로 구성해, 실제
+                운영 상황에서 발생할 수 있는 여러 상태를 한 화면에서 비교해 볼 수 있게 했다.</p>
+            <div class="case-slide">
+                <img src="../images/project/imu/qr-checkin/04-ui-state.jpg" alt="중복입장 불가 상태를 보여주는 키오스크 화면 UI">
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">04</span>
+                <h2>활용 사례 &amp; 하드웨어 사이즈</h2>
+            </div>
+            <p class="case-section-desc">미술관·박물관 같은 문화시설부터 무인 헬스장, 테마파크, 팝업스토어까지 다양한 업종에 적용 가능하다는 점과, 설치 공간에 맞춰 3가지 사이즈로 선택할 수
+                있다는 제품 정보를 함께 전달했다.</p>
+            <div class="case-slide">
+                <img src="../images/project/imu/qr-checkin/05-usecases-size.jpg" alt="업종별 활용 사례 아이콘 그리드와 3가지 키오스크 설치 사이즈">
+            </div>
         </section>
     </main>
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
+        <a class="btn ext" href="https://imupos.com/kr/sub/kioskpos/qr-checkin/" target="_blank"
+            aria-label="실제 페이지 보기, 새 창에서 열림">실제 페이지 보기</a>
     </footer>
 </body>
 
