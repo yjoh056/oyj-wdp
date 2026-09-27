@@ -95,7 +95,7 @@ mainInf.on('mouseenter', function () {
 // 섹션 스크롤 이동 관련 변수 초기화
 const win = $(window);
 const speed = Math.floor(win.height() * 1);
-const gnb = $('.gnb li');
+const gnb = $('.gnb > li');
 const sections = $('section');
 const sideNav = $('.sideNav>li');
 const topBtn = $('.sideNav-top');
@@ -151,6 +151,21 @@ sideNav.on('click', function (e) {
   sections.eq(index).addClass('on');
   progressAnimaition();
   pipScroll();
+});
+
+// Project 세부메뉴(GNB/사이드네비 서브메뉴) 클릭
+// 상위 li의 기본 클릭(섹션 맨 위로 이동)이 같이 실행되지 않도록 전파를 막고,
+// 해당 그룹 제목(id="proj-*") 위치로 바로 스크롤 이동
+$('.nav-submenu a, .sideNav-submenu a').on('click', function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  const target = $($(this).attr('href'));
+  if (!target.length) return;
+  $('html,body').stop().animate({ scrollTop: target.offset().top }, 800, 'easeOutCirc');
+  gnb.removeClass('on');
+  sideNav.removeClass('on');
+  gnb.filter('.has-submenu').addClass('on');
+  sideNav.filter('.has-submenu').addClass('on');
 });
 
 // 상단 이동 버튼 클릭 시 최상단으로 부드럽게 이동

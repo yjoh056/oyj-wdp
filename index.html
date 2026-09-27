@@ -77,7 +77,14 @@
                     <li><a href="#section1">Who Am I</a></li>
                     <li><a href="#section2">Resume</a></li>
                     <li><a href="#section3">Skill</a></li>
-                    <li><a href="#section4">Project</a></li>
+                    <li class="has-submenu">
+                        <a href="#section4">Project</a>
+                        <ul class="nav-submenu">
+                            <li><a href="#proj-uiux">UI/UX Case Study</a></li>
+                            <li><a href="#proj-publisher">Publisher Project</a></li>
+                            <li><a href="#proj-designer">Designer Project</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#section5">Portfolio</a></li>
                 </ul>
             </nav>
@@ -86,7 +93,14 @@
                     <li><a href="#section1">W</a></li>
                     <li><a href="#section2">R</a></li>
                     <li><a href="#section3">S</a></li>
-                    <li><a href="#section4">P</a></li>
+                    <li class="has-submenu">
+                        <a href="#section4">P</a>
+                        <ul class="sideNav-submenu">
+                            <li><a href="#proj-uiux">UI/UX</a></li>
+                            <li><a href="#proj-publisher">Publisher</a></li>
+                            <li><a href="#proj-designer">Designer</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#section5">P</a></li>
                 </ul>
                 <div class="sideNav-top en-font">
@@ -220,7 +234,7 @@
                                     <table class="resume-list-table">
                                         <tr>
                                             <th class="h5 company en-font">IMU</th>
-                                            <td class="en-font">Figma, HTML, CSS, JavaScript, jQuery, Classic ASP</td>
+                                            <td class="en-font">Figma, Photoshop, Illustrator, After Effect, HTML, CSS, JavaScript, ChatGPT, Gemini, Claude</td>
                                         </tr>
                                         <tr>
                                             <th>2026.02.20<br> ~ 재직중</th>
@@ -543,45 +557,7 @@
                 </div>
                 <div class="project-container">
                     <div class="project-wrap">
-                        <div class="project-group-heading en-font">IMU Project</div>
-                        <div class="project-box imu1">
-                            <div class="project-frame left">
-                                <div class="mockup pc en-font">
-                                    <div class="mask"><img src="./images/project/project7-pc.jpg" alt=""
-                                            class="screen"></div>
-                                    <img src="./images/web-frame.png" alt="" class="device">
-                                </div>
-                            </div>
-                            <div class="project-sub right">
-                                <div class="project-sub-title">
-                                    <div class="project-sub-title-row">
-                                        <span class="en-font up">IMU Project</span>
-                                    </div>
-                                    <p class="h4">QR 출입 키오스크</p>
-                                </div>
-                                <div class="project-sub-txt">
-                                    <p><span class="sub-txt-title">기술 스택</span>HTML, CSS, JavaScript, jQuery, Swiper.js
-                                    </p>
-                                    <p>QR 티켓 스캔으로 입장을 관리하는 무인 출입 키오스크 제품 페이지.<br>
-                                        기획(카피라이팅)부터 Figma UI 디자인, 반응형 퍼블리싱까지 전 과정 단독 진행</p>
-                                </div>
-                                <div class="project-sub-infor">
-                                    <div class="infor-item"><span class="infor-title">디바이스</span>
-                                        <p>PC / Mobile</p>
-                                    </div>
-                                    <div class="infor-item"><span class="infor-title">제작페이지</span>
-                                        <p>제품 소개 페이지</p>
-                                    </div>
-                                    <div class="infor-item"><span class="infor-title">본인 기여도</span>
-                                        <p>100%</p>
-                                    </div>
-                                </div>
-                                <div class="project-sub-btn">
-                                    <a class="btn" href="./portfolio/case-imu-qr-checkin.html">화면설계서 보기</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-group-heading en-font">UI/UX Case Study</div>
+                        <div class="project-group-heading en-font" id="proj-uiux">UI/UX Case Study</div>
                         <div class="project-box p6">
                             <div class="project-frame left">
                                 <div class="mockup pc en-font">
@@ -607,7 +583,93 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-group-heading en-font">Publisher Project</div>
+                        <div class="project-group-heading en-font" id="proj-publisher">Publisher Project</div>
+                        <div class="project-box imu1">
+                            <div class="project-frame left">
+                                <div class="mockup pc en-font">
+                                    <div class="mask"><img src="./images/project/project7-pc.jpg" alt=""
+                                            class="screen"></div>
+                                    <img src="./images/web-frame.png" alt="" class="device">
+                                </div>
+                            </div>
+                            <div class="project-sub right">
+                                <div class="project-sub-title">
+                                    <div class="project-sub-title-row">
+                                        <span class="en-font up">Publisher Project</span>
+                                        <span class="h2 en-font">01</span>
+                                    </div>
+                                    <p class="h4">QR 출입 키오스크</p>
+                                </div>
+                                <div class="project-sub-txt">
+                                    <p><span class="sub-txt-title">기술 스택</span>HTML, CSS, JavaScript, jQuery, Swiper.js
+                                    </p>
+                                    <p><span class="sub-txt-title">AI 활용</span>Gemini — 슬라이드 기능 자바스크립트 수정</p>
+                                    <p>QR 티켓 스캔으로 입장을 관리하는 무인 출입 키오스크 제품 페이지.<br>
+                                        기획(카피라이팅)부터 Figma UI 디자인, 반응형 퍼블리싱까지 전 과정 단독 진행</p>
+                                </div>
+                                <div class="project-sub-infor">
+                                    <div class="infor-item"><span class="infor-title">디바이스</span>
+                                        <p>PC / Mobile</p>
+                                    </div>
+                                    <div class="infor-item"><span class="infor-title">제작페이지</span>
+                                        <p>제품 소개 페이지</p>
+                                    </div>
+                                    <div class="infor-item"><span class="infor-title">제작-기간</span>
+                                        <p>2026. 5. 28 ~ 2026. 6. 8</p>
+                                    </div>
+                                    <div class="infor-item"><span class="infor-title">본인 기여도</span>
+                                        <p>100%</p>
+                                    </div>
+                                </div>
+                                <div class="project-sub-btn">
+                                    <a class="btn" href="./portfolio/case-imu-qr-checkin.html">화면설계서 보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-box imu2">
+                            <div class="project-frame left">
+                                <div class="mockup pc en-font">
+                                    <div class="mask"><img src="./images/project/project8-pc.png" alt=""
+                                            class="screen"></div>
+                                    <img src="./images/web-frame.png" alt="" class="device">
+                                </div>
+                            </div>
+                            <div class="project-sub right">
+                                <div class="project-sub-title">
+                                    <div class="project-sub-title-row">
+                                        <span class="en-font up">Publisher Project</span>
+                                        <span class="h2 en-font">02</span>
+                                    </div>
+                                    <p class="h4">포트폴리오 사이트 (본 사이트)</p>
+                                </div>
+                                <div class="project-sub-txt">
+                                    <p><span class="sub-txt-title">기술 스택</span>HTML5, CSS3, SCSS, jQuery</p>
+                                    <p><span class="sub-txt-title">AI 협업</span>Claude Code</p>
+                                    <p>마인드맵으로 콘셉트를 도출하고 와이어프레임 → 스타일가이드 → 프로토타입 순서로
+                                        기획해 직접 퍼블리싱한 개인 포트폴리오 사이트.<br>
+                                        현재는 Claude(AI)와 협업하며 콘텐츠 구조와 UX를 개선 중 — 요구사항 정의 → AI에게 구현 지시 →
+                                        결과 검증 및 반려/재지시의 과정을 거쳐 진행</p>
+                                </div>
+                                <div class="project-sub-infor">
+                                    <div class="infor-item"><span class="infor-title">디바이스</span>
+                                        <p>PC / Mobile</p>
+                                    </div>
+                                    <div class="infor-item"><span class="infor-title">제작페이지</span>
+                                        <p>INDEX</p>
+                                    </div>
+                                    <div class="infor-item"><span class="infor-title">제작-기간</span>
+                                        <p>2023. 09 ~ 진행중</p>
+                                    </div>
+                                    <div class="infor-item"><span class="infor-title">본인 기여도</span>
+                                        <p>100%</p>
+                                    </div>
+                                </div>
+                                <div class="project-sub-btn">
+                                    <a class="btn black-btn ext" href="https://github.com/yjoh056/oyj-wdp"
+                                        target="_blank" aria-label="GitHub, 새 창에서 열림">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-box p1">
                             <div class="project-frame left">
                                 <div class="mockup pc en-font">
@@ -620,7 +682,7 @@
                                 <div class="project-sub-title">
                                     <div class="project-sub-title-row">
                                         <span class="en-font up">Publisher Project</span>
-                                        <span class="h2 en-font">01</span>
+                                        <span class="h2 en-font">03</span>
                                     </div>
                                     <p class="h4">유성구 문화관광</p>
                                 </div>
@@ -637,7 +699,7 @@
                                         <p>INDEX</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">제작-기간</span>
-                                        <p>1week</p>
+                                        <p>2023 (1week)</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">본인 기여도</span>
                                         <p>100%</p>
@@ -663,7 +725,7 @@
                                 <div class="project-sub-title">
                                     <div class="project-sub-title-row">
                                         <span class="en-font up">Publisher Project</span>
-                                        <span class="h2 en-font">02</span>
+                                        <span class="h2 en-font">04</span>
                                     </div>
                                     <p class="h4">SAMSUNG</p>
                                 </div>
@@ -683,7 +745,7 @@
                                         <p>INDEX</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">제작-기간</span>
-                                        <p>2week</p>
+                                        <p>2023 (2week)</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">본인 기여도</span>
                                         <p>100%</p>
@@ -712,7 +774,7 @@
                                 <div class="project-sub-title">
                                     <div class="project-sub-title-row">
                                         <span class="en-font up">Publisher Project</span>
-                                        <span class="h2 en-font">03</span>
+                                        <span class="h2 en-font">05</span>
                                     </div>
                                     <p class="h4">MY FRIEND</p>
                                 </div>
@@ -728,7 +790,7 @@
                                         <p>INDEX</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">제작-기간</span>
-                                        <p>2days</p>
+                                        <p>2023 (2days)</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">본인 기여도</span>
                                         <p>100%</p>
@@ -754,7 +816,7 @@
                                 <div class="project-sub-title">
                                     <div class="project-sub-title-row">
                                         <span class="en-font up">Publisher Project</span>
-                                        <span class="h2 en-font">04</span>
+                                        <span class="h2 en-font">06</span>
                                     </div>
                                     <p class="h4">TOM FORD</p>
                                 </div>
@@ -770,7 +832,7 @@
                                         <p>INDEX</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">제작-기간</span>
-                                        <p>2days</p>
+                                        <p>2023 (2days)</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">본인 기여도</span>
                                         <p>100%</p>
@@ -801,7 +863,7 @@
                                 <div class="project-sub-title">
                                     <div class="project-sub-title-row">
                                         <span class="en-font up">Publisher Project</span>
-                                        <span class="h2 en-font">05</span>
+                                        <span class="h2 en-font">07</span>
                                     </div>
                                     <p class="h4">A.VIS</p>
                                 </div>
@@ -819,7 +881,7 @@
                                         <p>Prototype/Logo</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">제작-기간</span>
-                                        <p>2week</p>
+                                        <p>2023 (2week)</p>
                                     </div>
                                     <div class="infor-item"><span class="infor-title">본인 기여도</span>
                                         <p>40%</p>
@@ -835,7 +897,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-group-heading en-font">Designer Project</div>
+                        <div class="project-group-heading en-font" id="proj-designer">Designer Project</div>
                         <div class="project-box pp1">
                             <div class="project-frame left">
                                 <img src="./images/project/pj06.png">
@@ -880,6 +942,7 @@
                                 </div>
                                 <div class="project-sub-txt">
                                     <p><span class="sub-txt-title">Tool</span>Photoshop, Illustrator, Figma, Zeplin</p>
+                                    <p><span class="sub-txt-title">AI 활용</span>ChatGPT — 공룡 이미지 제작</p>
                                     <p>키오스크UI, 패널디자인, 배경그래픽</p>
                                     <p>- 다이노월드 특별전의 키오스크 콘텐츠 만족도가 높아<br>상설 전시관 콘텐츠로 내용과 단계를 수정해 재설치</p>
                                 </div>
@@ -971,7 +1034,8 @@
                                     <p class="h4">다이노월드</p>
                                 </div>
                                 <div class="project-sub-txt">
-                                    <p><span class="sub-txt-title">Tool</span>Photoshop, Illustrator, Figma, ChatGPT, Zeplin, Indesign</p>
+                                    <p><span class="sub-txt-title">Tool</span>Photoshop, Illustrator, Figma, Zeplin, Indesign</p>
+                                    <p><span class="sub-txt-title">AI 활용</span>ChatGPT — 공룡 이미지 제작</p>
                                     <p>전담 디자이너로 전시 기획 전체 참여 — 벽면 패널, 홍보현수막, x배너, 콘텐츠, 리플렛, 전시 패널, 키오스크 UI/UX, 도록 제작</p>
                                     <p>- 성과 : 4만명이 넘는 관람객 방문으로 성황리 마감. 클라이언트 요청으로 상설 전시관(공룡동산) 추가 진행 — 다이노월드에서 제작한 키오스크 퀴즈 프로그램을 콘텐츠만 새 전시 공룡으로 교체해 재활용</p>
                                 </div>

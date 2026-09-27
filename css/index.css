@@ -312,6 +312,53 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   transform: scaleX(1);
 }
 
+/* GNB Project 세부메뉴 */
+nav .gnb li.has-submenu {
+  position: relative;
+}
+nav .gnb .nav-submenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  min-width: 15rem;
+  padding: 0.6rem;
+  background: #FFFFF4;
+  border: 1px solid #DAFEC9;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+nav .gnb li.has-submenu:hover .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+nav .gnb .nav-submenu li {
+  padding: 0;
+  border-radius: 12px;
+}
+nav .gnb .nav-submenu li a {
+  display: block;
+  height: auto;
+  line-height: 1.4;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+nav .gnb .nav-submenu li a:before,
+nav .gnb .nav-submenu li a:after {
+  display: none;
+}
+nav .gnb .nav-submenu li a:hover {
+  background: #EAFFDD;
+  font-weight: 500;
+}
+
 /* sideNav */
 .side-menu .sideNav {
   position: fixed;
@@ -346,6 +393,54 @@ nav .gnb li.on a:before, nav .gnb li a:hover:before, nav .gnb li.on a:after, nav
   border: transparent;
   z-index: -1;
   color: #fff;
+}
+
+/* sideNav Project 세부메뉴 */
+.side-menu .sideNav-submenu {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translate(-8px, -50%);
+  min-width: 11rem;
+  padding: 0.6rem;
+  background: #FFFFF4;
+  border: 1px solid #DAFEC9;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+.side-menu .sideNav li.has-submenu:hover .sideNav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%);
+}
+.side-menu .sideNav-submenu li {
+  margin-bottom: 0;
+}
+.side-menu .sideNav-submenu li a {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  line-height: 1.4;
+  padding: 0.7rem 1rem;
+  color: #424242;
+  background: none;
+  border: none;
+  border-radius: 12px;
+  text-align: left;
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+.side-menu .sideNav-submenu li a:before {
+  display: none;
+}
+.side-menu .sideNav-submenu li a:hover {
+  background: #EAFFDD;
+  font-weight: 500;
 }
 @media screen and (min-width: 701px) and (max-width: 1200px) {
   .side-menu .sideNav {
