@@ -127,6 +127,101 @@
             box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
         }
 
+        .case-poster img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .case-section-head {
+            margin: 0 0 3rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-head h2 {
+            margin: 0 0 0.6rem;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .case-section-head p {
+            margin: 0;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-design-system {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-design-row {
+            margin: 0 0 2.4rem;
+            max-width: 720px;
+        }
+
+        .case-design-row dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .case-design-row dd {
+            margin: 0;
+            font-size: 1.45rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-swatch-groups {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            margin: 1.6rem 0 2.4rem;
+        }
+
+        .case-swatch-group span {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: rgba(66, 66, 66, 0.55);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-swatch-list {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .case-swatch {
+            width: 5.2rem;
+            height: 5.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-font-sample {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 2rem 3rem;
+            margin: 0.4rem 0 1rem;
+        }
+
+        .case-font-sample strong {
+            font-size: 2.6rem;
+            font-weight: 800;
+        }
+
+        .case-font-sample em {
+            font-style: normal;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
         .case-kiosk {
             margin: 0 0 11rem;
         }
@@ -166,6 +261,301 @@
 
         .case-kiosk .case-slide {
             margin-bottom: 3rem;
+        }
+
+        .case-kiosk-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-info {
+            flex: 1 1 380px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-info dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-kiosk-info dd {
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-kiosk-hero {
+            flex: 0 0 260px;
+            margin: 0;
+        }
+
+        .case-kiosk-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+        }
+
+        .case-kiosk-hero figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-kiosk-subhead {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0 0 2rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-flow-grid {
+            list-style: none;
+            margin: 0 0 1.2rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-flow-grid li {
+            position: relative;
+        }
+
+        .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 40%;
+            right: -1.2rem;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.35);
+        }
+
+        .case-kiosk-flow-grid li.flow-arrow-left:not(:last-child)::after {
+            content: '←';
+        }
+
+        .case-kiosk-flow-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-flow-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-flow-grid figcaption {
+            margin-top: 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .case-kiosk-flow-grid figcaption span {
+            font-weight: 400;
+            color: rgba(66, 66, 66, 0.55);
+        }
+
+        .case-kiosk-note {
+            margin: 0 0 5rem;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .case-kiosk-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.4rem;
+        }
+
+        .case-kiosk-detail-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-detail-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-detail-grid figcaption {
+            margin-top: 0.6rem;
+            font-size: 1.15rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.65);
+        }
+
+        @media screen and (max-width: 860px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+                display: none;
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(2n)):not(:last-child)::after {
+                content: '→';
+                display: block;
+                position: absolute;
+                top: 40%;
+                right: -1.2rem;
+                transform: translateY(-50%);
+                font-size: 1.4rem;
+                color: rgba(66, 66, 66, 0.35);
+            }
+
+            .case-kiosk-flow-grid li.flow-arrow-left:not(:last-child)::after {
+                content: '←';
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .case-kiosk-flow-grid img,
+        .case-kiosk-detail-grid img {
+            cursor: zoom-in;
+        }
+
+        .case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .case-lightbox.is-open {
+            display: flex;
+        }
+
+        .case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        .case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+        .case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
         }
 
         .case-footer {
@@ -235,12 +625,61 @@
     </header>
 
     <main class="wrap">
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj03_01.png" alt="공룡동산 프로젝트 개요">
+        <section class="case-slide case-poster">
+            <img src="../images/project/almaloco/dino-garden/poster.png" alt="공룡동산 프로젝트 개요 - 공룡백과사전 키비주얼">
         </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj03_02.png" alt="공룡동산 디자인 시스템 - 톤앤매너, 색채 계획, 폰트타입">
+        <section class="case-design-system">
+            <div class="case-section-head">
+                <h2>디자인 시스템</h2>
+            </div>
+            <dl class="case-design-row">
+                <dt>톤앤 매너</dt>
+                <dd>이전 특별 전시와 연결되는 무드, 전시되는 곳의 특성에 맞춤. 공룡 모형 전시에 맞는 배경과 어울리는 UI 제작.</dd>
+            </dl>
+            <dl class="case-design-row">
+                <dt>색채 계획</dt>
+                <dd>서식지의 무드인 풀숲을 살리는 화사한 컬러 사용. 주 사용층이 어린이인 점을 고려하여 단순하면서 컬러풀한 컬러감 사용.</dd>
+            </dl>
+            <div class="case-swatch-groups">
+                <div class="case-swatch-group">
+                    <span>Point Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#FFE100;"></div>
+                        <div class="case-swatch" style="background:#B25A2B;"></div>
+                    </div>
+                </div>
+                <div class="case-swatch-group">
+                    <span>Base Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#329235;"></div>
+                        <div class="case-swatch" style="background:#E57878;"></div>
+                    </div>
+                </div>
+            </div>
+            <dl class="case-design-row">
+                <dt>폰트타입</dt>
+                <dd>
+                    <div class="case-font-sample">
+                        <strong>파셜산스 · 태나단체</strong>
+                        <em>본문 격동고딕2 · 영문 Acumin Variable Concept</em>
+                    </div>
+                    타이틀은 판화 스타일의 서체로 빈티지한 노트 느낌 강조, 본문은 깔끔하고 직각적인 고딕 계열로 정보 전달에 초점, 영문 학명은 명칭표기 특성을 고려해 이탤릭 고딕체 사용.
+                </dd>
+            </dl>
+        </section>
+
+        <section class="case-design-system">
+            <div class="case-section-head">
+                <h2>배경그래픽</h2>
+                <p>Tool: Photoshop, ChatGPT — 화산과 야자수, 공룡이 어우러진 서식지 무드의 대형 배경 그래픽을 제작해 키오스크 존의 실제 벽면 그래픽으로 시공했다.</p>
+            </div>
+            <div class="case-slide" style="margin-bottom: 3rem;">
+                <img src="../images/project/almaloco/dino-garden/mural.png" alt="공룡동산 배경그래픽 - 화산과 야자수, 공룡이 있는 서식지 무드 벽면 그래픽">
+            </div>
+            <div class="case-slide">
+                <img src="../images/project/almaloco/dino-garden/mural-install.png" alt="공룡동산 배경그래픽 실제 전시 공간 설치 사진">
+            </div>
         </section>
 
         <section class="case-kiosk">
@@ -248,19 +687,171 @@
                 <span class="case-kiosk-num">Kiosk</span>
                 <h2>공룡백과사전</h2>
             </div>
-            <p class="case-kiosk-flow">Keyword: 미니게임, 백과사전 — 다이노월드 특별전 키오스크 콘텐츠에 대한 호평으로, 내용과 단계를 수정해 상설전시로 재구성</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj03_03.png" alt="공룡백과사전 키오스크 UI/UX 설계 배경">
+            <p class="case-kiosk-flow">공룡 탐구(도감) → 공룡 퀴즈(실루엣 맞추기) — 다이노월드 특별전 키오스크 콘텐츠에 대한 호평으로, 내용과 단계를 수정해 상설전시로 재구성</p>
+
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>미니게임, 백과사전</dd></div>
+                    <div><dt>Design Direction</dt><dd>공룡시대 어린이를 타겟으로 한 게임 모드 구성. 육식 공룡과 초식공룡의 배경을 다르게 하여 확실한 구분과 시각적 재미를 줌.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>유휴화면을 벽 실사와 같은 이미지로 설정, 탐구모드에서 공룡 배치 순서와 패널의 이미지를 일치시켜 아이들이 쉽게 공룡 이름과 특징을 연결 지을 수 있도록 설계.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/dino-garden/k-hero.png" alt="공룡백과사전 키오스크 대기 화면 - 공룡 탐구, 공룡 퀴즈 모드 선택">
+                    <figcaption>대기(유휴) 화면 · 모드 선택</figcaption>
+                </figure>
             </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj03_04.png" alt="공룡백과사전 키오스크 화면설계서">
-            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li class="flow-arrow-left">
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-card-sample.png" alt="공룡 탐구 도감 카드 예시 - 코엘로피시스">
+                        <figcaption>①-1 공룡 탐구<br><span>도감 카드 (왼쪽 선택 시)</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-hero.png" alt="공룡백과사전 키오스크 대기 화면 - 공룡 탐구, 공룡 퀴즈 모드 선택">
+                        <figcaption>① 대기(유휴) 화면<br><span>모드 선택</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-quiz-intro.png" alt="공룡 퀴즈 시작 안내 화면 (버튼 · 팝업 노출 전/후 상태 전환)">
+                        <figcaption>①-2 공룡 퀴즈<br><span>시작 안내 (오른쪽 선택 시)</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-quiz-question.png" alt="공룡 퀴즈 실루엣 문제 화면 - 스피노사우루스, 안킬로사우루스, 디메트로돈 중 선택 (1/4)">
+                        <figcaption>② 실루엣<br><span>문제 화면</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-quiz-wrong.png" alt="오답 시 피드백 팝업 - 다시 한 번 맞춰볼까요">
+                        <figcaption>②-1 오답<br><span>피드백</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-quiz-hint.png" alt="힌트 카드 - 공룡의 특징 텍스트 설명 제공">
+                        <figcaption>②-2 힌트<br><span>카드</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-quiz-answer.png" alt="공룡 퀴즈 정답 확인 카드 - 스피노사우루스 정답 공개">
+                        <figcaption>③ 정답 확인<br><span>카드</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-quiz-question-2.png" alt="공룡 퀴즈 실루엣 문제 화면 - 브라키오사우루스, 스테고사우루스, 우에르호사우루스 중 선택 (2/4)">
+                        <figcaption>④ 다음 문항<br><span>(4문항까지 반복)</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-garden/k-explore-complete.png" alt="공룡 퀴즈 전체 완료 알림 팝업 - 4문항 모두 맞힘">
+                        <figcaption>⑤ 퀴즈 전체<br><span>완료</span></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">1회 실행 시 총 4문항으로 구성. 오답 시 피드백 팝업을 보여주고, 힌트 버튼으로 정답을 유추할 수 있도록 하여 아이들이 끝까지 몰입할 수 있게 구성. 정답을 확인한 뒤에는 다음 문항의 실루엣 화면으로 이어지며 이 과정을 4문항까지 반복.<br>탐구모드에서 본 공룡 배치 순서와 패널 이미지를 퀴즈 실루엣에 그대로 연결해 학습 효과를 높임.</p>
         </section>
     </main>
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
     </footer>
+
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var currentItems = [];
+            var currentIndex = -1;
+
+            function render() {
+                var item = currentItems[currentIndex];
+                lightboxImg.src = item.src;
+                lightboxImg.alt = item.alt;
+                lightboxCaption.textContent = item.caption;
+            }
+
+            function openLightbox(items, index) {
+                if (!items.length) return;
+                currentItems = items;
+                currentIndex = (index + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % currentItems.length;
+                render();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                render();
+            }
+
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('caseLightboxNext').addEventListener('click', next);
+            document.getElementById('caseLightboxPrev').addEventListener('click', prev);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            function initGroups(selector) {
+                document.querySelectorAll(selector).forEach(function (group) {
+                    var figures = Array.prototype.slice.call(group.querySelectorAll('figure'));
+                    var items = figures.map(function (fig) {
+                        var img = fig.querySelector('img');
+                        var captionEl = fig.querySelector('figcaption');
+                        return {
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt') || '',
+                            caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                        };
+                    });
+                    figures.forEach(function (fig, idx) {
+                        fig.addEventListener('click', function () {
+                            openLightbox(items, idx);
+                        });
+                    });
+                });
+            }
+
+            initGroups('.case-kiosk-flow-grid');
+            initGroups('.case-kiosk-detail-grid');
+        })();
+    </script>
 </body>
 
 </html>

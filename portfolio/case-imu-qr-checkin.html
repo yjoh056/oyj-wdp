@@ -171,6 +171,10 @@
         .case-footer {
             padding: 6rem 0 9rem;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -274,10 +278,10 @@
                 <span class="case-section-num">03</span>
                 <h2>상태별 UI 설계</h2>
             </div>
-            <p class="case-section-desc">입장 가능(승인) · 입장 불가(중복입장) 등 스캔 결과에 따라 색상과 아이콘이 달라지는 키오스크 화면 UI를 Swiper 캐러셀로 구성해, 실제
-                운영 상황에서 발생할 수 있는 여러 상태를 한 화면에서 비교해 볼 수 있게 했다.</p>
+            <p class="case-section-desc">입장 가능(승인) · 입장 불가(중복입장) 등 스캔 결과에 따라 색상과 아이콘이 달라지는 키오스크 화면 UI를, 화면 길이가 길어지면 안 된다는 조건에 맞춰
+                Swiper 캐러셀로 구성해 여러 상태를 하나의 화면 안에서 확인할 수 있게 했다.</p>
             <div class="case-slide">
-                <img src="../images/project/imu/qr-checkin/04-ui-state.jpg" alt="중복입장 불가 상태를 보여주는 키오스크 화면 UI">
+                <img src="../images/project/imu/qr-checkin/04-ui-state.jpg" alt="입장 승인, 중복입장 불가 등 상태별 키오스크 화면 UI">
             </div>
         </section>
 
@@ -295,8 +299,11 @@
     </main>
 
     <footer class="case-footer">
+        <!-- 재현본 페이지 마무리되면 아래 링크 다시 노출 -->
+        <!-- <a class="btn" href="repro-imu-qr-checkin.html">실제 페이지 재현본 보기</a> -->
         <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
     </footer>
+
 </body>
 
 </html>

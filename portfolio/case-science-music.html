@@ -127,6 +127,12 @@
             box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
         }
 
+        .case-poster img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
         .case-kiosk {
             margin: 0 0 11rem;
         }
@@ -166,6 +172,293 @@
 
         .case-kiosk .case-slide {
             margin-bottom: 3rem;
+        }
+
+        .case-kiosk-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-info {
+            flex: 1 1 380px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-info dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-kiosk-info dd {
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-kiosk-hero {
+            flex: 0 0 260px;
+            margin: 0;
+        }
+
+        .case-kiosk-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+        }
+
+        .case-kiosk-hero figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-kiosk-subhead {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0 0 2rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-flow-grid {
+            list-style: none;
+            margin: 0 0 1.2rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-flow-grid li {
+            position: relative;
+        }
+
+        .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 40%;
+            right: -1.2rem;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.35);
+        }
+
+        .case-kiosk-flow-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-flow-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-flow-grid figcaption {
+            margin-top: 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .case-kiosk-flow-grid figcaption span {
+            font-weight: 400;
+            color: rgba(66, 66, 66, 0.55);
+        }
+
+        .case-kiosk-note {
+            margin: 0 0 5rem;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .case-kiosk-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.4rem;
+        }
+
+        .case-kiosk-detail-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-detail-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-detail-grid figcaption {
+            margin-top: 0.6rem;
+            font-size: 1.15rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.65);
+        }
+
+        @media screen and (max-width: 860px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+                display: none;
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(2n)):not(:last-child)::after {
+                content: '→';
+                display: block;
+                position: absolute;
+                top: 40%;
+                right: -1.2rem;
+                transform: translateY(-50%);
+                font-size: 1.4rem;
+                color: rgba(66, 66, 66, 0.35);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .case-kiosk-flow-grid img,
+        .case-kiosk-detail-grid img {
+            cursor: zoom-in;
+        }
+
+        .case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .case-lightbox.is-open {
+            display: flex;
+        }
+
+        .case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        .case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+        .case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
         }
 
         .case-footer {
@@ -235,8 +528,8 @@
     </header>
 
     <main class="wrap">
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj04_01.png" alt="선을 넘는 과학:음악편 프로젝트 개요">
+        <section class="case-slide case-poster">
+            <img src="../images/project/almaloco/poster.png" alt="선을 넘는 과학:음악편 키비주얼 포스터">
         </section>
 
         <section class="case-kiosk">
@@ -245,11 +538,104 @@
                 <h2>작곡 키오스크</h2>
             </div>
             <p class="case-kiosk-flow">닉네임 입력 → 장르 선택 → 감정 키워드 선택(최대 3개) → 완성곡 감상</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_03.png" alt="작곡 키오스크 UI/UX 설계 배경">
+
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>키워드선택, 닉네임입력, 음악감상</dd></div>
+                    <div><dt>Design Direction</dt><dd>복잡하지 않고 간단한 버튼 선택 단계로 작곡을 할 수 있는 컨셉. 선택과 관련된 설명위주의 레이아웃.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>키비주얼의 블랙대신 블루톤의 배경으로 가시성과 공간컬러 맞춤. 키오스크 유휴화면에 이미지로 구분.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-hero.png" alt="작곡 키오스크 대기 화면">
+                    <figcaption>대기(유휴) 화면</figcaption>
+                </figure>
             </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_04.png" alt="작곡 키오스크 화면설계서">
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-hero.png" alt="시작 화면">
+                        <figcaption>① 시작 화면</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-nickname.png" alt="닉네임 입력 화면">
+                        <figcaption>② 닉네임 입력</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-keyboard-03.png" alt="닉네임 입력 완료 상태 (두 번째 작곡가)">
+                        <figcaption>②-1 닉네임 입력 완료</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-genre.png" alt="장르 선택 화면 (선택 전/후 상태 전환)">
+                        <figcaption>③ 장르 선택</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-style.png" alt="작곡가 스타일 선택 화면 (선택 전/후 상태 전환)">
+                        <figcaption>③-1 작곡가 스타일 선택<br><span>(클래식 선택 시)</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-keyword.png" alt="감정 키워드 선택 화면 (선택 전/후 상태 전환)">
+                        <figcaption>④ 감정 키워드 선택<br><span>(최대 3개)</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-loading.png" alt="음악 생성 중 로딩 화면">
+                        <figcaption>⑤ 음악 생성 중</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-result.png" alt="완성곡 감상 화면 (저장 버튼 노출 전/후 상태 전환)">
+                        <figcaption>⑥ 완성곡 감상</figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/kiosk1/kiosk1-flow-qr.png" alt="QR 코드로 저장 및 SNS 공유 화면">
+                        <figcaption>⑦ QR 코드로 저장 &amp; 공유</figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">음악제목이 랜덤으로 송출된다는 기술적 문제점을 보완하기 위한 타이틀 배치</p>
+
+            <h3 class="case-kiosk-subhead">예외 처리 팝업 &amp; 입력 설계</h3>
+            <div class="case-kiosk-detail-grid">
+                <figure>
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-popup-confirm.png" alt="닉네임 설정 완료 팝업">
+                    <figcaption>닉네임 설정 완료</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-popup-forbidden.png" alt="금지어 포함 경고 팝업">
+                    <figcaption>금지어 포함 경고</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-popup-duplicate.png" alt="중복 닉네임 경고 팝업">
+                    <figcaption>중복 닉네임 경고</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-keyboard-01.png" alt="닉네임 입력 키보드 기본 상태">
+                    <figcaption>키보드 · 기본 상태</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-keyboard-02.png" alt="닉네임 입력 키보드 Shift 상태">
+                    <figcaption>키보드 · Shift 전환</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/kiosk1/kiosk1-keyboard-04.png" alt="쌍자음·쌍모음 터치 시 하이라이트 피드백">
+                    <figcaption>키보드 · 터치 피드백</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -259,12 +645,31 @@
                 <h2>뇌파측정 키오스크</h2>
             </div>
             <p class="case-kiosk-flow">측정기 착용 안내 → 뇌파 측정(로딩) → 결과 확인</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_05.png" alt="뇌파측정 키오스크 UI/UX 설계 배경">
+
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>뇌파측정, 측정별결과도출</dd></div>
+                    <div><dt>Design Direction</dt><dd>뇌파 측정기의 착용부터 측정까지 단계 안내. 각 키오스크 유휴화면에 이미지로 구분.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>키비주얼의 블랙대신 퍼플 톤으로 공간 컬러 맞춤.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/kiosk2/k2-hero.png" alt="뇌파측정 키오스크 대기 화면">
+                    <figcaption>대기(유휴) 화면</figcaption>
+                </figure>
             </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_06.png" alt="뇌파측정 키오스크 화면설계서">
-            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-hero.png" alt="시작 화면"><figcaption>① 시작 화면</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-wear.png" alt="측정기 착용 안내 화면"><figcaption>② 측정기 착용 안내</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-measuring.png" alt="뇌파 측정 중 화면"><figcaption>③ 뇌파 측정 중<br><span>(12초 로딩)</span></figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-fail-popup.png" alt="측정 실패 팝업"><figcaption>③-1 측정 실패 팝업</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-result-green.png" alt="결과 화면 - 편안한 상태"><figcaption>④ 결과 · 편안</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-result-blue.png" alt="결과 화면 - 집중력 뛰어난 상태"><figcaption>④ 결과 · 집중력</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-result-red.png" alt="결과 화면 - 활동적인 상태"><figcaption>④ 결과 · 활동적</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk2/k2-result-pink.png" alt="결과 화면 - 긴장된 상태"><figcaption>④ 결과 · 긴장</figcaption></figure></li>
+            </ol>
+            <p class="case-kiosk-note">측정 시간 동안 사용자 이탈을 방지하고 몰입감을 유지하기 위해 시각적 피드백이 있는 측정 화면과 로딩 게이지를 제공.<br>음악 감상 중 시각적 지루함을 줄이고 몰입감을 높이기 위해 회전하는 CD 애니메이션 적용.</p>
         </section>
 
         <section class="case-kiosk">
@@ -273,12 +678,33 @@
                 <h2>표정측정 키오스크</h2>
             </div>
             <p class="case-kiosk-flow">골전도 이어폰 착용 안내 → 표정 측정 → 결과에 따른 컬러 피드백</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_07.png" alt="표정측정 키오스크 UI/UX 설계 배경">
+
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>표정 측정, 측정별결과도출</dd></div>
+                    <div><dt>Design Direction</dt><dd>표정측정을 위한 안내, 골전도 이어폰 착용 안내, 각 키오스크 유휴화면에 이미지로 구분.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>앞의 키오스크 컬러와 유사한 시리즈로 컬러 지정. 표정 +- 정도에 따른 다른 컬러로 분석 결과에 따른 시각적 효과.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/kiosk3/k3-start.png" alt="표정측정 키오스크 대기 화면">
+                    <figcaption>대기(유휴) 화면</figcaption>
+                </figure>
             </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_08.png" alt="표정측정 키오스크 화면설계서">
-            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-start.png" alt="시작 화면"><figcaption>① 시작 화면</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-wear.png" alt="골전도 이어폰 착용 안내 화면"><figcaption>② 골전도 이어폰 착용 안내</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-analyzing.png" alt="표정 분석 중 화면 (실시간 감정 게이지 애니메이션)"><figcaption>③ 표정 분석 중</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-fail-popup.png" alt="표정 인식 실패 화면"><figcaption>③-1 인식 실패</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-joy.png" alt="결과 화면 - 즐거움"><figcaption>④ 결과 · 즐거움</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-surprise.png" alt="결과 화면 - 놀라움"><figcaption>④ 결과 · 놀라움</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-calm.png" alt="결과 화면 - 편안"><figcaption>④ 결과 · 편안</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-sad.png" alt="결과 화면 - 슬픔"><figcaption>④ 결과 · 슬픔</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-fear.png" alt="결과 화면 - 두려움"><figcaption>④ 결과 · 두려움</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-anger.png" alt="결과 화면 - 화남"><figcaption>④ 결과 · 화남</figcaption></figure></li>
+            </ol>
+            <p class="case-kiosk-note">측정 시간 동안 사용자 이탈을 방지하고 몰입감을 유지하기 위해 시각적 피드백이 있는 측정 화면과 로딩 게이지를 제공.<br>결과값에 따라 다른 색상과 게이지량에 차이를 두고 음량 게이지 형태의 애니메이션을 주어 음악을 들으면서 지루하지 않은 화면 구성.</p>
         </section>
 
         <section class="case-kiosk">
@@ -287,18 +713,122 @@
                 <h2>Music Showcase</h2>
             </div>
             <p class="case-kiosk-flow">음악 검색/신청 → 재생 리스트 확인 → 대형 쇼케이스 화면 송출</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_09.png" alt="Music Showcase UI/UX 설계 배경">
+
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>음악플레이, 검색기능</dd></div>
+                    <div><dt>Design Direction</dt><dd>플레이 중 정지나 뒤로 가기 버튼이 없어 리스트에서 직접 항목을 다시 선택하도록 유도. 두 기기에서 검색 기록이 공유될 수 있어, 검색 결과와 디자인을 각각 대응되도록 구성.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>뮤직 쇼케이스에서 음악을 전시하는 컨셉에 맞춰, 기존보다 더 화려하고 선명한 컬러 사용.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/kiosk4/k4-share-start.png" alt="Music Showcase 대기 화면">
+                    <figcaption>대기(유휴) 화면</figcaption>
+                </figure>
             </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj04_10.png" alt="Music Showcase 화면설계서">
-            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li><figure><img src="../images/project/almaloco/kiosk4/k4-share-start.png" alt="음악 공유 시작 화면"><figcaption>① 내 음악 공유하기</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk4/k4-search-input.png" alt="닉네임/제목 검색 입력 화면"><figcaption>② 닉네임 · 제목 검색</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk4/k4-search-result.png" alt="검색 결과 화면 (선택 전/후 상태 전환)"><figcaption>③ 검색 결과</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk4/k4-list-1.png" alt="음악 리스트 화면"><figcaption>④ 음악 리스트</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk4/k4-list-2-selected.png" alt="음악 리스트에서 항목 선택 후 재생하기 노출 화면"><figcaption>⑤ 항목 선택 → 재생하기</figcaption></figure></li>
+                <li><figure><img src="../images/project/almaloco/kiosk4/k4-showcase-playing.png" alt="대형 쇼케이스 재생 중 화면"><figcaption>⑥ 쇼케이스 재생 중</figcaption></figure></li>
+            </ol>
+            <p class="case-kiosk-note">사용자가 무대를 이용 중에 음악이 멈추지 않도록 조작 버튼을 제거하여 구성. 음악 재생 시간 동안 다른 사용자에게 남은 시간을 인지시킬 수 있도록 상단에 플레이 타임 게이지를 시각적으로 배치.<br>기다리는 동안 무대에 조명이 반짝이는 애니메이션을 적용하여 정적인 화면에 생동감을 부여하고 재생 중임을 직관적으로 전달.<br>음악이 끝날 때까지 되돌아갈 수 없는 구조와 터치 슬라이딩 UI를 고려하여, 선택 즉시 자동 재생되지 않도록 설정하고 '재생하기' 버튼을 별도로 노출하여 사용자 조작의 명확성과 편의성 향상.</p>
         </section>
     </main>
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
     </footer>
+
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var currentItems = [];
+            var currentIndex = -1;
+
+            function render() {
+                var item = currentItems[currentIndex];
+                lightboxImg.src = item.src;
+                lightboxImg.alt = item.alt;
+                lightboxCaption.textContent = item.caption;
+            }
+
+            function openLightbox(items, index) {
+                if (!items.length) return;
+                currentItems = items;
+                currentIndex = (index + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % currentItems.length;
+                render();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                render();
+            }
+
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('caseLightboxNext').addEventListener('click', next);
+            document.getElementById('caseLightboxPrev').addEventListener('click', prev);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            function initGroups(selector) {
+                document.querySelectorAll(selector).forEach(function (group) {
+                    var figures = Array.prototype.slice.call(group.querySelectorAll('figure'));
+                    var items = figures.map(function (fig) {
+                        var img = fig.querySelector('img');
+                        var captionEl = fig.querySelector('figcaption');
+                        return {
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt') || '',
+                            caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                        };
+                    });
+                    figures.forEach(function (fig, idx) {
+                        fig.addEventListener('click', function () {
+                            openLightbox(items, idx);
+                        });
+                    });
+                });
+            }
+
+            initGroups('.case-kiosk-flow-grid');
+            initGroups('.case-kiosk-detail-grid');
+        })();
+    </script>
 </body>
 
 </html>

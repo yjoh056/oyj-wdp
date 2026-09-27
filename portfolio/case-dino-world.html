@@ -127,6 +127,105 @@
             box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
         }
 
+        .case-poster img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .case-section-head {
+            margin: 0 0 3rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-head h2 {
+            margin: 0 0 0.6rem;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .case-section-head p {
+            margin: 0;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-design-system {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-design-row {
+            margin: 0 0 2.4rem;
+            max-width: 720px;
+        }
+
+        .case-design-row dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .case-design-row dd {
+            margin: 0;
+            font-size: 1.45rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-swatch-groups {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            margin: 1.6rem 0 2.4rem;
+        }
+
+        .case-swatch-group span {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: rgba(66, 66, 66, 0.55);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-swatch-list {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .case-swatch {
+            width: 5.2rem;
+            height: 5.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-swatch.outline {
+            border: 1px solid rgba(66, 66, 66, 0.15);
+        }
+
+        .case-font-sample {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 2rem 3rem;
+            margin: 0.4rem 0 1rem;
+        }
+
+        .case-font-sample strong {
+            font-size: 2.6rem;
+            font-weight: 800;
+        }
+
+        .case-font-sample em {
+            font-style: normal;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
         .case-kiosk {
             margin: 0 0 11rem;
         }
@@ -166,6 +265,293 @@
 
         .case-kiosk .case-slide {
             margin-bottom: 3rem;
+        }
+
+        .case-kiosk-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-info {
+            flex: 1 1 380px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-info dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-kiosk-info dd {
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-kiosk-hero {
+            flex: 0 0 260px;
+            margin: 0;
+        }
+
+        .case-kiosk-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+        }
+
+        .case-kiosk-hero figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-kiosk-subhead {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0 0 2rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-flow-grid {
+            list-style: none;
+            margin: 0 0 1.2rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-flow-grid li {
+            position: relative;
+        }
+
+        .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 40%;
+            right: -1.2rem;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.35);
+        }
+
+        .case-kiosk-flow-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-flow-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-flow-grid figcaption {
+            margin-top: 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .case-kiosk-flow-grid figcaption span {
+            font-weight: 400;
+            color: rgba(66, 66, 66, 0.55);
+        }
+
+        .case-kiosk-note {
+            margin: 0 0 5rem;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .case-kiosk-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.4rem;
+        }
+
+        .case-kiosk-detail-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-detail-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-detail-grid figcaption {
+            margin-top: 0.6rem;
+            font-size: 1.15rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.65);
+        }
+
+        @media screen and (max-width: 860px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+                display: none;
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(2n)):not(:last-child)::after {
+                content: '→';
+                display: block;
+                position: absolute;
+                top: 40%;
+                right: -1.2rem;
+                transform: translateY(-50%);
+                font-size: 1.4rem;
+                color: rgba(66, 66, 66, 0.35);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .case-kiosk-flow-grid img,
+        .case-kiosk-detail-grid img {
+            cursor: zoom-in;
+        }
+
+        .case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .case-lightbox.is-open {
+            display: flex;
+        }
+
+        .case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        .case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+        .case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
         }
 
         .case-footer {
@@ -235,12 +621,50 @@
     </header>
 
     <main class="wrap">
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj01_01.png" alt="2024 다이노월드 프로젝트 개요">
+        <section class="case-slide case-poster">
+            <img src="../images/project/almaloco/dino-world/poster.png" alt="2024 다이노월드 프로젝트 개요 - 키비주얼 포스터">
         </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj01_02.png" alt="다이노월드 디자인 시스템 - 톤앤매너, 색채 계획, 폰트타입">
+        <section class="case-design-system">
+            <div class="case-section-head">
+                <h2>디자인 시스템</h2>
+                <p>4만명이 넘는 관람객이 방문하여 성황리에 마감. 클라이언트 요청으로 상설 전시관(공룡동산) 추가 작업으로 이어졌다.</p>
+            </div>
+            <dl class="case-design-row">
+                <dt>톤앤 매너</dt>
+                <dd>실감형 공룡 시대 여행 컨셉 - 루이와 함께하는 다이노 뮤지엄 투어. 주요 캐릭터 '루이'가 큐레이터처럼 등장해 해설하는 구조. 공룡 시대를 체험하는 듯한 몰입감을 위해 2D 스타일의 캐릭터와 소품, 그리고 실사 배경을 조합했다. 실사와 일러스트의 조화로, 교육적이면서도 친숙한 전시 분위기를 조성한다.</dd>
+            </dl>
+            <dl class="case-design-row">
+                <dt>색채 계획</dt>
+                <dd>2D 주라기월드의 빈티지한 노트 느낌과 타이틀 컬러를 특징으로 구성. 오렌지-브라운 톤을 중심으로 한 포인트 컬러, 공룡이 살았던 시대의 자연을 연상시키는 그린톤의 실사 배경. 베이스 컬러는 연한 베이지와 회색으로 분위기를 살리며 정보 전달을 방해하지 않도록 설정.</dd>
+            </dl>
+            <div class="case-swatch-groups">
+                <div class="case-swatch-group">
+                    <span>Point Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#634335;"></div>
+                        <div class="case-swatch" style="background:#FF941A;"></div>
+                        <div class="case-swatch" style="background:#FFD752;"></div>
+                    </div>
+                </div>
+                <div class="case-swatch-group">
+                    <span>Base Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch outline" style="background:#E6CFBB;"></div>
+                        <div class="case-swatch outline" style="background:#F8F0E7;"></div>
+                    </div>
+                </div>
+            </div>
+            <dl class="case-design-row">
+                <dt>폰트타입</dt>
+                <dd>
+                    <div class="case-font-sample">
+                        <strong>파셜산스 · 태나단체</strong>
+                        <em>본문 격동고딕2 · 영문 Acumin Variable Concept</em>
+                    </div>
+                    타이틀은 판화 스타일의 서체로 빈티지한 노트 느낌 강조, 본문은 깔끔하고 직각적인 고딕 계열로 정보 전달에 초점, 영문 학명은 명칭표기 특성을 고려해 이탤릭 고딕체 사용.
+                </dd>
+            </dl>
         </section>
 
         <section class="case-kiosk">
@@ -249,18 +673,146 @@
                 <h2>루이의 공룡백과</h2>
             </div>
             <p class="case-kiosk-flow">Keyword: 백과사전채우기, 퍼즐게임 — 공룡의 그림자를 보고 이름을 맞히면 백과사전이 채워지는 콘텐츠. 2개의 키오스크로 체험 가능</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj01_03.png" alt="루이의 공룡백과 키오스크 UI/UX 설계 배경">
+
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>백과사전채우기, 퍼즐게임</dd></div>
+                    <div><dt>Design Direction</dt><dd>루이의 공룡백과사전에 빠진 내용을 추가한다는 컨셉을 부여. 노트와 종이요소로 사전의 모습을 나타냄. 전시와 연결될 수 있게 전시설명에 들어간 그림자 형태를 일관성 있게 사용함.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>2개의 키오스크로 체험 가능한 콘텐츠. 공룡의 그림자를 보고 이름을 맞히는 퍼즐 형식으로 13문항 중 랜덤으로 4문항이 출제됨.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/dino-world/k-hero.png" alt="루이의 공룡백과 대기 화면 - 어서오게, 마침 오늘 본 공룡들을 내 백과사전에 채우려고 하는데, 도와주지 않겠나?">
+                    <figcaption>대기(유휴) 화면 · 루이의 인사</figcaption>
+                </figure>
             </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj01_04.png" alt="루이의 공룡백과 키오스크 화면설계서">
-            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-world/k-q-silhouette.png" alt="공룡의 그림자를 보고 이름을 맞춰보라는 문제 화면">
+                        <figcaption>① 문제 출제<br><span>그림자 실루엣</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-world/k-q-hint.png" alt="힌트 버튼을 누르면 도와준다는 안내가 뜨는 화면">
+                        <figcaption>② 힌트 안내<br><span>답을 모르겠다면</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-world/k-q-choices.png" alt="힌트를 눌러 실제 공룡 이미지와 보기 3개가 노출된 화면">
+                        <figcaption>③ 힌트 사용<br><span>보기 3개 노출</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-world/k-correct.png" alt="정답 확인 후 다음 문제로 이동하는 알로사우루스 정답 화면">
+                        <figcaption>④ 정답 확인<br><span>다음 문제</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/dino-world/k-finish.png" alt="4문항 완료 후 루이가 인사하는 완료 화면">
+                        <figcaption>⑤ 완료<br><span>4문항 완료</span></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">13문항 중 랜덤으로 문제가 산출되며, 4문항까지 반복. 오답 시 다시 확인해보라는 팝업 노출, 힌트 아이콘 클릭 시 힌트가 총 13개까지 순차 제공. 전시설명에 들어간 그림자 형태를 퀴즈에 그대로 활용해 학습 효과를 높임.</p>
         </section>
     </main>
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
     </footer>
+
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var currentItems = [];
+            var currentIndex = -1;
+
+            function render() {
+                var item = currentItems[currentIndex];
+                lightboxImg.src = item.src;
+                lightboxImg.alt = item.alt;
+                lightboxCaption.textContent = item.caption;
+            }
+
+            function openLightbox(items, index) {
+                if (!items.length) return;
+                currentItems = items;
+                currentIndex = (index + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % currentItems.length;
+                render();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                render();
+            }
+
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('caseLightboxNext').addEventListener('click', next);
+            document.getElementById('caseLightboxPrev').addEventListener('click', prev);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            function initGroups(selector) {
+                document.querySelectorAll(selector).forEach(function (group) {
+                    var figures = Array.prototype.slice.call(group.querySelectorAll('figure'));
+                    var items = figures.map(function (fig) {
+                        var img = fig.querySelector('img');
+                        var captionEl = fig.querySelector('figcaption');
+                        return {
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt') || '',
+                            caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                        };
+                    });
+                    figures.forEach(function (fig, idx) {
+                        fig.addEventListener('click', function () {
+                            openLightbox(items, idx);
+                        });
+                    });
+                });
+            }
+
+            initGroups('.case-kiosk-flow-grid');
+            initGroups('.case-kiosk-detail-grid');
+        })();
+    </script>
 </body>
 
 </html>

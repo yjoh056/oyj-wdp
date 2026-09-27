@@ -127,6 +127,105 @@
             box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
         }
 
+        .case-poster img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .case-section-head {
+            margin: 0 0 3rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-head h2 {
+            margin: 0 0 0.6rem;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .case-section-head p {
+            margin: 0;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-design-system {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-design-row {
+            margin: 0 0 2.4rem;
+            max-width: 720px;
+        }
+
+        .case-design-row dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .case-design-row dd {
+            margin: 0;
+            font-size: 1.45rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-swatch-groups {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            margin: 1.6rem 0 2.4rem;
+        }
+
+        .case-swatch-group span {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: rgba(66, 66, 66, 0.55);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-swatch-list {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .case-swatch {
+            width: 5.2rem;
+            height: 5.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-swatch.outline {
+            border: 1px solid rgba(66, 66, 66, 0.15);
+        }
+
+        .case-font-sample {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 2rem 3rem;
+            margin: 0.4rem 0 1rem;
+        }
+
+        .case-font-sample strong {
+            font-size: 2.6rem;
+            font-weight: 800;
+        }
+
+        .case-font-sample em {
+            font-style: normal;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
         .case-kiosk {
             margin: 0 0 11rem;
         }
@@ -166,6 +265,293 @@
 
         .case-kiosk .case-slide {
             margin-bottom: 3rem;
+        }
+
+        .case-kiosk-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-info {
+            flex: 1 1 380px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-info dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-kiosk-info dd {
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-kiosk-hero {
+            flex: 0 0 260px;
+            margin: 0;
+        }
+
+        .case-kiosk-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+        }
+
+        .case-kiosk-hero figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-kiosk-subhead {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0 0 2rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-flow-grid {
+            list-style: none;
+            margin: 0 0 1.2rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-flow-grid li {
+            position: relative;
+        }
+
+        .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 40%;
+            right: -1.2rem;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.35);
+        }
+
+        .case-kiosk-flow-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-flow-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-flow-grid figcaption {
+            margin-top: 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .case-kiosk-flow-grid figcaption span {
+            font-weight: 400;
+            color: rgba(66, 66, 66, 0.55);
+        }
+
+        .case-kiosk-note {
+            margin: 0 0 5rem;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .case-kiosk-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.4rem;
+        }
+
+        .case-kiosk-detail-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-detail-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-detail-grid figcaption {
+            margin-top: 0.6rem;
+            font-size: 1.15rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.65);
+        }
+
+        @media screen and (max-width: 860px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+                display: none;
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(2n)):not(:last-child)::after {
+                content: '→';
+                display: block;
+                position: absolute;
+                top: 40%;
+                right: -1.2rem;
+                transform: translateY(-50%);
+                font-size: 1.4rem;
+                color: rgba(66, 66, 66, 0.35);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.6rem 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-detail-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .case-kiosk-flow-grid img,
+        .case-kiosk-detail-grid img {
+            cursor: zoom-in;
+        }
+
+        .case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .case-lightbox.is-open {
+            display: flex;
+        }
+
+        .case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        .case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+        .case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
         }
 
         .case-footer {
@@ -235,12 +621,49 @@
     </header>
 
     <main class="wrap">
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_01.png" alt="우주로 가는 길을 찾다 프로젝트 개요">
+        <section class="case-slide case-poster">
+            <img src="../images/project/almaloco/space-road/poster.png" alt="우주로 가는 길을 찾다 프로젝트 개요 - 키비주얼 포스터">
         </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_02.png" alt="우주로 가는 길을 찾다 디자인 시스템 - 톤앤매너, 색채 계획, 폰트타입">
+        <section class="case-design-system">
+            <div class="case-section-head">
+                <h2>디자인 시스템</h2>
+            </div>
+            <dl class="case-design-row">
+                <dt>톤앤 매너</dt>
+                <dd>우주선과 우주여행 컨셉의 공간 구축. 전시 주제에 맞추어 우주선 내부 같은 컨셉의 텍스트와 컬러 조합, 전시 주제에 맞추어 3구역에 각각 포인트 컬러를 다르게 구성하여 공간 구분을 둠.</dd>
+            </dl>
+            <dl class="case-design-row">
+                <dt>색채 계획</dt>
+                <dd>미래적인 색채를 사용하여 우주선 내부의 모습을 표현. 검은색 바탕으로 짙은 회색에 조명색을 표현하는 오렌지색, 민트색, 화이트색을 사용하여 비상등이 켜진 우주선 내부 분위기. 화이트 바탕에서는 보라색과 청록색을 활용한 우주선 벽면 디자인.</dd>
+            </dl>
+            <div class="case-swatch-groups">
+                <div class="case-swatch-group">
+                    <span>Point Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#FF8C4E;"></div>
+                        <div class="case-swatch" style="background:#41FFEF;"></div>
+                        <div class="case-swatch" style="background:#8B6EC7;"></div>
+                    </div>
+                </div>
+                <div class="case-swatch-group">
+                    <span>Base Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#303030;"></div>
+                        <div class="case-swatch outline" style="background:#EEEEEE;"></div>
+                    </div>
+                </div>
+            </div>
+            <dl class="case-design-row">
+                <dt>폰트타입</dt>
+                <dd>
+                    <div class="case-font-sample">
+                        <strong>설립체</strong>
+                        <em>본문 스포카한산스</em>
+                    </div>
+                    옛날과 현대가 조화로운 우주적 공간. 80~90년대 한국 간판을 모티브로 현대 해석된 폰트로 옛스러운 느낌을 주면서 우주공간에 쓰이는 폰트와 유사성을 주는 폰트로 과거와 현재, 미래를 아우르는 전시 분위기를 조성.
+                </dd>
+            </dl>
         </section>
 
         <section class="case-kiosk">
@@ -249,16 +672,45 @@
                 <h2>우주선 안 컴퓨터 · 정보보기</h2>
             </div>
             <p class="case-kiosk-flow">3가지 카테고리를 폴더형식으로 묶어 보여주는 방식. 우주선 컨셉에 맞추어 공중에 띄워지는 화면으로 제작, 벽면 태블릿 2대 설치</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_03.png" alt="우주선 안 컴퓨터 키오스크 UI/UX 설계 배경">
-            </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_04.png" alt="우주선 안 컴퓨터 키오스크 화면설계서">
-            </div>
-        </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_05.png" alt="우주선 안 컴퓨터 키오스크 현장 설치 사진">
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>우주선 안 컴퓨터, 정보보기</dd></div>
+                    <div><dt>Design Direction</dt><dd>3가지 카테고리(천문 관측일지, 천문 관측기구, 천문학자)를 폴더형식으로 묶어 보여주는 방식. 우주선이라는 컨셉에 맞추어 공중에 띄워지는 화면컨셉으로 제작. 클릭 시 불이 들어오거나 접히는 애니메이션을 넣음.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>벽면 태블릿이 2대가 설치되어 서서 눌러볼 수 있는 콘텐츠로 구성.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/space-road/k1-hero.png" alt="우주선 안 컴퓨터 유휴 화면 - 천문 관측일지, 천문 관측기구, 천문학자 카드 선택">
+                    <figcaption>유휴 화면 · 카테고리 선택</figcaption>
+                </figure>
+            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k1-detail-samguksagi.png" alt="천문 관측일지 카테고리 - 삼국사기 상세 화면">
+                        <figcaption>① 천문 관측일지<br><span>삼국사기</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k1-detail-cheomseongdae.png" alt="천문 관측기구 카테고리 - 고려 첨성대 상세 화면">
+                        <figcaption>② 천문 관측기구<br><span>고려 첨성대</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k1-detail-jangyeongsil.png" alt="천문학자 카테고리 - 장영실 상세 화면">
+                        <figcaption>③ 천문학자<br><span>장영실</span></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">유휴 화면에서 카테고리 버튼 선택 시 팝업창이 중앙에서 펼쳐지며 열리는 모션(0.3초) 적용. 버튼 선택 시 해당 버튼은 흑백에서 컬러로 전환되어 이미 확인한 항목을 구분.</p>
+
+            <div class="case-slide">
+                <img src="../images/project/almaloco/space-road/k1-install.png" alt="우주선 안 컴퓨터 키오스크 현장 설치 사진">
+            </div>
         </section>
 
         <section class="case-kiosk">
@@ -267,22 +719,144 @@
                 <h2>우주여행 · 방명록</h2>
             </div>
             <p class="case-kiosk-flow">전시 마지막 순서, 다른 행성으로 여행을 떠나고 방명록을 남기는 게임무드 컨셉. 조작 시 프로젝터로 송출되는 화면이 변경됨</p>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_06.png" alt="우주여행 방명록 키오스크 UI/UX 설계 배경">
-            </div>
-            <div class="case-slide">
-                <img src="../images/project/almaloco/pj02_07.png" alt="우주여행 방명록 키오스크 화면설계서">
-            </div>
-        </section>
 
-        <section class="case-slide">
-            <img src="../images/project/almaloco/pj02_08.png" alt="우주여행 방명록 키오스크 및 나의 우주 프로젝터 현장 설치 사진">
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>우주여행, 방명록, 게임무드</dd></div>
+                    <div><dt>Design Direction</dt><dd>전시의 마지막 순서에 맞게 미래에는 다른 행성에 여행 갈 수 있고 방명록을 남길 수 있다는 컨셉으로 제작.</dd></div>
+                    <div><dt>Visual Elements</dt><dd>키오스크에서 조작 시 프로젝터로 띄워지는 화면이 변경됨. 그림판으로 그린 그림이 프로젝터에 적용되어 보여짐.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/space-road/k2-hero.png" alt="우주여행 방명록 키오스크 대기 화면 - 여행하고 싶은 행성을 선택해보세요">
+                    <figcaption>대기(유휴) 화면 · 행성 선택</figcaption>
+                </figure>
+            </div>
+
+            <h3 class="case-kiosk-subhead">화면설계서 · 전체 플로우</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k2-launch.png" alt="우주선 발사 카운트다운 애니메이션 화면">
+                        <figcaption>① 발사<br><span>3···2···1···발사!</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k2-arrive.png" alt="행성 도착 후 흔적 남기기 여부를 묻는 팝업 화면">
+                        <figcaption>② 행성 도착<br><span>흔적 남기기 선택</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k2-draw.png" alt="그림판으로 메시지를 자유롭게 작성하는 화면">
+                        <figcaption>③ 방명록<br><span>그림판 작성</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/space-road/k2-complete.png" alt="흔적이 행성에 남겨졌습니다 완료 화면">
+                        <figcaption>④ 완료<br><span>흔적 남기기 완료</span></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">체험자가 일정 시간 이상 동작이 없는 경우 자동으로 유휴 화면으로 복귀. 키오스크에서 남긴 메시지는 프로젝터 화면(나의 우주)에 실시간으로 반영되어 전시 공간 전체에 노출됨.</p>
+
+            <div class="case-slide">
+                <img src="../images/project/almaloco/space-road/k2-install.png" alt="우주여행 방명록 키오스크 및 나의 우주 프로젝터 현장 설치 사진">
+            </div>
         </section>
     </main>
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
     </footer>
+
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var currentItems = [];
+            var currentIndex = -1;
+
+            function render() {
+                var item = currentItems[currentIndex];
+                lightboxImg.src = item.src;
+                lightboxImg.alt = item.alt;
+                lightboxCaption.textContent = item.caption;
+            }
+
+            function openLightbox(items, index) {
+                if (!items.length) return;
+                currentItems = items;
+                currentIndex = (index + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % currentItems.length;
+                render();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                render();
+            }
+
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('caseLightboxNext').addEventListener('click', next);
+            document.getElementById('caseLightboxPrev').addEventListener('click', prev);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            function initGroups(selector) {
+                document.querySelectorAll(selector).forEach(function (group) {
+                    var figures = Array.prototype.slice.call(group.querySelectorAll('figure'));
+                    var items = figures.map(function (fig) {
+                        var img = fig.querySelector('img');
+                        var captionEl = fig.querySelector('figcaption');
+                        return {
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt') || '',
+                            caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                        };
+                    });
+                    figures.forEach(function (fig, idx) {
+                        fig.addEventListener('click', function () {
+                            openLightbox(items, idx);
+                        });
+                    });
+                });
+            }
+
+            initGroups('.case-kiosk-flow-grid');
+            initGroups('.case-kiosk-detail-grid');
+        })();
+    </script>
 </body>
 
 </html>

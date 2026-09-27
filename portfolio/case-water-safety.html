@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수난체험센터 · 화면설계서 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --color-primary: #8ffb5d;
+            --color-secondary: #B4FC93;
+            --txt-primary: #424242;
+            --txt-secondary: #1B9FB3;
+            --bg-color: #FFFFF4;
+            --bg-color-secondary: #F8FFE3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+        .case-header {
+            padding: 7rem 0 5rem;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+        }
+
+        .back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+            margin-bottom: 3.2rem;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: var(--txt-secondary);
+        }
+
+        .case-eyebrow {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .case-header h1 {
+            margin: 0 0 1rem;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .case-sub {
+            margin: 0 0 3.6rem;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 5rem;
+        }
+
+        .case-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .case-meta span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .case-meta strong,
+        .case-meta div p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 7rem 0 3rem;
+        }
+
+        .case-slide {
+            margin: 0 0 8rem;
+        }
+
+        .case-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
+        }
+
+        .case-poster img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .case-section-head {
+            margin: 0 0 3rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-head h2 {
+            margin: 0 0 0.6rem;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .case-section-head p {
+            margin: 0;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-design-system {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-design-row {
+            margin: 0 0 2.4rem;
+            max-width: 720px;
+        }
+
+        .case-design-row dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .case-design-row dd {
+            margin: 0;
+            font-size: 1.45rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-swatch-groups {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            margin: 1.6rem 0 2.4rem;
+        }
+
+        .case-swatch-group span {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: rgba(66, 66, 66, 0.55);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-swatch-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .case-swatch {
+            width: 5.2rem;
+            height: 5.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-swatch.outline {
+            border: 1px solid rgba(66, 66, 66, 0.15);
+        }
+
+        .case-font-sample {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 2rem 3rem;
+            margin: 0.4rem 0 1rem;
+        }
+
+        .case-font-sample strong {
+            font-size: 2.6rem;
+            font-weight: 800;
+        }
+
+        .case-font-sample em {
+            font-style: normal;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
+        .case-kiosk {
+            margin: 0 0 11rem;
+        }
+
+        .case-kiosk-head {
+            display: flex;
+            align-items: baseline;
+            gap: 3rem;
+            margin-bottom: 1rem;
+            flex-direction: column;
+        }
+
+        .case-kiosk-num {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--bg-color);
+            background: var(--txt-primary);
+            border-radius: 999px;
+            padding: 0.3rem 1.1rem;
+            white-space: nowrap;
+        }
+
+        .case-kiosk h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-flow {
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk .case-slide {
+            margin-bottom: 3rem;
+        }
+
+        .case-kiosk-overview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-info {
+            flex: 1 1 380px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-info dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-kiosk-info dd {
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-kiosk-hero {
+            flex: 0 0 300px;
+            margin: 0;
+        }
+
+        .case-kiosk-hero img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+            cursor: zoom-in;
+        }
+
+        .case-kiosk-hero figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-kiosk-subhead {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0 0 2rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-kiosk-flow-grid {
+            list-style: none;
+            margin: 0 0 1.2rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.6rem;
+        }
+
+        .case-kiosk-flow-grid li {
+            position: relative;
+        }
+
+        .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            top: 40%;
+            right: -1.2rem;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.35);
+        }
+
+        .case-kiosk-flow-grid figure {
+            margin: 0;
+        }
+
+        .case-kiosk-flow-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-kiosk-flow-grid figcaption {
+            margin-top: 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .case-kiosk-flow-grid figcaption span {
+            font-weight: 400;
+            color: rgba(66, 66, 66, 0.55);
+        }
+
+        .case-kiosk-note {
+            margin: 0 0 5rem;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .case-gallery {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .case-gallery-grid.cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .case-gallery-grid figure {
+            margin: 0;
+        }
+
+        .case-gallery-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+            cursor: zoom-in;
+        }
+
+        .case-gallery-grid figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-gallery-grid,
+            .case-gallery-grid.cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 860px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(4n)):not(:last-child)::after {
+                display: none;
+            }
+
+            .case-kiosk-flow-grid li:not(:nth-child(2n)):not(:last-child)::after {
+                content: '→';
+                display: block;
+                position: absolute;
+                top: 40%;
+                right: -1.2rem;
+                transform: translateY(-50%);
+                font-size: 1.4rem;
+                color: rgba(66, 66, 66, 0.35);
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .case-kiosk-flow-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .case-lightbox.is-open {
+            display: flex;
+        }
+
+        .case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        .case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+        .case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
+        }
+
+        .case-footer {
+            padding: 6rem 0 9rem;
+            text-align: center;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--txt-secondary);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-header {
+                padding: 4.5rem 0 3rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .case-meta {
+                gap: 2rem 3.5rem;
+            }
+
+            .case-kiosk {
+                margin-bottom: 7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="case-header">
+        <div class="wrap">
+            <a class="back-link" href="../index.html#section4">← 포트폴리오로 돌아가기</a>
+            <span class="case-eyebrow">알마로꼬 Project · Designer Project</span>
+            <h1>수난체험센터</h1>
+            <p class="case-sub">충북안전체험관 수난체험센터 · 브랜드 &amp; 콘텐츠 디자인 화면설계서</p>
+            <div class="case-meta">
+                <div><span>작업기간</span>
+                    <p>2023. 12 ~ 2024. 03</p>
+                </div>
+                <div><span>Tool</span>
+                    <p>Photoshop, Illustrator, Figma, Zep</p>
+                </div>
+                <div><span>본인 기여도</span>
+                    <p>100%</p>
+                </div>
+                <div><span>산출물</span>
+                    <p>로고디자인, 캐릭터디자인, 사이니지디자인, 월그래픽, Zep페이지 제작</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="case-slide case-poster">
+            <img src="../images/project/almaloco/water-safety/poster.png" alt="수난체험센터 마스코트와 웰컴 그래픽 - 수난체험센터에 오신 걸 환영합니다">
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-section-head">
+                <h2>로고 디자인</h2>
+            </div>
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>지역성과 연계성, 공공기관에 적합한 명확성, 직관적인 시각 전달</dd></div>
+                    <div><dt>Design Direction</dt><dd>신뢰, 안전, 체험, 공공성</dd></div>
+                    <div><dt>Result</dt><dd>수난체험센터의 특성과 기관 요청사항을 반영하여 신뢰성과 기능성을 모두 갖춘 시그니처 로고를 완성. 현재 기관의 공식 로고로 다양한 매체에 적용 중이며, 시각 정체성 구축에 기여.</dd></div>
+                    <div><dt>로고 의미</dt><dd>전체를 감싸는 흰색 원은 실제 물이 존재하는 체험 공간으로서의 센터 역할을 상징하며 '공간의 수용성'을 시각화. 'ㅅ' 모양의 오브젝트는 구명보트 전면부 형상을 모티브로 해 구조와 안전을 의미하고, 컬러는 관할 소방기관인 충북안전체험관의 CI와 아이덴티티를 유지. 물을 형상화한 물결 모양은 수난체험센터의 특징인 실제 물 안에서의 체험 콘텐츠를 표현하며, 하늘색·파란색·초록색·청록색은 각각 센터·항공·육지·해상을 의미하는 4캐릭터의 대표 색상.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/water-safety/logo-signatures.png" alt="수난체험센터 로고 시그니처 - Primary Signature, Signage Version, Logotype Only">
+                    <figcaption>로고 시그니처 종류</figcaption>
+                </figure>
+            </div>
+
+            <h3 class="case-kiosk-subhead">컬러 시스템</h3>
+            <div class="case-swatch-groups">
+                <div class="case-swatch-group">
+                    <span>Main Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#EB4A35;" title="PANTONE 2347 U"></div>
+                        <div class="case-swatch" style="background:#199FB3;" title="PANTONE 7711 U"></div>
+                        <div class="case-swatch" style="background:#61B04B;" title="PANTONE 3501 U"></div>
+                        <div class="case-swatch" style="background:#FEB501;" title="PANTONE 116 U"></div>
+                        <div class="case-swatch" style="background:#EE9832;" title="PANTONE 7408 U"></div>
+                    </div>
+                </div>
+                <div class="case-swatch-group">
+                    <span>Sub Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch outline" style="background:#A8D3F1;" title="PANTONE 290 U"></div>
+                        <div class="case-swatch" style="background:#FCCE33;" title="PANTONE 115 U"></div>
+                        <div class="case-swatch" style="background:#3BA7B8;" title="PANTONE 7710 U"></div>
+                        <div class="case-swatch" style="background:#11A0D9;" title="PANTONE 2995 U"></div>
+                        <div class="case-swatch" style="background:#3D4F57;" title="PANTONE 5463 U"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="case-kiosk-subhead">로고 응용 · 세로형 &amp; 사이니지 적용</h3>
+            <div class="case-gallery-grid">
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/logo-vertical.png" alt="수난체험센터 세로형(Vertical) 로고 시그니처">
+                    <figcaption>Vertical Signature</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/install-signage-tile.png" alt="현장 타일 벽면에 적용된 주의 안내 사이니지 실사 사진">
+                    <figcaption>현장 적용 · 안내 사이니지</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-section-head">
+                <h2>캐릭터 디자인</h2>
+            </div>
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>하늘, 땅, 바다, 물</dd></div>
+                    <div><dt>Design Direction</dt><dd>물의 형상을 모티브로 한, 어린이에게 친근한 캐릭터 디자인. 체험센터의 특성을 반영해 하늘·땅·바다의 요소를 형상화하고, 운영 주체인 119 소속임을 고려해 설계함.</dd></div>
+                    <div><dt>Result</dt><dd>센터의 웹 그래픽, 영상, Zep 등 다양한 콘텐츠에 활용.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/water-safety/char-lineup.png" alt="수난체험센터 캐릭터 라인업 - 대표캐릭터 수아, 도우미 캐릭터 느리(하늘), 지아(땅), 다야(바다)">
+                    <figcaption>수아 · 느리 · 지아 · 다야</figcaption>
+                </figure>
+            </div>
+
+            <h3 class="case-kiosk-subhead">캐릭터 응용</h3>
+            <div class="case-gallery-grid">
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/char-applied.png" alt="캐릭터 응용 - 제복/구명조끼 의상 변형, 표정 세트, 프로그램별 캐릭터 활용">
+                    <figcaption>의상 · 표정 · 탈것 응용 세트</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/install-mural-lobby.png" alt="로비 벽면에 적용된 수아 캐릭터 웰컴 월그래픽 현장 사진">
+                    <figcaption>로비 웰컴 월그래픽 (현장)</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-gallery">
+            <div class="case-section-head">
+                <h2>사이니지 디자인</h2>
+                <p>체험 프로그램 5종 픽토그램과 시설 안내 사이니지 일체를 제작해 현장 동선 안내에 적용.</p>
+            </div>
+            <div class="case-gallery-grid" style="margin-bottom: 2rem;">
+                <figure style="grid-column: 1 / -1;">
+                    <img src="../images/project/almaloco/water-safety/signage-programs.png" alt="체험 프로그램 픽토그램 - 항공기 비상착수, 선박 탈출, 에어포켓, 침수 차량 탈출, 생존 수영">
+                    <figcaption>체험 프로그램 픽토그램 5종</figcaption>
+                </figure>
+            </div>
+            <div class="case-gallery-grid">
+                <figure style="grid-column: 1 / -1;">
+                    <img src="../images/project/almaloco/water-safety/signage-facility.png" alt="시설 안내 사이니지 - 탈의실/샤워실, 수심 표시, 주의 안내, 출입구 현판, 남녀 샤워실 사이니지">
+                    <figcaption>시설 안내 · 주의 사이니지</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-gallery">
+            <div class="case-section-head">
+                <h2>공간 그래픽 · 아트웍</h2>
+                <p>탑승동 항공기 모형 랩핑 디자인과 로비 벽면 웰컴 월그래픽으로 체험 공간의 몰입감을 강화.</p>
+            </div>
+            <div class="case-gallery-grid">
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/space-aircraft.png" alt="항공기 비상착수 체험 모형 랩핑 디자인 도면 및 렌더링">
+                    <figcaption>항공기 모형 랩핑 디자인</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/mural-wave.png" alt="로비 남녀 탈의실 입구 물결 캐릭터 월그래픽 전체 구성">
+                    <figcaption>탈의실 입구 물결 월그래픽</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-gallery">
+            <div class="case-section-head">
+                <h2>현장 사진</h2>
+                <p>완공 후 체험장, 항공기 모형 내부, 로비 월그래픽이 실제 공간에 적용된 모습.</p>
+            </div>
+            <div class="case-gallery-grid">
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/install-pool-slide.png" alt="수난체험센터 체험 풀 및 미끄럼틀 현장 사진">
+                    <figcaption>체험 풀 · 슬라이드</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/install-pool-dome.png" alt="수난체험센터 체험 풀 전경 및 침수 차량 탈출 체험 존 현장 사진">
+                    <figcaption>체험 풀 전경 · 침수 차량 존</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/install-aircraft-cabin.png" alt="항공기 비상착수 체험을 위한 항공기 모형 내부 좌석 현장 사진">
+                    <figcaption>항공기 모형 내부</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/water-safety/install-mural-lobby.png" alt="로비 벽면 수아 캐릭터 월그래픽 현장 사진">
+                    <figcaption>로비 월그래픽</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-kiosk">
+            <div class="case-kiosk-head">
+                <h2>ZEP 가상공간 기획 · 그래픽 · 페이지 제작</h2>
+            </div>
+            <div class="case-kiosk-overview">
+                <dl class="case-kiosk-info">
+                    <div><dt>Keyword</dt><dd>체험 미리보기, 체험이 어려운 방문객을 위한 가상체험공간</dd></div>
+                    <div><dt>Design Direction</dt><dd>실제 체험센터의 구조를 기반으로 시각적으로 유사한 공간 그래픽을 제작하여 몰입감을 높임. ZEP의 가상공간 특성을 활용해 맵 이동에 따른 캐릭터와의 대화 등 상호작용 콘텐츠를 구성해 재미 요소를 추가. 체험 위주의 센터 특성상 부족했던 설명 요소를 캐릭터, 짧은 문구, 미니게임 등으로 대체하여 정보 전달과 재미를 동시에 만족시키는 방향으로 기획함.</dd></div>
+                    <div><dt>Result</dt><dd>체험 콘텐츠 설명, 사전 안내, 미니게임, 체험 영상, 홍보 영상 등 다양한 콘텐츠를 통합 구성. ZEP 페이지를 통해 체험 플랫폼으로 활용 중.</dd></div>
+                </dl>
+                <figure class="case-kiosk-hero">
+                    <img src="../images/project/almaloco/water-safety/zep-hero.png" alt="ZEP 가상공간 전체 맵 - 수난체험센터 건물과 캐릭터, 이동 오브젝트로 구성된 메타버스 공간">
+                    <figcaption>ZEP 가상공간 전체 맵</figcaption>
+                </figure>
+            </div>
+
+            <h3 class="case-kiosk-subhead">구현 이미지 · 공간 &amp; 인터랙션</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-pool-room.png" alt="ZEP 가상공간 내 체험 풀 및 항공기 모형 재현 화면">
+                        <figcaption>① 체험 풀 재현<br><span>실제 공간과 동일한 구조</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-char-intro.png" alt="캐릭터 대화창 - 내 이름은 수아 물을 능숙하게 다루는 수난안전전문가야">
+                        <figcaption>② 캐릭터 소개<br><span>수아와의 대화</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-guide-npc.png" alt="안내 요원 캐릭터와의 인터랙션 - 비상 착륙 설명하기">
+                        <figcaption>③ 안내 요원<br><span>프로그램 설명 인터랙션</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-lobby-map.png" alt="로비 전체를 재현한 ZEP 맵 화면">
+                        <figcaption>④ 로비 전체 맵<br><span>동선 재현</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-video-guide.png" alt="항공기 비상 착륙 안내 영상 재생 화면">
+                        <figcaption>⑤ 안내 영상<br><span>F키를 눌러 감상하기</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-route-guide.png" alt="체험장 가는 길 이동 경로 안내 화면">
+                        <figcaption>⑥ 이동 경로 안내<br><span>체험장 가는 길</span></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">맵 이동에 따라 캐릭터와의 대화·인터랙션이 트리거되도록 구성하여, 체험 위주 센터의 부족했던 설명 요소를 재미있게 보완.</p>
+
+            <h3 class="case-kiosk-subhead">구현 이미지 · 미니게임</h3>
+            <ol class="case-kiosk-flow-grid">
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-game-slide.png" alt="선박 탈출 미끄럼틀 미니게임 화면 - 스페이스바로 탈출">
+                        <figcaption>① 선박 탈출<br><span>슬라이드 미니게임</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-game-airpocket.png" alt="에어포켓 미로 탈출 미니게임 Air pocket 화면">
+                        <figcaption>② 에어포켓<br><span>미로 탈출 미니게임</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-game-raft.png" alt="구명보트 탈출 미니게임 화면">
+                        <figcaption>③ 구명보트<br><span>탈출 미니게임</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-game-driving.png" alt="침수 차량 탈출 1인칭 운전 시뮬레이션 화면">
+                        <figcaption>④ 침수 차량 탈출<br><span>1인칭 주행 시뮬레이션</span></figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/zep-game-popup.png" alt="탈출 방법 선택 팝업 - 내외부 물높이가 같아지면 문을 연다">
+                        <figcaption>⑤ 탈출 방법 선택<br><span>퀴즈형 팝업</span></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <p class="case-kiosk-note">각 프로그램의 탈출·생존 원리를 미니게임으로 재구성해, 방문 전에도 체험 내용을 재미있게 예습할 수 있도록 구성.</p>
+        </section>
+    </main>
+
+    <footer class="case-footer">
+        <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
+    </footer>
+
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var currentItems = [];
+            var currentIndex = -1;
+
+            function render() {
+                var item = currentItems[currentIndex];
+                lightboxImg.src = item.src;
+                lightboxImg.alt = item.alt;
+                lightboxCaption.textContent = item.caption;
+            }
+
+            function openLightbox(items, index) {
+                if (!items.length) return;
+                currentItems = items;
+                currentIndex = (index + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % currentItems.length;
+                render();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                render();
+            }
+
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('caseLightboxNext').addEventListener('click', next);
+            document.getElementById('caseLightboxPrev').addEventListener('click', prev);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            function initGroups(selector) {
+                document.querySelectorAll(selector).forEach(function (group) {
+                    var figures = Array.prototype.slice.call(group.querySelectorAll('figure')).filter(function (fig) {
+                        return fig.querySelector('img') && fig.querySelector('img').getAttribute('src');
+                    });
+                    var items = figures.map(function (fig) {
+                        var img = fig.querySelector('img');
+                        var captionEl = fig.querySelector('figcaption');
+                        return {
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt') || '',
+                            caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                        };
+                    });
+                    figures.forEach(function (fig, idx) {
+                        fig.addEventListener('click', function () {
+                            openLightbox(items, idx);
+                        });
+                    });
+                });
+            }
+
+            function initStandaloneFigures(selector) {
+                document.querySelectorAll(selector).forEach(function (fig) {
+                    var img = fig.querySelector('img');
+                    if (!img || !img.getAttribute('src')) return;
+                    var captionEl = fig.querySelector('figcaption');
+                    var item = {
+                        src: img.getAttribute('src'),
+                        alt: img.getAttribute('alt') || '',
+                        caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                    };
+                    fig.addEventListener('click', function () {
+                        openLightbox([item], 0);
+                    });
+                });
+            }
+
+            initStandaloneFigures('.case-kiosk-hero');
+            initGroups('.case-kiosk-flow-grid');
+            initGroups('.case-gallery-grid');
+        })();
+    </script>
+</body>
+
+</html>

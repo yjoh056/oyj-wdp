@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>놀이로 체인지 · 화면설계서 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --color-primary: #8ffb5d;
+            --color-secondary: #B4FC93;
+            --txt-primary: #424242;
+            --txt-secondary: #4BE006;
+            --bg-color: #FFFFF4;
+            --bg-color-secondary: #F8FFE3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+        .case-header {
+            padding: 7rem 0 5rem;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+        }
+
+        .back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+            margin-bottom: 3.2rem;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: var(--txt-secondary);
+        }
+
+        .case-eyebrow {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .case-header h1 {
+            margin: 0 0 1rem;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .case-sub {
+            margin: 0 0 3.6rem;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 5rem;
+        }
+
+        .case-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .case-meta span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .case-meta strong,
+        .case-meta div p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 7rem 0 3rem;
+        }
+
+        .case-slide {
+            margin: 0 0 8rem;
+        }
+
+        .case-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
+        }
+
+        .case-poster img {
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .case-section-head {
+            margin: 0 0 3rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-head h2 {
+            margin: 0 0 0.6rem;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .case-section-head p {
+            margin: 0;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-design-system {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-design-row {
+            margin: 0 0 2.4rem;
+            max-width: 720px;
+        }
+
+        .case-design-row dt {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .case-design-row dd {
+            margin: 0;
+            font-size: 1.45rem;
+            color: rgba(66, 66, 66, 0.85);
+        }
+
+        .case-swatch-groups {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 4rem;
+            margin: 1.6rem 0 2.4rem;
+        }
+
+        .case-swatch-group span {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            color: rgba(66, 66, 66, 0.55);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-swatch-list {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .case-swatch {
+            width: 5.2rem;
+            height: 5.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(66, 66, 66, 0.14);
+        }
+
+        .case-swatch.outline {
+            border: 1px solid rgba(66, 66, 66, 0.15);
+        }
+
+        .case-font-sample {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 2rem 3rem;
+            margin: 0.4rem 0 1rem;
+        }
+
+        .case-font-sample strong {
+            font-size: 2.6rem;
+            font-weight: 800;
+        }
+
+        .case-font-sample em {
+            font-style: normal;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
+        .case-gallery {
+            margin: 0 0 8rem;
+            padding-left: 0.5rem;
+        }
+
+        .case-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 0;
+        }
+
+        .case-gallery-grid figure {
+            margin: 0;
+        }
+
+        .case-gallery-grid img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+            cursor: zoom-in;
+        }
+
+        .case-gallery-grid figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .case-lightbox.is-open {
+            display: flex;
+        }
+
+        .case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+        .case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+        .case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+        .case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+        .case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
+        }
+
+        .case-footer {
+            padding: 6rem 0 9rem;
+            text-align: center;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--txt-secondary);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-header {
+                padding: 4.5rem 0 3rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .case-meta {
+                gap: 2rem 3.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="case-header">
+        <div class="wrap">
+            <a class="back-link" href="../index.html#section4">← 포트폴리오로 돌아가기</a>
+            <span class="case-eyebrow">알마로꼬 Project · Designer Project</span>
+            <h1>놀이로 체인지</h1>
+            <p class="case-sub">부산과학체험관 특별전시회 · 화면설계서</p>
+            <div class="case-meta">
+                <div><span>작업기간</span>
+                    <p>2024. 8. 7 ~ 2024. 8. 20</p>
+                </div>
+                <div><span>Tool</span>
+                    <p>Photoshop, Illustrator</p>
+                </div>
+                <div><span>본인 기여도</span>
+                    <p>90%</p>
+                </div>
+                <div><span>산출물</span>
+                    <p>벽면 패널, 포스터, 현수막, 콘텐츠디자인, 리플렛</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="case-slide case-poster">
+            <img src="../images/project/almaloco/play-change/poster.png" alt="놀이로 체인지 프로젝트 개요 - 키비주얼 포스터">
+        </section>
+
+        <section class="case-design-system">
+            <div class="case-section-head">
+                <h2>디자인 시스템</h2>
+                <p>타이트한 일정으로 팀작업, 사이니지 그래픽 전반을 메인으로 담당. 전시 만족도 조사 대부분이 흥미롭고 재방문·추천 의사가 있다는 등 호평이 많았다.</p>
+            </div>
+            <dl class="case-design-row">
+                <dt>톤앤 매너</dt>
+                <dd>몸을 자유롭게 움직이는 즐거움. 특정한 오브젝트가 없는 전시의 주제인 '움직임'을 부드럽고 차갑지 않게 표현하기 위해, 파란색 계열에 형광 연두색을 포인트로 사용. 다양한 컬러의 캐릭터들이 공간 곳곳에 작은 면적으로 배치되어 활동성이 느껴지도록 구성함.</dd>
+            </dl>
+            <dl class="case-design-row">
+                <dt>색채 계획</dt>
+                <dd>부담스럽지 않으면서 공간에서 활동을 이끌어주는 색채 조합. 넓고 자유로움을 상징하는 하늘과 바다에서 영감을 받은 블루 계열을 기반으로, 어두운 전시장 조명 환경 속에서도 포인트가 되어 시선을 끌 수 있도록 계획. 패널 컬러에 통일성을 주어 전체 공간의 일관성을 유지함.</dd>
+            </dl>
+            <div class="case-swatch-groups">
+                <div class="case-swatch-group">
+                    <span>Point Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch outline" style="background:#FFFFFF;"></div>
+                        <div class="case-swatch" style="background:#BCFF41;"></div>
+                        <div class="case-swatch" style="background:#FF7C65;"></div>
+                    </div>
+                </div>
+                <div class="case-swatch-group">
+                    <span>Base Color</span>
+                    <div class="case-swatch-list">
+                        <div class="case-swatch" style="background:#2668B2;"></div>
+                        <div class="case-swatch" style="background:#3473D3;"></div>
+                    </div>
+                </div>
+            </div>
+            <dl class="case-design-row">
+                <dt>폰트타입</dt>
+                <dd>
+                    <div class="case-font-sample">
+                        <strong>SD어그로체</strong>
+                        <em>서브 카페24 써라운드 · 본문 프리텐다드 · 영문 Pristina</em>
+                    </div>
+                    과학적 원리를 담고 있는 본문은 전문성과 가독성을 고려해 고딕체로 구성하고, 전시의 딱딱한 분위기를 완화하기 위해 둥글고 부드러운 서체와 손글씨 느낌의 영문 폰트를 조합. 체험형 전시의 즐거움과 친근한 무드를 함께 전달할 수 있도록 전체 톤을 조율함.
+                </dd>
+            </dl>
+        </section>
+
+        <section class="case-gallery">
+            <div class="case-section-head">
+                <h2>공간 그래픽 · 전시 패널</h2>
+                <p>특정한 스포츠 종목에 국한되지 않도록, 놀이의 속성(즐거움·경쟁·스릴·행운과 확률)과 그 안에 담긴 과학 원리를 벽면 패널로 풀어냈다.</p>
+            </div>
+            <div class="case-gallery-grid">
+                <figure>
+                    <img src="../images/project/almaloco/play-change/panel-intro.png" alt="놀이터1 - 놀이란 무엇인가 벽면 패널, 호모 루덴스 개념 설명">
+                    <figcaption>놀이터 1 · 놀이란 무엇인가?</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/project/almaloco/play-change/panel-sports.png" alt="PLAY&amp;SPORTS 벽면 패널 - 놀이의 속성과 놀이와 스포츠의 관계 설명">
+                    <figcaption>놀이의 속성 · 놀이와 스포츠</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="case-gallery">
+            <div class="case-section-head">
+                <h2>체험 콘텐츠 · 보드게임</h2>
+                <p>놀이터를 순서대로 돌며 사다리를 타고 오르내리는 체험형 보드게임 콘텐츠로, 벽면 패널에서 배운 과학 원리를 게임 미션과 연결해 복습하도록 구성했다.</p>
+            </div>
+            <div class="case-gallery-grid">
+                <figure>
+                    <img src="../images/project/almaloco/play-change/board.png" alt="놀이로 체인지 뱀사다리 보드게임 콘텐츠 디자인">
+                    <figcaption>뱀사다리 보드게임</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer class="case-footer">
+        <a class="btn" href="../index.html#section4">포트폴리오로 돌아가기</a>
+    </footer>
+
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var currentItems = [];
+            var currentIndex = -1;
+
+            function render() {
+                var item = currentItems[currentIndex];
+                lightboxImg.src = item.src;
+                lightboxImg.alt = item.alt;
+                lightboxCaption.textContent = item.caption;
+            }
+
+            function openLightbox(items, index) {
+                if (!items.length) return;
+                currentItems = items;
+                currentIndex = (index + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+
+            function next() {
+                currentIndex = (currentIndex + 1) % currentItems.length;
+                render();
+            }
+
+            function prev() {
+                currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+                render();
+            }
+
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLightbox);
+            document.getElementById('caseLightboxNext').addEventListener('click', next);
+            document.getElementById('caseLightboxPrev').addEventListener('click', prev);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            function initGroups(selector) {
+                document.querySelectorAll(selector).forEach(function (group) {
+                    var figures = Array.prototype.slice.call(group.querySelectorAll('figure'));
+                    var items = figures.map(function (fig) {
+                        var img = fig.querySelector('img');
+                        var captionEl = fig.querySelector('figcaption');
+                        return {
+                            src: img.getAttribute('src'),
+                            alt: img.getAttribute('alt') || '',
+                            caption: captionEl ? captionEl.textContent.trim() : (img.getAttribute('alt') || '')
+                        };
+                    });
+                    figures.forEach(function (fig, idx) {
+                        fig.addEventListener('click', function () {
+                            openLightbox(items, idx);
+                        });
+                    });
+                });
+            }
+
+            initGroups('.case-gallery-grid');
+        })();
+    </script>
+</body>
+
+</html>

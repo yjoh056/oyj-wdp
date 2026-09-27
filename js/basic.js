@@ -292,6 +292,7 @@ function filterImages(category) {
       item.style.display = 'none';
     }
   });
+  resetPortfolioSlider();
 }
 
 // 전체 이미지 다시 보이게
@@ -300,7 +301,47 @@ function showAllImages() {
   gridItems.forEach(function (item) {
     item.style.display = 'block';
   });
+  resetPortfolioSlider();
 }
+
+// 카테고리 전환 시 슬라이더를 맨 처음 위치로 되돌림
+// (display 전환 직후 CSS scroll-behavior: smooth 때문에 리셋 자체가 애니메이션으로
+// 처리되면서 레이아웃 변경(스크롤 가능 범위 변화)과 경합해 엉뚱한 위치에 멈추는
+// 경우가 있어, 리셋하는 동안만 scroll-behavior를 강제로 auto로 바꿔 즉시 이동시킨다)
+function resetPortfolioSlider() {
+  const track = document.querySelector('.portfolio-box-work');
+  if (!track) return;
+  const prevBehavior = track.style.scrollBehavior;
+  track.style.scrollBehavior = 'auto';
+  track.scrollLeft = 0;
+  requestAnimationFrame(function () {
+    track.scrollLeft = 0;
+    track.style.scrollBehavior = prevBehavior || '';
+  });
+}
+
+// 포트폴리오 갤러리 슬라이더 화살표 버튼
+(function () {
+  const track = document.querySelector('.portfolio-box-work');
+  const prevBtn = document.querySelector('.portfolio-slider-arrow.prev');
+  const nextBtn = document.querySelector('.portfolio-slider-arrow.next');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function scrollByOneStep(direction) {
+    const firstItem = track.querySelector('.work-item');
+    const itemWidth = firstItem ? firstItem.getBoundingClientRect().width : track.clientWidth * 0.8;
+    const gap = parseFloat(getComputedStyle(track).columnGap || 0) || 0;
+    track.scrollBy({ left: direction * (itemWidth + gap), behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', function () {
+    scrollByOneStep(-1);
+  });
+
+  nextBtn.addEventListener('click', function () {
+    scrollByOneStep(1);
+  });
+})();
 
 // 이미지 클릭 시 라이트박스 열기 (현재 필터에서 보이는 항목들 안에서 이전/다음 이동 가능)
 const lightbox = $("#lightbox");

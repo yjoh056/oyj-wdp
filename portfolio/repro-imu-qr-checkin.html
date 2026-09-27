@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR 출입 키오스크 · 페이지 재현 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --brand: #37579f;
+            --brand-dark: #2c4680;
+            --txt-primary: #333333;
+            --txt-sub: #666666;
+            --bg-soft: #f5f5f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #ffffff;
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .repro-topbar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 1.4rem clamp(2rem, 5vw, 4rem);
+            background: #fff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: var(--brand);
+        }
+
+        .repro-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--brand-dark);
+            background: #eef1fb;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+        }
+
+        .repro-note {
+            padding: 1.2rem clamp(2rem, 5vw, 4rem);
+            font-size: 1.3rem;
+            color: var(--txt-sub);
+            text-align: center;
+            background: #fafafa;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .w1400 {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+        .wwd {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+        /* hero */
+        .repro-hero {
+            background-color: #eef0f4;
+            background-image: linear-gradient(135deg, #eef0f4 0%, #e4e8f0 60%, #dfe4ee 100%);
+            overflow: hidden;
+        }
+
+        .repro-hero .flexBox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 6rem 0;
+        }
+
+        .repro-hero .text b.smallTitle {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--brand);
+            margin-bottom: 0.8rem;
+        }
+
+        .repro-hero .text h2 {
+            font-size: clamp(2.8rem, 4vw, 4.4rem);
+            font-weight: 800;
+            margin: 0 0 1.2rem;
+            line-height: 1.25;
+        }
+
+        .repro-hero .text p {
+            font-size: 1.6rem;
+            color: var(--txt-sub);
+            margin: 0;
+        }
+
+        .repro-hero figure {
+            margin: 0;
+            flex-shrink: 0;
+            width: min(360px, 40vw);
+        }
+
+        /* generic content section */
+        .content {
+            padding: 7rem 0;
+        }
+
+        .content.soft {
+            background: var(--bg-soft);
+        }
+
+        .cont_box1 > div {
+            display: flex;
+            align-items: center;
+            gap: 6rem;
+        }
+
+        .cont_box1 .img {
+            flex: 1 1 45%;
+        }
+
+        .cont_box1 .title {
+            flex: 1 1 45%;
+        }
+
+        .cont_box1 .title.title2 {
+            order: -1;
+        }
+
+        .content h3 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin: 0 0 1.6rem;
+        }
+
+        .content .title p {
+            font-size: 1.6rem;
+            color: var(--txt-sub);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .content3 .title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .content3 .title h3 {
+            margin: 0;
+        }
+
+        .content_box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .content_box .box {
+            width: 240px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--bg-soft);
+            border-radius: 15px;
+            padding: 3rem 1.5rem 2.5rem;
+        }
+
+        .content_box .box img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 1.6rem;
+        }
+
+        .content_box .box .txt {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--txt-primary);
+            margin: 0;
+        }
+
+        .content_box .box .txt span {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--txt-sub);
+            line-height: 1.6;
+        }
+
+        .content_box .icon img {
+            width: 32px;
+            height: auto;
+        }
+
+        /* content4: kiosk screen demo */
+        .content4 .title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .content4 .title p {
+            margin-top: 0.8rem;
+        }
+
+        .kiosk-demo {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .kiosk-demo-slide {
+            display: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 34px rgba(0, 0, 0, 0.14);
+        }
+
+        .kiosk-demo-slide.is-visible {
+            display: block;
+        }
+
+        .kiosk-demo-slide img {
+            width: 100%;
+        }
+
+        .kiosk-demo-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.6rem;
+        }
+
+        .kiosk-demo-dot {
+            cursor: pointer;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            background: rgba(0, 0, 0, 0.18);
+            transition: background-color 0.2s;
+        }
+
+        .kiosk-demo-dot.is-active {
+            background: var(--brand);
+        }
+
+        /* content5: icon grid */
+        .content5 .title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .icon_list {
+            display: flex;
+            justify-content: center;
+            gap: 2.4rem;
+            flex-wrap: wrap;
+        }
+
+        .icon_list .icon_box {
+            width: 220px;
+            background: var(--bg-soft);
+            border-radius: 15px;
+            padding: 3.5rem 1.5rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .icon_list .icon_box img {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 1.6rem;
+        }
+
+        .icon_list .icon_box .txt {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .icon_list .icon_box .txt span {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--txt-sub);
+            line-height: 1.6;
+        }
+
+        /* content6: size photos */
+        .content6 .title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .imgBox {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .imgBox img {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+        }
+
+        .case-footer {
+            padding: 6rem 0 9rem;
+            text-align: center;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--brand);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #eef1fb;
+        }
+
+        @media screen and (max-width: 760px) {
+            .repro-hero .flexBox {
+                flex-direction: column-reverse;
+                padding: 3.5rem 0;
+            }
+
+            .repro-hero figure {
+                width: 60vw;
+            }
+
+            .cont_box1 > div {
+                flex-direction: column;
+            }
+
+            .cont_box1 .title.title2 {
+                order: 0;
+            }
+
+            .content {
+                padding: 5rem 0;
+            }
+
+            .content_box .box {
+                width: 100%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="repro-topbar">
+        <a class="back-link" href="case-imu-qr-checkin.html">← 화면설계서로 돌아가기</a>
+        <span class="repro-badge">🔁 실제 서비스 페이지 재현본</span>
+    </div>
+    <p class="repro-note">imupos.com에 게시된 QR 출입 키오스크 소개 페이지를 정적으로 재현한 화면입니다. 실제 서비스 페이지의 텍스트·이미지를 기반으로 직접 코딩했습니다.</p>
+
+    <section class="repro-hero">
+        <div class="w1400">
+            <div class="flexBox">
+                <div class="text">
+                    <b class="smallTitle">IMU</b>
+                    <h2>QR 출입 키오스크</h2>
+                    <p>QR 티켓을 인식해 빠르게 입장하는 출입 전용 키오스크</p>
+                </div>
+                <figure>
+                    <img src="../images/project/imu/qr-checkin/repro/hero.png" alt="QR 출입 키오스크 제품 이미지">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="wwd">
+            <div class="cont_box1">
+                <div class="img">
+                    <img src="../images/project/imu/qr-checkin/repro/intro-1.png" alt="">
+                </div>
+                <div class="title title1">
+                    <h3>매표소부터 미술관, 시설 출입까지</h3>
+                    <p>아임유 QR 출입 키오스크는 티켓의 QR코드를 인식해 입장 가능 여부를 확인하고 방문객의 출입을 간편하게 관리할 수 있는 출입 전용 시스템입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content soft">
+        <div class="wwd">
+            <div class="cont_box1">
+                <div class="title title2">
+                    <h3>QR기반 빠른 입장 확인</h3>
+                    <p>티켓을 스캔하면 입장 가능 여부를 확인하고 방문객이 바로 입장할 수 있습니다.</p>
+                </div>
+                <div class="img">
+                    <img src="../images/project/imu/qr-checkin/repro/intro-2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content content3">
+        <div class="w1400">
+            <div class="title">
+                <h3>티켓 확인 인력 없이, 방문객 입장까지 무인으로</h3>
+            </div>
+            <div class="content_box">
+                <div class="box">
+                    <img src="../images/project/imu/qr-checkin/repro/step-1.png" alt="">
+                    <p class="txt">키오스크 티켓 발권 (연동)<span>예약 확인, 현장 구매 티켓 출력</span></p>
+                </div>
+                <div class="icon">
+                    <img src="../images/project/imu/qr-checkin/repro/arrow.png" alt="next arrow">
+                </div>
+                <div class="box">
+                    <img src="../images/project/imu/qr-checkin/repro/step-2.png" alt="">
+                    <p class="txt">QR 티켓 스캔<span>QR 출입 키오스크에 티켓을 스캔하여 입장 여부 확인</span></p>
+                </div>
+                <div class="icon">
+                    <img src="../images/project/imu/qr-checkin/repro/arrow.png" alt="next arrow">
+                </div>
+                <div class="box">
+                    <img src="../images/project/imu/qr-checkin/repro/step-3.png" alt="">
+                    <p class="txt">방문객 입장<span>티켓 인증 완료 후 입장</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content soft content4">
+        <div class="wwd">
+            <div class="title">
+                <h3>직관적인 UI로, 무인 입장을 더 쉽게</h3>
+                <p>한눈에 보이는 화면으로 승인·입장 불가 상태를 바로 확인할 수 있습니다.</p>
+            </div>
+            <div class="kiosk-demo">
+                <div class="kiosk-demo-slide is-visible" data-slide="entry">
+                    <img src="../images/project/imu/qr-checkin/repro/screen-entry.png" alt="입장 승인 화면">
+                </div>
+                <div class="kiosk-demo-slide" data-slide="noentry">
+                    <img src="../images/project/imu/qr-checkin/repro/screen-noentry.png" alt="중복입장 불가 화면">
+                </div>
+                <div class="kiosk-demo-dots">
+                    <button class="kiosk-demo-dot is-active" data-target="entry" aria-label="입장 승인 화면 보기"></button>
+                    <button class="kiosk-demo-dot" data-target="noentry" aria-label="중복입장 불가 화면 보기"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content content5">
+        <div class="wwd">
+            <div class="title">
+                <h3>문화 시설부터 무인 매장까지,<br>출입 관리가 필요한 모든 비즈니스 적용</h3>
+            </div>
+            <div class="icon_list">
+                <div class="icon_box">
+                    <img src="../images/project/imu/qr-checkin/repro/icon-museum.svg" alt="">
+                    <p class="txt">문화/전시<span>미술관, 박물관, 전시관<br>매표 연동이 필요한 공간</span></p>
+                </div>
+                <div class="icon_box">
+                    <img src="../images/project/imu/qr-checkin/repro/icon-training.svg" alt="">
+                    <p class="txt">스포츠/커뮤니티<span>무인 헬스장, 테니스장,<br>공유 오피스, 스터디카페</span></p>
+                </div>
+                <div class="icon_box">
+                    <img src="../images/project/imu/qr-checkin/repro/icon-themepark.svg" alt="">
+                    <p class="txt">레저/테마<span>테마파크, 키즈카페,<br>워터파크, 놀이시설</span></p>
+                </div>
+                <div class="icon_box">
+                    <img src="../images/project/imu/qr-checkin/repro/icon-event.svg" alt="">
+                    <p class="txt">이벤트/팝업<span>팝업스토어, 박람회,<br>이벤트 행사장, e-스포츠 경기장</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content soft content6">
+        <div class="wwd">
+            <div class="title">
+                <h3>공간에 맞게 설치 가능한 최적의 사이즈</h3>
+            </div>
+            <div class="imgBox">
+                <img src="../images/project/imu/qr-checkin/repro/size-perspective.png" alt="">
+                <img src="../images/project/imu/qr-checkin/repro/size-front.png" alt="">
+                <img src="../images/project/imu/qr-checkin/repro/size-side.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <footer class="case-footer">
+        <a class="btn" href="case-imu-qr-checkin.html">화면설계서로 돌아가기</a>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.kiosk-demo').forEach(function (demo) {
+            var dots = demo.querySelectorAll('.kiosk-demo-dot');
+            var slides = demo.querySelectorAll('.kiosk-demo-slide');
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () {
+                    var target = dot.getAttribute('data-target');
+                    dots.forEach(function (d) {
+                        d.classList.toggle('is-active', d === dot);
+                    });
+                    slides.forEach(function (s) {
+                        s.classList.toggle('is-visible', s.getAttribute('data-slide') === target);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
