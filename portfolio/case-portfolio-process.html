@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트 · 협업 프로세스 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --color-primary: #8ffb5d;
+            --color-secondary: #B4FC93;
+            --txt-primary: #424242;
+            --txt-secondary: #4BE006;
+            --bg-color: #FFFFF4;
+            --bg-color-secondary: #F8FFE3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+        .case-header {
+            padding: 7rem 0 5rem;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+        }
+
+        .back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+            margin-bottom: 3.2rem;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: var(--txt-secondary);
+        }
+
+        .case-eyebrow {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .case-header h1 {
+            margin: 0 0 1rem;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .case-sub {
+            margin: 0 0 3.6rem;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 5rem;
+        }
+
+        .case-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .case-meta span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .case-meta strong,
+        .case-meta div p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 7rem 0 3rem;
+        }
+
+        .case-intro {
+            max-width: 700px;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.8);
+            margin: 0 0 8rem;
+        }
+
+        .case-section {
+            margin: 0 0 9rem;
+        }
+
+        .case-section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 3rem;
+            margin-bottom: 1rem;
+            flex-direction: column;
+        }
+
+        .case-section-num {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--bg-color);
+            background: var(--txt-primary);
+            border-radius: 999px;
+            padding: 0.3rem 1.1rem;
+            white-space: nowrap;
+        }
+
+        .case-section h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-desc {
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--color-secondary);
+            margin-left: 0.9rem;
+        }
+
+        .process-step {
+            position: relative;
+            padding: 0 0 0 2.4rem;
+        }
+
+        .process-step:before {
+            content: "";
+            position: absolute;
+            left: -0.45rem;
+            top: 0.4rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 2px solid var(--bg-color);
+        }
+
+        .process-label {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 0.4rem;
+        }
+
+        .process-step p {
+            margin: 0;
+            font-size: 1.5rem;
+            max-width: 680px;
+        }
+
+        .process-step.is-choice {
+            background: var(--bg-color-secondary);
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem 1.4rem 2.6rem;
+            margin-left: -0.2rem;
+        }
+
+        .process-step.is-choice:before {
+            left: -0.65rem;
+            background: var(--txt-secondary);
+        }
+
+        .case-footer {
+            padding: 6rem 0 9rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--txt-secondary);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            margin: 0 0.6rem;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-header {
+                padding: 4.5rem 0 3rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .case-meta {
+                gap: 2rem 3.5rem;
+            }
+
+            .case-section {
+                margin-bottom: 6rem;
+            }
+
+            .btn {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="case-header">
+        <div class="wrap">
+            <a class="back-link" href="../index.html#imu2">← 포트폴리오로 돌아가기</a>
+            <span class="case-eyebrow">Publisher Project · AI 협업</span>
+            <h1>포트폴리오 사이트 협업 프로세스</h1>
+            <p class="case-sub">이 사이트를 Claude와 함께 고쳐나가는 과정에서 실제로 있었던 문제 발견 → 검토 → 선택의 기록</p>
+            <div class="case-meta">
+                <div><span>작업기간</span>
+                    <p>2023. 09 ~ 진행중</p>
+                </div>
+                <div><span>협업 도구</span>
+                    <p>Claude Code</p>
+                </div>
+                <div><span>협업 방식</span>
+                    <p>요구사항 정의 → AI 구현 지시 → 결과 검증 및 반려·재지시</p>
+                </div>
+                <div><span>본인 기여도</span>
+                    <p>100% (기획·판단·검증)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <p class="case-intro">아래 네 가지는 실제로 이 사이트를 개선하면서 마주친 문제들이다. AI에게 구현을 맡기더라도 무엇이 문제인지 정의하고, 어떤 방향으로 풀지 판단하고, 여러 대안 중 하나를
+            선택하는 건 결국 사람의 몫이었다. 그 판단의 과정을 그대로 남겨둔다.</p>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">01</span>
+                <h2>프로젝트 분류 기준 재정립</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="process-label">문제 발견</span>
+                    <p>포트폴리오 사이트 자체를 새 프로젝트로 추가하려다, "이걸 대체 어느 카테고리에 넣어야 하나"라는 분류 기준 자체의 공백을 발견했다. 기존에는 프로젝트가 만들어진
+                        출처(회사·학원)로만 나뉘어 있었다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">검토한 방안</span>
+                    <p>직접 코드로 퍼블리싱했는지를 기준으로 나누는 "만든 기준"과, 어디서 한 작업인지를 기준으로 나누는 "출처 기준" 두 방향을 비교했다.</p>
+                </div>
+                <div class="process-step is-choice">
+                    <span class="process-label">선택</span>
+                    <p>포트폴리오를 보는 사람(채용 담당자)이 궁금한 건 "이 사람이 무엇을 만들 수 있는가"라고 판단해 만든 기준을 선택했다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">결과</span>
+                    <p>Publisher Project / Designer Project / UI-UX Case Study 세 카테고리로 재정의하고, QR 출입 키오스크를 포함한 프로젝트 카드 전체를 새
+                        기준에 맞게 재배치했다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">02</span>
+                <h2>포트폴리오 사이트를 프로젝트로 편입</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="process-label">문제 발견</span>
+                    <p>이미 올라가 있는 프로젝트들은 전부 AI와의 협업 없이 진행한 작업들이라, 실무에서 AI를 어떻게 활용하는지 보여줄 사례가 하나도 없었다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">검토한 방안</span>
+                    <p>AI 협업을 보여주기 위한 새 프로젝트를 따로 기획해서 추가할지, 지금 진행 중인 작업을 그대로 소재로 쓸지 고민했다.</p>
+                </div>
+                <div class="process-step is-choice">
+                    <span class="process-label">선택</span>
+                    <p>마침 이 사이트 자체를 Claude와 협업하며 고쳐나가고 있었기 때문에, 그 과정 자체가 가장 진솔한 소재라고 판단해 포트폴리오 사이트를 프로젝트로 편입하기로
+                        했다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">결과</span>
+                    <p>Publisher Project 02로 추가하고, "요구사항 정의 → AI 구현 지시 → 결과 검증 및 반려·재지시"라는 협업 방식을 카드 설명에 명시했다. 지금 보고
+                        있는 이 페이지도 그 협업 기록의 일부다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">03</span>
+                <h2>Project 서브메뉴 추가</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="process-label">문제 발견</span>
+                    <p>프로젝트 카테고리가 늘어나면서 PROJECT 섹션 전체 길이가 길어졌고, 원하는 카테고리를 찾으려면 계속 스크롤해야 하는 불편이 예상됐다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">검토한 방안</span>
+                    <p>사이드 내비게이션을 지금 그대로 둘지, 카테고리별로 바로 이동할 수 있는 하위 메뉴를 추가할지 검토했다.</p>
+                </div>
+                <div class="process-step is-choice">
+                    <span class="process-label">선택</span>
+                    <p>상단 GNB와 사이드 내비게이션 양쪽에 Publisher·Designer·UI/UX 카테고리로 바로 이동하는 서브메뉴를 추가하기로 했다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">결과</span>
+                    <p>마우스 오버·클릭 시 펼쳐지는 서브메뉴 UI를 구현해, 데스크톱과 모바일 내비게이션 양쪽에 동일하게 적용했다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">04</span>
+                <h2>화면설계서 뒤로가기 UX 개선</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="process-label">문제 발견</span>
+                    <p>직접 화면설계서 페이지를 열어보고 "포트폴리오로 돌아가기"를 눌렀더니, 보고 있던 카드가 아니라 PROJECT 섹션 맨 위로 이동해 다시 스크롤해야 하는 불편을
+                        발견했다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">검토한 방안</span>
+                    <p>원인을 살펴보니 모든 화면설계서 페이지의 뒤로가기 링크가 섹션 공용 앵커 하나를 공유하고 있었다. 카드마다 개별 앵커를 부여하는 방식을 검토했다.</p>
+                </div>
+                <div class="process-step is-choice">
+                    <span class="process-label">선택</span>
+                    <p>프로젝트 카드 전체에 고유 id를 부여하고, 각 화면설계서 페이지의 뒤로가기 링크가 자신이 속한 카드로 정확히 돌아가도록 수정하기로 했다.</p>
+                </div>
+                <div class="process-step">
+                    <span class="process-label">결과</span>
+                    <p>어떤 화면설계서를 보고 돌아와도 원래 보던 카드 위치로 바로 복귀한다. 고정 내비게이션에 가리지 않도록 여백도 함께 조정했다.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="case-footer">
+        <a class="btn" href="../index.html#imu2">포트폴리오로 돌아가기</a>
+    </footer>
+
+</body>
+
+</html>

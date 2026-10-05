@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVER + Shopping · 홈 메뉴 정보구조 개선 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --color-primary: #8ffb5d;
+            --color-secondary: #B4FC93;
+            --txt-primary: #424242;
+            --txt-secondary: #4BE006;
+            --bg-color: #FFFFF4;
+            --bg-color-secondary: #F8FFE3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        body {
+            word-break: keep-all;
+        }
+
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+        .case-header {
+            padding: 7rem 0 5rem;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+        }
+
+        .back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+            margin-bottom: 3.2rem;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            color: var(--txt-secondary);
+        }
+
+        .case-eyebrow {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .case-header h1 {
+            margin: 0 0 1rem;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+        .case-sub {
+            margin: 0 0 3.6rem;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 5rem;
+        }
+
+        .case-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .case-meta span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .case-meta strong,
+        .case-meta div p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        main {
+            padding: 7rem 0 3rem;
+        }
+
+        .case-slide {
+            margin: 0 0 8rem;
+        }
+
+        .case-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
+        }
+
+        .case-section {
+            margin: 0 0 11rem;
+        }
+
+        .case-section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 3rem;
+            margin-bottom: 1rem;
+            flex-direction: column;
+        }
+
+        .case-section-num {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--bg-color);
+            background: var(--txt-primary);
+            border-radius: 999px;
+            padding: 0.3rem 1.1rem;
+            white-space: nowrap;
+        }
+
+        .case-section h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .case-section-desc {
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
+        }
+
+        .case-section .case-slide {
+            margin-bottom: 3rem;
+        }
+
+        .case-footer {
+            padding: 6rem 0 9rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--txt-secondary);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            margin: 0 0.6rem;
+        }
+
+        .btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .case-slide .cap {
+            margin: 1.2rem 0 0;
+            font-size: 1.3rem;
+            color: rgba(66, 66, 66, 0.6);
+            padding-left: 0.5rem;
+        }
+
+        .obs-list,
+        .plain-list {
+            list-style: none;
+            margin: 0 0 3rem;
+            padding: 0 0 0 0.5rem;
+            max-width: 720px;
+        }
+
+        .obs-list li {
+            padding: 1.6rem 0;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+            font-size: 1.5rem;
+        }
+
+        .obs-list li strong {
+            display: block;
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .statement {
+            margin: 0 0 3rem;
+            padding: 2.4rem 2.8rem;
+            background: var(--bg-color-secondary);
+            border-left: 4px solid var(--txt-secondary);
+            border-radius: 0 12px 12px 0;
+            font-size: 1.9rem;
+            font-weight: 700;
+            line-height: 1.6;
+            max-width: 720px;
+        }
+
+        .plain-list li {
+            position: relative;
+            padding: 0.5rem 0 0.5rem 1.6rem;
+            font-size: 1.5rem;
+        }
+
+        .plain-list li:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 1.45rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: var(--color-primary);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 8px 30px rgba(66, 66, 66, 0.08);
+        }
+
+        .card .num {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.6rem;
+        }
+
+        .card h3 {
+            margin: 0 0 0.8rem;
+            font-size: 1.7rem;
+            line-height: 1.4;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .card .items {
+            margin-bottom: 1.4rem;
+        }
+
+        .card .purpose {
+            font-weight: 700;
+            color: var(--txt-primary);
+        }
+
+        .compare-label {
+            display: inline-block;
+            margin: 0 0 1rem 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .order-line {
+            margin: 3rem 0 1.6rem;
+            padding: 1.8rem 2.2rem;
+            border: 2px solid var(--color-secondary);
+            border-radius: 12px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .order-line span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .rationale {
+            margin: 0 0 1.4rem;
+            max-width: 720px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.8);
+            padding-left: 0.5rem;
+        }
+
+        @media screen and (max-width: 700px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statement {
+                font-size: 1.6rem;
+                padding: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-header {
+                padding: 4.5rem 0 3rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .case-meta {
+                gap: 2rem 3.5rem;
+            }
+
+            .case-section {
+                margin-bottom: 7rem;
+            }
+
+            .btn {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="case-header">
+        <div class="wrap">
+            <a class="back-link" href="../index.html#p6">← 포트폴리오로 돌아가기</a>
+            <span class="case-eyebrow">UI/UX Case Study</span>
+            <h1>NAVER + Shopping</h1>
+            <p class="case-sub">홈 상단 메뉴 정보구조 개선 · 기존 서비스 분석 및 개선안 제시</p>
+            <div class="case-meta">
+                <div><span>Tool</span>
+                    <p>Figma, Photoshop</p>
+                </div>
+                <div><span>분석 범위</span>
+                    <p>홈 메인 상단 메뉴 영역</p>
+                </div>
+                <div><span>제외 범위</span>
+                    <p>전체 IA 개편, 개별 카테고리 페이지 리디자인</p>
+                </div>
+                <div><span>유형</span>
+                    <p>분석 + 개선안 (구현 없음)</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">01</span>
+                <h2>Context &amp; Observation</h2>
+            </div>
+            <p class="case-section-desc">홈 상단 메뉴가 &lsquo;많아서 문제&rsquo;가 아니라, 분류 기준이 드러나지 않아 탐색 부담이 생기는 문제에 집중했다. 아래 빨간 박스가 분석 대상이다.</p>
+            <div class="case-slide">
+                <img src="../images/project/naver-plus/01-context.jpg" alt="네이버플러스 스토어 홈 화면. 상단 메뉴와 아이콘 메뉴 영역이 빨간 박스로 표시되어 있다">
+                <p class="cap">분석 대상 &mdash; 홈 상단 메뉴와 아이콘 메뉴 영역</p>
+            </div>
+            <ul class="obs-list">
+                <li><strong>높은 인지 부하</strong>사용자가 메뉴를 훑을 때 &ldquo;여기는 혜택, 저기는 배송, 저기는 옷&hellip;&rdquo;이라며 머릿속으로 다시 분류해야 한다.</li>
+                <li><strong>위계 질서 부재</strong>&lsquo;쿠폰/혜택&rsquo;과 &lsquo;마르디(특정 브랜드)&rsquo;가 동등한 위계로 놓여 있어 메뉴의 중요도를 파악하기 어렵다.</li>
+                <li><strong>스캐너빌리티 저하</strong>눈으로 빠르게 훑어 원하는 메뉴를 찾기가 어렵다.</li>
+            </ul>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">02</span>
+                <h2>Problem Definition</h2>
+            </div>
+            <p class="statement">네이버쇼핑 홈 상단 메뉴는 메뉴 수 자체보다 메뉴의 성격을 예측할 수 없는 구조로 인해, 사용자가 스크롤 이전에 탐색 전략을 세우기 어렵다.</p>
+            <ul class="plain-list">
+                <li>카테고리 / 테마 / 혜택 / 기능 진입점이 혼재되어 있고 중복 노출된다.</li>
+                <li>동일한 기능이 상단 메뉴와 메인 콘텐츠에 반복되어 우선순위 신호가 부족하다.</li>
+                <li>왜 이 순서인지 사용자가 추론할 수 없다.</li>
+            </ul>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">03</span>
+                <h2>Design Principle &amp; Strategy</h2>
+            </div>
+            <p class="case-section-desc">메뉴를 줄이는 대신, 메뉴가 어떤 성격인지 먼저 드러나도록 세 가지 원칙을 세웠다.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="num">01</span>
+                    <h3>메뉴는 &lsquo;줄이지 않고&rsquo;, 성격을 드러낸다</h3>
+                    <p>각 메뉴의 역할을 숨기지 않고, 같은 성격끼리 시각적으로 묶는다.</p>
+                </div>
+                <div class="card">
+                    <span class="num">02</span>
+                    <h3>홈 진입 메뉴와 콘텐츠 메뉴를 구분한다</h3>
+                    <p>홈으로 연결되는 메뉴는 &ldquo;카테고리 대체&rdquo;가 아님을 명확히 한다.</p>
+                </div>
+                <div class="card">
+                    <span class="num">03</span>
+                    <h3>상단 메뉴는 탐색의 시작점까지만 담당한다</h3>
+                    <p>상세 탐색은 메인 콘텐츠에 위임한다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-section">
+            <div class="case-section-head">
+                <span class="case-section-num">04</span>
+                <h2>Home Navigation Structure Redesign</h2>
+            </div>
+            <p class="case-section-desc">메뉴를 탐색 목적에 따라 세 갈래로 분류하고, 사용자가 먼저 찾을 만한 순서로 재배열했다.</p>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>브랜드 &amp; 스토어</h3>
+                    <p class="items">컬리N마트, 마르디 입점, 하이엔드</p>
+                    <p class="purpose">브랜드 중심의 독립 쇼핑 경험 제공</p>
+                </div>
+                <div class="card">
+                    <h3>큐레이션 &amp; 테마 홈</h3>
+                    <p class="items">스토어랭킹, 선물샵, 오늘끝딜, 베스트, 슈퍼특가, 쇼핑라이브, 지금배달, 기획전, 슈퍼적립 / 홈, 패션뷰티, 푸드윈도, 신학기가구, 패션타운, 미스터</p>
+                    <p class="purpose">주제별·상황별로 편집된 쇼핑 홈 진입점</p>
+                </div>
+                <div class="card">
+                    <h3>혜택 &amp; 멤버십</h3>
+                    <p class="items">쿠폰·혜택, 쿠폰팩매일발급, 친구초대, N배송</p>
+                    <p class="purpose">회원 대상 혜택 및 리워드 기능 진입</p>
+                </div>
+            </div>
+
+            <span class="compare-label">BEFORE</span>
+            <div class="case-slide">
+                <img src="../images/project/naver-plus/02-before.jpg" alt="개선 전 네이버플러스 스토어 홈 상단 메뉴">
+            </div>
+            <span class="compare-label">AFTER &mdash; Reordering Navigation with Cognitive Priority</span>
+            <div class="case-slide">
+                <img src="../images/project/naver-plus/03-after.jpg" alt="인지 우선순위에 따라 재배열한 홈 상단 메뉴">
+            </div>
+
+            <div class="order-line"><span>제안 메뉴 순서</span>홈 | 오늘끝딜 · 슈퍼적립 · 베스트 | 컬리N마트 · 마르디 · 하이엔드 · 쇼핑라이브 | 패션뷰티 · 푸드윈도 · 미스터 · 선물샵 · 기획전 | N배송 · 지금배달 · 쿠폰/혜택</div>
+            <p class="rationale">사용자가 가장 먼저 찾을 것으로 예상되는 끝딜·특가를 앞에 배치해 쇼핑의 방향을 잡아준다. 전략적으로 밀고 있는 타 브랜드와의 협업을 그다음에 두어 주의를 끌고, 큐레이션 페이지와 혜택 관련 페이지는 정렬해 시각적으로 정리했다.</p>
+            <p class="rationale">홈의 추가 아이콘 메뉴에는 시간성·보상성이 강한 기능을 상단 네비게이션과 홈 영역에 중복 노출해 접근성을 높인다.</p>
+        </section>
+    </main>
+
+    <footer class="case-footer">
+        <a class="btn" href="../index.html#p6">포트폴리오로 돌아가기</a>
+    </footer>
+
+</body>
+
+</html>

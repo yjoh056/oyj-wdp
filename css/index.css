@@ -1030,6 +1030,10 @@ section:last-of-type {
   color: #4BE006;
   font-weight: 400;
 }
+.resume-list-item .ex-list-table td.h6 {
+  white-space: nowrap;
+  vertical-align: top;
+}
 .resume-list-item th,
 .resume-list-item td {
   padding-bottom: 1rem;
@@ -1805,3 +1809,71 @@ section:last-of-type {
 }
 
 /*# sourceMappingURL=index.css.map */
+
+/* mobile readability: center the intro/experience cards, stack the resume tables */
+@media screen and (max-width: 700px) {
+  .infor-cards {
+    box-sizing: border-box;
+    padding: 2rem 2.4rem 0;
+  }
+  .infor .card-content-txt {
+    word-break: keep-all;
+  }
+  .resume-list-item .resume-list-table,
+  .resume-list-item .resume-list-table tbody {
+    display: grid;
+    width: 100%;
+  }
+  .resume-list-item .resume-list-table tbody {
+    grid-template-columns: 1fr auto;
+    column-gap: 1.5rem;
+    align-items: baseline;
+  }
+  .resume-list-item .resume-list-table tr {
+    display: contents;
+  }
+  .resume-list-item .resume-list-table th {
+    width: auto;
+    padding-right: 0;
+    text-align: left;
+  }
+  .resume-list-item .resume-list-table tr:nth-child(1) th {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .resume-list-item .resume-list-table tr:nth-child(2) th {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .resume-list-item .resume-list-table tr:nth-child(2) th br {
+    display: none;
+  }
+  .resume-list-item .resume-list-table tr:nth-child(1) td {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .resume-list-item .resume-list-table tr:nth-child(2) td {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+  .resume-list-item .resume-list-table td {
+    word-break: keep-all;
+  }
+  .resume-list-item .ex-list-table,
+  .resume-list-item .ex-list-table tbody,
+  .resume-list-item .ex-list-table tr,
+  .resume-list-item .ex-list-table th,
+  .resume-list-item .ex-list-table td {
+    display: block;
+    width: 100%;
+  }
+  .resume-list-item .ex-list-table th {
+    padding-right: 0;
+    padding-bottom: 0.4rem;
+  }
+  .resume-list-item .ex-list-table td {
+    word-break: keep-all;
+  }
+}
