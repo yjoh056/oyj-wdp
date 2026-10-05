@@ -319,6 +319,42 @@
             color: rgba(66, 66, 66, 0.6);
         }
 
+        .case-logo-set {
+            flex: 0 0 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-logo-set figure {
+            margin: 0;
+        }
+
+        .case-logo-set img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(66, 66, 66, 0.16);
+            cursor: zoom-in;
+        }
+
+        .case-logo-set figcaption {
+            margin-top: 0.6rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-fig-note {
+            margin: 0.3rem 0 0;
+            text-wrap: balance;
+            word-break: keep-all;
+            font-size: 1.3rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
         .case-kiosk-subhead {
             font-size: 1.7rem;
             font-weight: 800;
@@ -642,10 +678,20 @@
                     <div><dt>Result</dt><dd>수난체험센터의 특성과 기관 요청사항을 반영하여 신뢰성과 기능성을 모두 갖춘 시그니처 로고를 완성. 현재 기관의 공식 로고로 다양한 매체에 적용 중이며, 시각 정체성 구축에 기여.</dd></div>
                     <div><dt>로고 의미</dt><dd>전체를 감싸는 흰색 원은 실제 물이 존재하는 체험 공간으로서의 센터 역할을 상징하며 '공간의 수용성'을 시각화. 'ㅅ' 모양의 오브젝트는 구명보트 전면부 형상을 모티브로 해 구조와 안전을 의미하고, 컬러는 관할 소방기관인 충북안전체험관의 CI와 아이덴티티를 유지. 물을 형상화한 물결 모양은 수난체험센터의 특징인 실제 물 안에서의 체험 콘텐츠를 표현하며, 하늘색·파란색·초록색·청록색은 각각 센터·항공·육지·해상을 의미하는 4캐릭터의 대표 색상.</dd></div>
                 </dl>
-                <figure class="case-kiosk-hero">
-                    <img src="../images/project/almaloco/water-safety/logo-signatures.png" alt="수난체험센터 로고 시그니처 - Primary Signature, Signage Version, Logotype Only">
-                    <figcaption>로고 시그니처 종류</figcaption>
-                </figure>
+                <div class="case-logo-set">
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/logo-primary.png" alt="수난체험센터 로고 - Primary Signature">
+                        <figcaption>Primary Signature</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/logo-signage.png" alt="수난체험센터 로고 - Signage Version">
+                        <figcaption>Signage Version</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/project/almaloco/water-safety/logo-logotype.png" alt="수난체험센터 로고 - Logotype Only">
+                        <figcaption>Logotype Only</figcaption>
+                    </figure>
+                </div>
             </div>
 
             <h3 class="case-kiosk-subhead">컬러 시스템</h3>
@@ -677,6 +723,7 @@
                 <figure>
                     <img src="../images/project/almaloco/water-safety/logo-vertical.png" alt="수난체험센터 세로형(Vertical) 로고 시그니처">
                     <figcaption>Vertical Signature</figcaption>
+                    <p class="case-fig-note">격동고딕2 기반 커스텀 / 자소 변형 (ㅅ, ㄴ, 터)</p>
                 </figure>
                 <figure>
                     <img src="../images/project/almaloco/water-safety/install-signage-tile.png" alt="현장 타일 벽면에 적용된 주의 안내 사이니지 실사 사진">
@@ -974,6 +1021,7 @@
             }
 
             initStandaloneFigures('.case-kiosk-hero');
+            initGroups('.case-logo-set');
             initGroups('.case-kiosk-flow-grid');
             initGroups('.case-gallery-grid');
         })();
