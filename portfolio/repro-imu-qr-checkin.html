@@ -4,568 +4,1197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR 출입 키오스크 · 페이지 재현 | 오예주 포트폴리오</title>
+    <title>QR 출입 키오스크 · 실제 페이지 재현본 | 오예주 포트폴리오</title>
     <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Roboto:wght@400;500;700&display=swap">
     <style>
-        :root {
-            --brand: #37579f;
-            --brand-dark: #2c4680;
-            --txt-primary: #333333;
-            --txt-sub: #666666;
-            --bg-soft: #f5f5f5;
-        }
+        /* ==== 아임유 원본 CSS에서 이 페이지에 쓰이는 규칙만 추출 (base / common / main / sub / media, 원본 순서 유지) ==== */
+        
 
         * {
-            box-sizing: border-box;
+        	max-height: 1000000px;
+        	box-sizing: border-box;
+        }
+
+        html,
+        body {
+        	margin: 0;
+        	padding: 0;
+        	word-break: keep-all;
+        	font-size: 62.5%;
+        	
+        	font-family: "Roboto", "Outfit", "Noto Sans KR", "Noto Sans JP", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"; 
         }
 
         body {
-            margin: 0;
-            background-color: #ffffff;
-            color: var(--txt-primary);
-            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
-            line-height: 1.6;
+        	-webkit-text-size-adjust: none;
         }
 
-        a {
-            color: inherit;
+        html,
+        body {
+        	color: #666666;
+        }
+
+        article,
+        figure,
+        section {
+        	display: block;
         }
 
         img {
-            max-width: 100%;
-            display: block;
+        	display: inline-block;
         }
 
-        .repro-topbar {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            padding: 1.4rem clamp(2rem, 5vw, 4rem);
-            background: #fff;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        button {
+        	padding: 0;
+        	outline: none;
         }
 
-        .back-link {
-            display: flex;
-            width: max-content;
-            align-items: center;
-            gap: 0.4rem;
-            text-decoration: none;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--txt-primary);
-            opacity: 0.7;
+        body,
+        a,
+        button {
+        	line-height: 1;
         }
 
-        .back-link:hover {
-            opacity: 1;
-            color: var(--brand);
+        a {
+        	outline: none;
+        	select-dummy: expression(this.hideFocus=true);
         }
 
-        .repro-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--brand-dark);
-            background: #eef1fb;
-            padding: 0.6rem 1.4rem;
-            border-radius: 999px;
+        div,
+        h2,
+        h3,
+        h5,
+        p,
+        ul {
+        	margin: 0;
+        	padding: 0;
         }
 
-        .repro-note {
-            padding: 1.2rem clamp(2rem, 5vw, 4rem);
-            font-size: 1.3rem;
-            color: var(--txt-sub);
-            text-align: center;
-            background: #fafafa;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        h2,
+        h3,
+        h5 {
+        	font-size: 100%;
+        	font-weight: normal;
+        }
+
+        ul {
+        	list-style: none;
+        }
+
+        img {
+        	max-width: 100%;
+        	max-height: 100%;
+        }
+
+        img {
+        	border: none;
+        }
+
+        img {
+        	vertical-align: top;
+        }
+
+        button {
+        	border: none;
+        	background: transparent;
+        }
+
+        button {
+        	cursor: pointer;
+        }
+
+        button {
+        	font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        a:link {
+        	color: #666;
+        	text-decoration: none;
+        }
+
+        a:active {
+        	color: #666;
+        	text-decoration: none;
+        }
+
+        a:visited {
+        	color: #666;
+        	text-decoration: none;
+        }
+
+        a:hover {
+        	color: #666;
+        	text-decoration: none;
+        }
+
+        button,
+        button:focus {
+          border: none;
+          outline: none;
+          resize: none;
+        }
+
+        * {
+          line-height: 1.2;
+          letter-spacing: -0.025em;
+        }
+
+        html,
+        body {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+
+        a,
+        a:link,
+        a:hover,
+        a:focus,
+        a:active {
+          text-decoration: none;
+          
+        }
+
+        #wrap {
+          width: 100%;
+          max-width: 100%;
+          font-size: 1.6rem;
+          line-height: 1.2;
+
+        }
+
+        .wwd{
+        	max-width: 100vw;
+        	margin: 0 auto;
+        	padding: 0 20px;
         }
 
         .w1400 {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 clamp(2rem, 5vw, 4rem);
+          width: 100%;
+          height: 100%;
+          max-width: 1400px;
+          margin: 0 auto;
         }
 
-        .wwd {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 clamp(2rem, 5vw, 4rem);
+        .flexBox {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
         }
 
-        /* hero */
-        .repro-hero {
-            background-color: #eef0f4;
-            background-image: linear-gradient(135deg, #eef0f4 0%, #e4e8f0 60%, #dfe4ee 100%);
-            overflow: hidden;
+        .flexBox {
+          display: flex;
         }
 
-        .repro-hero .flexBox {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-            padding: 6rem 0;
+        .font38 {
+          font-size: 3.8rem;
         }
 
-        .repro-hero .text b.smallTitle {
-            display: block;
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 0.05em;
-            color: var(--brand);
-            margin-bottom: 0.8rem;
+        .font70 {
+          font-size: 7rem;
         }
 
-        .repro-hero .text h2 {
-            font-size: clamp(2.8rem, 4vw, 4.4rem);
-            font-weight: 800;
-            margin: 0 0 1.2rem;
-            line-height: 1.25;
+        #subWrap {
+          position: relative;
+          margin: 0 auto;
         }
 
-        .repro-hero .text p {
-            font-size: 1.6rem;
-            color: var(--txt-sub);
-            margin: 0;
+        b.smallTitle {
+          color: #37579f;
+          font-size: 1.4rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          font-family: "Roboto", sans-serif;
         }
 
-        .repro-hero figure {
-            margin: 0;
+        .main {
+          width: 100%;
+          height: calc(100vh - 300px);
+
+          background: #e9e9e9;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+
+        .main b.smallTitle {
+          font-size: 1.7rem;
+        }
+        .main .flexBox {
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          overflow: hidden;
+        }
+
+        .main .flexBox > div {
+          width: 50%;
+        }
+
+        .main .text {
+          padding: 35px 0 0;
+        }
+
+        .main .text h2 {
+          color: #222;
+          font-weight: 700;
+          line-height: 1.2;
+          margin: 40px 0;
+        }
+
+        .main .text p {
+          color: #444;
+          font-size: 1.7rem;
+          line-height: 1.7142;
+        }
+
+        .kiposTop {
+          width: 100%;
+          height: 60px;
+          background: #000000;
+        }
+
+        .kiposTop * {
+          height: 100%;
+        }
+
+        .kiposTop .flexBox {
+          justify-content: space-between;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .logo_imu {
+          width: auto;
+          height: 25px;
+          margin: 17px;
+        }
+
+        .paddingBox {
+          padding: 150px 0;
+        }
+
+        .content .title {
+          text-align: center;
+        }
+        .content .title h3 {
+          color: #222;
+          margin: 25px 0 20px;
+          font-weight: bold;
+        }
+        .content .title p {
+          color: #666;
+          font-size: 2rem;
+          line-height: 1.75;
+        }
+        .content .title2 p {
+          color: #444;
+          font-size: 2rem;
+        }
+
+        .title p {
+          font-size: 2rem;
+        }
+
+        figure{margin: 0;}
+        .wauto{width: auto;}
+
+        @media (max-width: 1800px) {
+
+        }
+
+        @media (max-width: 1600px) {
+
+        	.font38 {
+        		font-size: 3.0rem;
+        	}
+
+        	.font70 {
+        		font-size: 5.2rem;
+        	}
+
+        	.kiposTop>.w1400 {
+        		padding: 0;
+        	}
+
+        }
+
+        @media (max-width: 1400px) {
+
+        	.w1400 {
+        		padding: 0 20px;
+        		word-break: keep-all;
+        		overflow-wrap: break-word;
+        	}
+
+        }
+
+        @media (max-width: 1200px) {
+
+        	html,
+        	body {
+        		font-size: 56.25%;
+        	}
+
+        	.font38 {
+        		font-size: 3.8rem;
+        		line-height: 1.2;
+        		word-break: keep-all;
+        		overflow-wrap: break-word;
+        		hyphens: auto;
+        	}
+
+        	.paddingBox {
+        		padding: 100px 0;
+        	}
+
+        }
+
+        @media (max-width: 1100px) {
+
+        	.main {
+        		height: calc(100vh - 180px);
+        	}
+
+        }
+
+        @media (max-width: 960px) {
+
+        }
+
+        @media (max-width: 768px) {
+
+        	.font70 {
+        		font-size: 3.8rem;
+        	}
+
+        }
+
+        @media (max-width: 640px) {
+
+        	.font70 {
+        		font-size: 2.8rem;
+        	}
+
+        	.paddingBox {
+        		padding: 60px 0;
+        	}
+
+        }
+
+        @media (max-width: 580px) {
+
+        }
+
+        @media (max-width: 420px) {
+
+        	html,
+        	body {
+        		font-size: 50%;
+        	}
+
+        }
+
+        .wwd{
+        	max-width: 100vw;
+        	margin: 0 auto;
+        	padding: 0 20px;
+        }
+        #admission .paddingBox {
+        padding: 80px 0;
+        	}
+        .qradmission .main {
+            background-image: url(../images/project/imu/qr-checkin/repro/hero-bg.jpg);
+        	overflow: hidden;
+            position: relative;
+        }
+
+        .qradmission .main figure {
+        	width: auto;
             flex-shrink: 0;
-            width: min(360px, 40vw);
+            align-self: center;
+            margin-top: 65vh;
         }
 
-        /* generic content section */
-        .content {
-            padding: 7rem 0;
+        .qradmission .main figure img {
+            height: clamp(500px, 55vw, 1400px);
+            width: auto;
+            max-width: none;
+            object-fit: unset;
+            display: block;
         }
 
-        .content.soft {
-            background: var(--bg-soft);
+        .qradmission .main .flexBox {
+            align-items: flex-end;
+        }
+
+        .qradmission .main .text {
+            align-self: center;
+            padding-bottom: 60px;
+        }
+
+        .content2,
+        .content4,
+        .content6 {
+            background: #f5f5f5;
         }
 
         .cont_box1 > div {
             display: flex;
             align-items: center;
-            gap: 6rem;
+        	gap: 20rem;
+            margin: auto;
+        }
+
+        .flex_box{
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	width: 100%;
+        }
+
+        .title1 {
+            text-align: left !important;
+        }
+
+        .title2 {
+        	text-align: right !important;
+        	min-width: 35%;
         }
 
         .cont_box1 .img {
-            flex: 1 1 45%;
+            display: flex;
+            justify-content: flex-end;
         }
 
-        .cont_box1 .title {
-            flex: 1 1 45%;
+        h3 {
+            line-height: 1.4444;
+            margin: 15px 0;
         }
 
-        .cont_box1 .title.title2 {
-            order: -1;
+        .colfff,
+        .content .title .colfff{
+        	color: #fff;
         }
 
-        .content h3 {
-            font-size: 2.6rem;
-            font-weight: 800;
-            line-height: 1.4;
-            margin: 0 0 1.6rem;
-        }
-
-        .content .title p {
+        .txt {
             font-size: 1.6rem;
-            color: var(--txt-sub);
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .content3 .title {
+            font-weight: bold;
+            color: #555;
             text-align: center;
-            margin-bottom: 5rem;
+            line-height: 1.4;
+            margin-top: 30px;
         }
 
-        .content3 .title h3 {
-            margin: 0;
+        .txt span {
+        	font-size: 1.4rem;
+        	font-weight: normal;
+        	color: #777;
+        	line-height: 1.6;
+        }
+        .title {
+        	min-width: 40%;
+        }
+
+        .title p {
+            font-size: 1.8rem;
+        	color: #666;
+            line-height: 1.75;
+        }
+
+        .flex{
+        	display: flex;
+        	gap: 16rem;
+        }
+        .br{display: none;}
+
+        .content_box h5 {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            font-weight: bold;
+            color: #fff;
+            line-height: 50px;
+            border-radius: 25px;
+            display: inline-block;
+            text-align: center;
+            font-size: 2rem;
+            background: #37579f;
+            width: auto;
+            min-width: 135px;
+            padding: 0 30px;
+            white-space: nowrap;
         }
 
         .content_box {
+            margin-top: 110px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .content_box .box {
-            width: 240px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: var(--bg-soft);
-            border-radius: 15px;
-            padding: 3rem 1.5rem 2.5rem;
-        }
-
-        .content_box .box img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            margin-bottom: 1.6rem;
-        }
-
-        .content_box .box .txt {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--txt-primary);
-            margin: 0;
-        }
-
-        .content_box .box .txt span {
-            display: block;
-            margin-top: 0.6rem;
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--txt-sub);
-            line-height: 1.6;
-        }
-
-        .content_box .icon img {
-            width: 32px;
-            height: auto;
-        }
-
-        /* content4: kiosk screen demo */
-        .content4 .title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .content4 .title p {
-            margin-top: 0.8rem;
-        }
-
-        .kiosk-demo {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .kiosk-demo-slide {
-            display: none;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 34px rgba(0, 0, 0, 0.14);
-        }
-
-        .kiosk-demo-slide.is-visible {
-            display: block;
-        }
-
-        .kiosk-demo-slide img {
             width: 100%;
+            padding: 60px 20px;
+            background: #f5f5f5;
+            border-radius: 15px;
+            position: relative;
         }
 
-        .kiosk-demo-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-top: 1.6rem;
-        }
-
-        .kiosk-demo-dot {
-            cursor: pointer;
-            width: 0.8rem;
-            height: 0.8rem;
-            border-radius: 50%;
-            border: none;
-            padding: 0;
-            background: rgba(0, 0, 0, 0.18);
-            transition: background-color 0.2s;
-        }
-
-        .kiosk-demo-dot.is-active {
-            background: var(--brand);
-        }
-
-        /* content5: icon grid */
-        .content5 .title {
-            text-align: center;
-            margin-bottom: 4rem;
+        .content_in {
+            margin: 65px 0 0 0;
         }
 
         .icon_list {
             display: flex;
-            justify-content: center;
-            gap: 2.4rem;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 80px;
+            gap: 25px;
         }
-
-        .icon_list .icon_box {
-            width: 220px;
-            background: var(--bg-soft);
+        .icon_list .icon_box{
+        	width: calc((100% - 70px) / 4);
+            background: #F5F5F5;
+            padding: 70px 0 50px 0;
             border-radius: 15px;
-            padding: 3.5rem 1.5rem 2.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
+            transition: all 0.5s;
         }
 
-        .icon_list .icon_box img {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 1.6rem;
-        }
-
-        .icon_list .icon_box .txt {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .icon_list .icon_box .txt span {
-            display: block;
-            margin-top: 0.6rem;
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: var(--txt-sub);
-            line-height: 1.6;
-        }
-
-        /* content6: size photos */
-        .content6 .title {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .imgBox {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .imgBox img {
-            width: 100%;
-            max-width: 260px;
-            height: auto;
-        }
-
-        .case-footer {
-            padding: 6rem 0 9rem;
-            text-align: center;
-        }
-
-        .btn {
-            cursor: pointer;
-            padding: 0 3rem;
-            border-radius: 5rem;
-            text-decoration: none;
-            display: inline-block;
-            border: 2px solid var(--brand);
-            line-height: 5rem;
+        #admission button {
+            line-height: 1.9rem;
+            background: #37579f;
+        	padding: 14px 28px;
+            color: #fff;
             font-size: 1.6rem;
-            font-weight: 700;
-            transition: background-color 0.3s;
+            border-radius: 30px;
+            margin-top: 20px;
+        }
+        #admission button a{color:#fff;}
+
+        .content4-1 .content_in .box_list {
+            display: flex;
         }
 
-        .btn:hover {
-            background-color: #eef1fb;
+        #subWrap {position: relative;max-width: 100%; }
+        .cont{max-width: 1920px;  margin: 0 auto;}
+
+        .content3 .content_box {
+        	flex-wrap: wrap;
+        	gap: 40px;
+        	align-items: flex-start;
         }
 
-        @media screen and (max-width: 760px) {
-            .repro-hero .flexBox {
-                flex-direction: column-reverse;
-                padding: 3.5rem 0;
-            }
+        .content3 .content_box .box {
+        	width: 300px;
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        }
 
-            .repro-hero figure {
-                width: 60vw;
-            }
+        .content3 .content_box .icon {
+            align-self: center;
+        }
 
-            .cont_box1 > div {
+        .content4 .tab_cont .box.box1 img {
+            width: auto;
+            max-width: 30%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .imgBox{
+        	display: flex;
+            justify-content: center;
+            margin: 80px auto 0 auto;
+            gap: 25px;
+        	width: 100%;
+        	max-width: 1400px;
+        }
+
+        .imgBox img {  
+            width: 100%;
+        	max-width: 340px;
+            height: auto;
+            object-fit: contain; 
+        }
+
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .qradmission .main figure {
+                margin-top: 50vh;
+            }
+        }
+
+        @media (min-width: 1281px) and (max-width: 1366px) {
+            .qradmission .main figure {
+                margin-top: 64vh;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .main .ss {
+                flex-wrap: wrap;
+                padding: 15vh 0;
+            }
+        	.icon_list {
+        		flex-wrap: wrap;
+        		justify-content: center;
+        	}
+        	.icon_list .icon_box {
+        		width: calc(100vw / 2.5);
+        	}
+
+        	.content_box h5{
+        		left: auto;
+        	}
+
+        	.content_box {
+        		align-content: center;
+        		flex-direction: column;
+        	}
+
+        	.content_box .icon img {
+                transform: rotate(90deg);
+        	}
+        	.txt{
+        		font-size: 2.6rem;
+        	}
+        	.txt span{
+        		font-size: 2.2rem;
+        	}
+        }
+
+        @media (max-width: 768px) {
+        #admission button {
+        	font-size: 2.2rem;
+        }
+
+        .content4 .tab_cont .box.box1 img{
+        	max-width: 100%;
+        }
+
+        	 .cont_box1 > div {
                 flex-direction: column;
             }
 
-            .cont_box1 .title.title2 {
-                order: 0;
+            .cont_box1 .img {
+                order: 2;
             }
 
-            .content {
-                padding: 5rem 0;
+            .cont_box1 .title {
+                order: 1;
             }
 
-            .content_box .box {
-                width: 100%;
-                max-width: 320px;
+            .qradmission .main .ss {
+        		justify-content: flex-start;
+                overflow: visible;
+        		width: auto;
+        		height: auto;
+            }
+
+        	.qradmission .main .text {
+        	padding-bottom: 20px;
+        	}
+            .qradmission .main figure {
+                align-self: flex-start;
+                margin-top: 0;
+        	}
+            .qradmission .main figure img {
+                height: auto;
+                max-width: 70vw;
+            }
+
+        	.title1, .title2 {
+        		text-align: center !important;
+        		width: 100%;
+        	}
+        	.flex{
+        		flex-direction: column;
+        		gap: 12rem;
+        		padding: 0;
+        	}
+
+        	.br{display: block;}
+
+        .imgBox {
+                flex-direction: column; 
+            }
+
+            .imgBox img {
+                width: 80%;           
+                max-width: 450px;       
+                margin: 0 auto;        
+            }
+
+        }
+
+        /* 원본의 글꼴 목록 끝이 "sans-serif"(따옴표)로 되어 있어 기본 글꼴 대체가 안 되므로 바로잡음 */
+        html,
+        body,
+        input,
+        button {
+            font-family: "Roboto", "Noto Sans KR", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+        }
+
+        /* 포트폴리오 안내 바 */
+        .repro-bar {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.6rem 2rem;
+            padding: 1rem 2rem;
+            background: #424242;
+            color: #fff;
+            font-size: 1.3rem;
+        }
+
+        .repro-bar a {
+            color: #8ffb5d;
+            font-weight: 700;
+        }
+
+        .repro-bar .repro-links {
+            display: flex;
+            gap: 1.6rem;
+        }
+
+        /* ---------------- 슬라이더 (Swiper 대체, 순수 JS) ---------------- */
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-slide {
+            flex: 0 0 100%;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        #admission .slider-dots button {
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            margin: 0;
+            border-radius: 50%;
+            background: #000;
+            opacity: 0.2;
+            line-height: 0;
+            font-size: 0;
+        }
+
+        #admission .slider-dots button.on {
+            background: #007aff;
+            opacity: 1;
+        }
+
+        /* 기기 크기 전환 */
+        .repro-views {
+            display: flex;
+            gap: 0.4rem;
+            padding: 0.3rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .repro-views button {
+            padding: 0.4rem 1.4rem;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .repro-views button.on {
+            background: #8ffb5d;
+            color: #222;
+        }
+
+        .device-stage {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            height: calc(100vh - var(--bar-h, 48px));
+            overflow: hidden;
+            background: #e4e4e4;
+        }
+
+        body.is-device .device-stage {
+            display: flex;
+        }
+
+        body.is-device .qradmission {
+            display: none;
+        }
+
+        .device-box {
+            position: relative;
+            flex: none;
+        }
+
+        .device-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top left;
+            background: #1f1f1f;
+            box-shadow: 0 1.6rem 4rem rgba(0, 0, 0, 0.25);
+        }
+
+        .device-frame iframe {
+            display: block;
+            border: 0;
+            background: #fff;
+        }
+
+        .device-frame.pos {
+            padding: 14px 14px 14px;
+            border-radius: 18px;
+        }
+
+        .device-frame.mobile {
+            padding: 12px;
+            border-radius: 40px;
+        }
+
+        .device-frame.mobile iframe {
+            border-radius: 28px;
+        }
+
+        .device-label {
+            font-size: 1.3rem;
+            color: #666;
+        }
+
+        /* 기기 틀 안에서는 스크롤바를 숨겨(폰·키오스크는 스크롤바가 폭을 차지하지 않음) 실제 기기와 같은 화면 폭으로 보이게 함 */
+        html.embed {
+            scrollbar-width: none;
+        }
+
+        html.embed::-webkit-scrollbar {
+            display: none;
+        }
+
+        html.embed .repro-bar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .repro-views {
+                display: none;
             }
         }
+
+        /* 검정 로고 바: 원본은 스크롤 시 JS로 상단 고정 → 재현본은 sticky로 대체 */
+        .kiposTop {
+            position: sticky;
+            top: var(--bar-h, 48px);
+            z-index: 5;
+        }
+
+        html.embed .kiposTop {
+            top: 0;
+        }
+
+        body.is-device .kiposTop {
+            display: none;
+        }
+
     </style>
+    <script>if (/[?&]embed=1/.test(location.search)) document.documentElement.classList.add('embed');</script>
 </head>
 
 <body>
-    <div class="repro-topbar">
-        <a class="back-link" href="case-imu-qr-checkin.html">← 화면설계서로 돌아가기</a>
-        <span class="repro-badge">🔁 실제 서비스 페이지 재현본</span>
+    <div class="repro-bar">
+        <span>포트폴리오용 재현본 · imupos.com 실제 페이지를 HTML/CSS/JS로 재구성했습니다.</span>
+        <span class="repro-views" id="reproViews" role="group" aria-label="화면 크기 선택">
+            <button type="button" data-view="web" class="on">웹</button>
+            <button type="button" data-view="pos">POS 기기</button>
+            <button type="button" data-view="mobile">모바일</button>
+        </span>
+        <span class="repro-links">
+            <a href="case-imu-qr-checkin.html">← 화면설계서로 돌아가기</a>
+            <a href="../index.html#imu1">← 포트폴리오로 돌아가기</a>
+        </span>
     </div>
-    <p class="repro-note">imupos.com에 게시된 QR 출입 키오스크 소개 페이지를 정적으로 재현한 화면입니다. 실제 서비스 페이지의 텍스트·이미지를 기반으로 직접 코딩했습니다.</p>
 
-    <section class="repro-hero">
-        <div class="w1400">
-            <div class="flexBox">
-                <div class="text">
-                    <b class="smallTitle">IMU</b>
-                    <h2>QR 출입 키오스크</h2>
-                    <p>QR 티켓을 인식해 빠르게 입장하는 출입 전용 키오스크</p>
-                </div>
-                <figure>
-                    <img src="../images/project/imu/qr-checkin/repro/hero.png" alt="QR 출입 키오스크 제품 이미지">
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <section class="content">
-        <div class="wwd">
-            <div class="cont_box1">
-                <div class="img">
-                    <img src="../images/project/imu/qr-checkin/repro/intro-1.png" alt="">
-                </div>
-                <div class="title title1">
-                    <h3>매표소부터 미술관, 시설 출입까지</h3>
-                    <p>아임유 QR 출입 키오스크는 티켓의 QR코드를 인식해 입장 가능 여부를 확인하고 방문객의 출입을 간편하게 관리할 수 있는 출입 전용 시스템입니다.</p>
+    <div id="wrap"><div id="subWrap">
+    <article class="subPage manage qradmission">
+        <div class="main">
+            <div class="w1400" style="height:100%">
+                <div class="flexBox ss">
+                    <div class="text wauto">
+                        <b class="smallTitle">IMU</b>
+                        <h2 class="font70">QR 출입 키오스크</h2>
+                        <p>QR 티켓을 인식해 빠르게 입장하는 출입 전용 키오스크</p>
+                    </div>
+                    <figure>
+                        <img src="../images/project/imu/qr-checkin/repro/hero.png" alt="QR 출입 키오스크">
+                    </figure>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="content soft">
-        <div class="wwd">
-            <div class="cont_box1">
-                <div class="title title2">
-                    <h3>QR기반 빠른 입장 확인</h3>
-                    <p>티켓을 스캔하면 입장 가능 여부를 확인하고 방문객이 바로 입장할 수 있습니다.</p>
-                </div>
-                <div class="img">
-                    <img src="../images/project/imu/qr-checkin/repro/intro-2.png" alt="">
+        <div class="kiposTop">
+            <div class="w1400">
+                <div class="flexBox">
+                    <ul class="path"><img src="../images/project/imu/qr-checkin/repro/logo-imu-w.png" class="logo_imu" alt="imu"></ul>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="content content3">
-        <div class="w1400">
-            <div class="title">
-                <h3>티켓 확인 인력 없이, 방문객 입장까지 무인으로</h3>
-            </div>
-            <div class="content_box">
-                <div class="box">
-                    <img src="../images/project/imu/qr-checkin/repro/step-1.png" alt="">
-                    <p class="txt">키오스크 티켓 발권 (연동)<span>예약 확인, 현장 구매 티켓 출력</span></p>
-                </div>
-                <div class="icon">
-                    <img src="../images/project/imu/qr-checkin/repro/arrow.png" alt="next arrow">
-                </div>
-                <div class="box">
-                    <img src="../images/project/imu/qr-checkin/repro/step-2.png" alt="">
-                    <p class="txt">QR 티켓 스캔<span>QR 출입 키오스크에 티켓을 스캔하여 입장 여부 확인</span></p>
-                </div>
-                <div class="icon">
-                    <img src="../images/project/imu/qr-checkin/repro/arrow.png" alt="next arrow">
-                </div>
-                <div class="box">
-                    <img src="../images/project/imu/qr-checkin/repro/step-3.png" alt="">
-                    <p class="txt">방문객 입장<span>티켓 인증 완료 후 입장</span></p>
-                </div>
+        <div class="pdbot0">
+            <div id="admission">
+                <section class="content cont_box1 paddingBox">
+                    <div class="wwd">
+                        <div class="cont flex_box flex">
+                            <div class="img">
+                                <img src="../images/project/imu/qr-checkin/repro/intro-1.png" alt="">
+                            </div>
+                            <div class="title title1">
+                                <h3 class="font38">매표소부터 미술관,<br class="br"> 시설 출입까지</h3>
+                                <p>아임유 QR 출입 키오스크는 <br> 티켓의 QR코드를 인식해<br class="br"> 입장 가능 여부를 확인하고<br>
+                                    방문객의 출입을 간편하게 관리할 수 있는<br class="br"> 출입 전용 시스템입니다.</p>
+                                <button type="button"><a href="https://imupos.com/site/download.asp?bid=6&file=QR%EC%B6%9C%EC%9E%85%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC.pdf" target="_blank" rel="noopener">QR 출입 키오스크 리플릿 다운로드</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content cont_box1 content2 paddingBox">
+                    <div class="wwd">
+                        <div class="cont flex">
+                            <div class="title title2">
+                                <h3 class="font38">QR기반 빠른 입장 확인</h3>
+                                <p>티켓을 스캔하면 입장 가능 여부를 확인하고<br>방문객이 바로 입장할 수 있습니다.</p>
+                            </div>
+                            <div class="img">
+                                <p><img src="../images/project/imu/qr-checkin/repro/intro-2.png" alt=""></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content cont_box2 content3 paddingBox">
+                    <div class="w1400">
+                        <div class="title">
+                            <h3 class="font38">티켓 확인 인력 없이, <br class="br">방문객 입장까지 무인으로</h3>
+                        </div>
+                        <div class="content_box">
+                            <h5>운영 방법</h5>
+                            <div class="box">
+                                <p><img src="../images/project/imu/qr-checkin/repro/step-1.png" alt=""></p>
+                                <p class="txt">키오스크 티켓 발권 (연동)<br>
+                                    <span>예약 확인, 현장 구매<br>티켓 출력 </span></p>
+                            </div>
+                            <div class="icon">
+                                <p><img src="../images/project/imu/qr-checkin/repro/arrow.png" alt="next arrow"></p>
+                            </div>
+                            <div class="box">
+                                <p><img src="../images/project/imu/qr-checkin/repro/step-2.png" alt=""></p>
+                                <p class="txt">QR 티켓 스캔<br>
+                                    <span>QR 출입 키오스크에<br>티켓을 스캔하여 입장 여부 확인</span></p>
+                            </div>
+                            <div class="icon">
+                                <p><img src="../images/project/imu/qr-checkin/repro/arrow.png" alt="next arrow"></p>
+                            </div>
+                            <div class="box">
+                                <p><img src="../images/project/imu/qr-checkin/repro/step-3.png" alt=""></p>
+                                <p class="txt">방문객 입장<br>
+                                    <span>티켓 인증 완료후 입장 </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content content4 paddingBox">
+                    <div class="wwd">
+                        <div class="title">
+                            <h3 class="font38">직관적인 UI로, <br class="br">무인 입장을 더 쉽게</h3>
+                            <p>한눈에 보이는 화면으로 대기·승인·입장 불가 상태를 바로 확인할 수 있습니다.</p>
+                        </div>
+                        <div class="content_in">
+                          <div class="tab_cont"><div class="box box1">
+                            <div class="slider" id="stateSlider" aria-label="상태별 화면 슬라이드">
+                                <div class="slider-track">
+                                    <div class="slider-slide"><p><img src="../images/project/imu/qr-checkin/repro/screen-stand.png" alt="대기 화면"></p></div>
+                                    <div class="slider-slide"><p><img src="../images/project/imu/qr-checkin/repro/screen-entry.png" alt="입장 승인 화면"></p></div>
+                                    <div class="slider-slide"><p><img src="../images/project/imu/qr-checkin/repro/screen-noentry.png" alt="중복입장 불가 화면"></p></div>
+                                </div>
+                                <div class="slider-dots"></div>
+                            </div>
+                          </div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content content5 paddingBox">
+                    <div class="w1400">
+                        <div class="title">
+                            <h3 class="font38">문화 시설부터 <br class="br">무인 매장까지,<br>출입 관리가 필요한<br class="br"> 모든 비즈니스 적용</h3>
+                        </div>
+                        <div class="icon_list">
+                            <div class="icon_box">
+                                <img src="../images/project/imu/qr-checkin/repro/icon-museum.svg" alt="">
+                                <p class="txt">문화/전시<br><span>미술관, 박물관, 전시관<br>매표 연동이 필요한 공간</span></p>
+                            </div>
+                            <div class="icon_box">
+                                <img src="../images/project/imu/qr-checkin/repro/icon-training.svg" alt="">
+                                <p class="txt">스포츠/커뮤니티<br><span>무인 헬스장, 테니스장,<br>공유 오피스, 스터디카페</span></p>
+                            </div>
+                            <div class="icon_box">
+                                <img src="../images/project/imu/qr-checkin/repro/icon-themepark.svg" alt="">
+                                <p class="txt">레저/테마<br><span>테마파크, 키즈카페,<br>워터파크, 놀이시설</span></p>
+                            </div>
+                            <div class="icon_box">
+                                <img src="../images/project/imu/qr-checkin/repro/icon-event.svg" alt="">
+                                <p class="txt">이벤트/팝업<br><span>팝업스토어, 박람회, <br>이벤트 행사장, e-스포츠 경기장</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content content6 paddingBox">
+                    <div class="wwd">
+                        <div class="title">
+                            <h3 class="font38">공간에 맞게 설치 가능한 최적의 사이즈</h3>
+                        </div>
+                        <div class="imgBox">
+                            <img src="../images/project/imu/qr-checkin/repro/size-perspective.png" alt="">
+                            <img src="../images/project/imu/qr-checkin/repro/size-front.png" alt="">
+                            <img src="../images/project/imu/qr-checkin/repro/size-side.png" alt="">
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+    </article>
+    </div></div>
 
-    <section class="content soft content4">
-        <div class="wwd">
-            <div class="title">
-                <h3>직관적인 UI로, 무인 입장을 더 쉽게</h3>
-                <p>한눈에 보이는 화면으로 승인·입장 불가 상태를 바로 확인할 수 있습니다.</p>
-            </div>
-            <div class="kiosk-demo">
-                <div class="kiosk-demo-slide is-visible" data-slide="entry">
-                    <img src="../images/project/imu/qr-checkin/repro/screen-entry.png" alt="입장 승인 화면">
-                </div>
-                <div class="kiosk-demo-slide" data-slide="noentry">
-                    <img src="../images/project/imu/qr-checkin/repro/screen-noentry.png" alt="중복입장 불가 화면">
-                </div>
-                <div class="kiosk-demo-dots">
-                    <button class="kiosk-demo-dot is-active" data-target="entry" aria-label="입장 승인 화면 보기"></button>
-                    <button class="kiosk-demo-dot" data-target="noentry" aria-label="중복입장 불가 화면 보기"></button>
-                </div>
-            </div>
+    <div class="device-stage" id="deviceStage">
+        <div class="device-box" id="deviceBox">
+            <div class="device-frame" id="deviceFrame"><iframe id="deviceIframe" title="재현 페이지 미리보기"></iframe></div>
         </div>
-    </section>
-
-    <section class="content content5">
-        <div class="wwd">
-            <div class="title">
-                <h3>문화 시설부터 무인 매장까지,<br>출입 관리가 필요한 모든 비즈니스 적용</h3>
-            </div>
-            <div class="icon_list">
-                <div class="icon_box">
-                    <img src="../images/project/imu/qr-checkin/repro/icon-museum.svg" alt="">
-                    <p class="txt">문화/전시<span>미술관, 박물관, 전시관<br>매표 연동이 필요한 공간</span></p>
-                </div>
-                <div class="icon_box">
-                    <img src="../images/project/imu/qr-checkin/repro/icon-training.svg" alt="">
-                    <p class="txt">스포츠/커뮤니티<span>무인 헬스장, 테니스장,<br>공유 오피스, 스터디카페</span></p>
-                </div>
-                <div class="icon_box">
-                    <img src="../images/project/imu/qr-checkin/repro/icon-themepark.svg" alt="">
-                    <p class="txt">레저/테마<span>테마파크, 키즈카페,<br>워터파크, 놀이시설</span></p>
-                </div>
-                <div class="icon_box">
-                    <img src="../images/project/imu/qr-checkin/repro/icon-event.svg" alt="">
-                    <p class="txt">이벤트/팝업<span>팝업스토어, 박람회,<br>이벤트 행사장, e-스포츠 경기장</span></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content soft content6">
-        <div class="wwd">
-            <div class="title">
-                <h3>공간에 맞게 설치 가능한 최적의 사이즈</h3>
-            </div>
-            <div class="imgBox">
-                <img src="../images/project/imu/qr-checkin/repro/size-perspective.png" alt="">
-                <img src="../images/project/imu/qr-checkin/repro/size-front.png" alt="">
-                <img src="../images/project/imu/qr-checkin/repro/size-side.png" alt="">
-            </div>
-        </div>
-    </section>
-
-    <footer class="case-footer">
-        <a class="btn" href="case-imu-qr-checkin.html">화면설계서로 돌아가기</a>
-    </footer>
+        <p class="device-label" id="deviceLabel"></p>
+    </div>
 
     <script>
-        document.querySelectorAll('.kiosk-demo').forEach(function (demo) {
-            var dots = demo.querySelectorAll('.kiosk-demo-dot');
-            var slides = demo.querySelectorAll('.kiosk-demo-slide');
-            dots.forEach(function (dot) {
-                dot.addEventListener('click', function () {
-                    var target = dot.getAttribute('data-target');
-                    dots.forEach(function (d) {
-                        d.classList.toggle('is-active', d === dot);
-                    });
-                    slides.forEach(function (s) {
-                        s.classList.toggle('is-visible', s.getAttribute('data-slide') === target);
-                    });
-                });
+        (function () {
+            var slider = document.getElementById('stateSlider');
+            if (!slider) return;
+            var track = slider.querySelector('.slider-track');
+            var slides = slider.querySelectorAll('.slider-slide');
+            var dotsWrap = slider.querySelector('.slider-dots');
+            var index = 0;
+            var timer = null;
+
+            slides.forEach(function (_, i) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.setAttribute('aria-label', (i + 1) + '번째 화면');
+                b.addEventListener('click', function () { go(i); start(); });
+                dotsWrap.appendChild(b);
             });
-        });
+
+            function go(i) {
+                index = (i + slides.length) % slides.length;
+                track.style.transform = 'translateX(' + (-100 * index) + '%)';
+                Array.prototype.forEach.call(dotsWrap.children, function (d, k) {
+                    d.classList.toggle('on', k === index);
+                });
+            }
+
+            function start() {
+                clearInterval(timer);
+                timer = setInterval(function () { go(index + 1); }, 3000);
+            }
+
+            go(0);
+            start();
+        })();
+    </script>
+    <script>
+        /* 웹 / POS 기기 / 모바일 크기 전환 (iframe으로 실제 화면 폭을 적용) */
+        (function () {
+            if (document.documentElement.classList.contains('embed')) return;
+            var VIEWS = {
+                pos: { w: 1024, h: 768, pad: 14, name: 'POS 기기' },
+                mobile: { w: 390, h: 844, pad: 12, name: '모바일' }
+            };
+            var bar = document.querySelector('.repro-bar');
+            var btns = document.querySelectorAll('#reproViews button');
+            var frame = document.getElementById('deviceFrame');
+            var box = document.getElementById('deviceBox');
+            var iframe = document.getElementById('deviceIframe');
+            var label = document.getElementById('deviceLabel');
+            var current = 'web';
+
+            function setBarH() {
+                document.documentElement.style.setProperty('--bar-h', bar.offsetHeight + 'px');
+            }
+            setBarH();
+            window.addEventListener('resize', setBarH);
+
+            function fit() {
+                if (current === 'web') return;
+                var v = VIEWS[current];
+                var barH = bar.offsetHeight;
+                document.documentElement.style.setProperty('--bar-h', barH + 'px');
+                var fw = v.w + v.pad * 2, fh = v.h + v.pad * 2;
+                var availW = window.innerWidth - 48;
+                var availH = window.innerHeight - barH - 80;
+                var k = Math.min(1, availW / fw, availH / fh);
+                frame.style.transform = 'scale(' + k + ')';
+                box.style.width = fw * k + 'px';
+                box.style.height = fh * k + 'px';
+            }
+
+            function setView(name) {
+                current = name;
+                btns.forEach(function (b) { b.classList.toggle('on', b.dataset.view === name); });
+                if (name === 'web') {
+                    document.body.classList.remove('is-device');
+                    return;
+                }
+                var v = VIEWS[name];
+                frame.className = 'device-frame ' + name;
+                iframe.style.width = v.w + 'px';
+                iframe.style.height = v.h + 'px';
+                if (!iframe.getAttribute('src')) {
+                    iframe.setAttribute('src', location.pathname.split('/').pop() + '?embed=1');
+                }
+                label.textContent = v.name + ' · ' + v.w + ' × ' + v.h;
+                document.body.classList.add('is-device');
+                window.scrollTo(0, 0);
+                fit();
+            }
+
+            btns.forEach(function (b) {
+                b.addEventListener('click', function () { setView(b.dataset.view); });
+            });
+            window.addEventListener('resize', fit);
+        })();
     </script>
 </body>
 
