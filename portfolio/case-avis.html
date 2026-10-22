@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.VIS · 화면설계서 | 오예주 포트폴리오</title>
+    <meta name="robots" content="noindex">
+    <style>
+:root {
+            --color-primary: #8ffb5d;
+            --color-secondary: #B4FC93;
+            --txt-primary: #424242;
+            --txt-secondary: #4BE006;
+            --bg-color: #FFFFF4;
+            --bg-color-secondary: #F8FFE3;
+        }
+
+* {
+            box-sizing: border-box;
+        }
+
+body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--txt-primary);
+            font-family: "Pretendard Variable", Pretendard, "Montserrat", sans-serif, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+            line-height: 1.6;
+        }
+
+a {
+            color: inherit;
+        }
+
+.wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 clamp(2rem, 5vw, 4rem);
+        }
+
+.case-header {
+            padding: 7rem 0 5rem;
+            border-bottom: 1px solid rgba(66, 66, 66, 0.12);
+        }
+
+.back-link {
+            display: flex;
+            width: max-content;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--txt-primary);
+            opacity: 0.7;
+            margin-bottom: 3.2rem;
+        }
+
+.back-link:hover {
+            opacity: 1;
+            color: var(--txt-secondary);
+        }
+
+.case-eyebrow {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+.case-header h1 {
+            margin: 0 0 1rem;
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+
+.case-sub {
+            margin: 0 0 3.6rem;
+            font-size: 1.6rem;
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+.case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem 5rem;
+        }
+
+.case-meta div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+.case-meta span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--txt-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+.case-meta strong,
+        .case-meta div p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+main {
+            padding: 7rem 0 3rem;
+        }
+
+.case-slide {
+            margin: 0 0 8rem;
+        }
+
+.case-slide img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(66, 66, 66, 0.12);
+        }
+
+.case-kiosk-subhead {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin: 0 0 2rem;
+            padding-left: 0.5rem;
+        }
+
+.case-credit,
+        .case-overview-lead,
+        .case-rules li,
+        .uf-steps li,
+        .comp-panel p,
+        .uf-link {
+            word-break: keep-all;
+        }
+
+.case-credit {
+            margin: 3rem 0 0;
+            max-width: 640px;
+            font-size: 1.3rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
+.case-figma-link {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--txt-secondary);
+            padding-bottom: 0.1rem;
+        }
+
+.case-figma-link:hover {
+            background-color: var(--color-secondary);
+        }
+
+.case-overview-lead {
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
+        }
+
+.case-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(20, 20, 20, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+.case-lightbox.is-open {
+            display: flex;
+        }
+
+.case-lightbox-content {
+            margin: 0;
+            max-width: 90vw;
+            text-align: center;
+        }
+
+.case-lightbox-content img {
+            display: block;
+            max-width: 90vw;
+            max-height: 76vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+        }
+
+.case-lightbox-content figcaption {
+            margin-top: 1.6rem;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+.case-lightbox-close,
+        .case-lightbox-arrow {
+            position: absolute;
+            border: none;
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+.case-lightbox-close:hover,
+        .case-lightbox-arrow:hover {
+            background: rgba(255, 255, 255, 0.28);
+        }
+
+.case-lightbox-close {
+            top: 2rem;
+            right: 2.4rem;
+            width: 4.4rem;
+            height: 4.4rem;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+.case-lightbox-arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5.2rem;
+            height: 5.2rem;
+            font-size: 3.2rem;
+            line-height: 1;
+        }
+
+.case-lightbox-arrow.prev {
+            left: 1.5rem;
+        }
+
+.case-lightbox-arrow.next {
+            right: 1.5rem;
+        }
+
+.case-footer {
+            padding: 6rem 0 9rem;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+.btn {
+            cursor: pointer;
+            padding: 0 3rem;
+            border-radius: 5rem;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid var(--txt-secondary);
+            line-height: 5rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+.btn:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .av-section {
+            margin: 0 0 10rem;
+        }
+
+        .av-section h2 {
+            margin: 0 0 1rem;
+            font-size: 2rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .av-lead {
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
+            word-break: keep-all;
+        }
+
+        .av-headline {
+            margin: 0 0 3rem;
+            padding: 2.6rem 3rem;
+            background: #fff;
+            border: 1px solid rgba(66, 66, 66, 0.12);
+            border-radius: 12px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.5;
+            word-break: keep-all;
+        }
+
+        .av-headline mark {
+            background: #fbd4d0;
+            color: inherit;
+            padding: 0 0.3rem;
+        }
+
+        .av-steps {
+            list-style: none;
+            margin: 0 0 3rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+        }
+
+        .av-steps li {
+            position: relative;
+            padding: 2rem 1.6rem;
+            border-radius: 12px;
+            background: #ee685a;
+            color: #fff;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        .av-steps li:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.45);
+            z-index: 1;
+        }
+
+        .av-steps li span {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            opacity: 0.92;
+        }
+
+        .av-points {
+            margin: 0;
+            padding: 0 0 0 0.5rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 1.4rem;
+            word-break: keep-all;
+        }
+
+        .av-points li {
+            position: relative;
+            padding-left: 1.6rem;
+        }
+
+        .av-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: var(--txt-secondary);
+        }
+
+        .av-sheet {
+            margin: 0 0 5rem;
+        }
+
+        .av-sheet figure {
+            margin: 0 0 1.6rem;
+        }
+
+        .av-sheet img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background: #fff;
+            border: 1px solid rgba(66, 66, 66, 0.12);
+            cursor: zoom-in;
+        }
+
+        .av-sheet figcaption {
+            margin-top: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .av-sheet figcaption span {
+            font-weight: 600;
+            color: var(--txt-secondary);
+            margin-right: 0.6rem;
+        }
+
+        .av-note {
+            margin: 0;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            color: rgba(66, 66, 66, 0.7);
+            word-break: keep-all;
+        }
+
+        .av-note a {
+            font-weight: 700;
+            color: var(--txt-primary);
+        }
+
+        .av-brand {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem 4rem;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+        }
+
+        .av-circles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+        }
+
+        .av-circle {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .av-circle i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: min(9rem, 24vw);
+            height: min(9rem, 24vw);
+            margin: 0 auto 0.6rem;
+            border-radius: 50%;
+            border: 2px solid rgba(66, 66, 66, 0.35);
+            font-style: normal;
+            font-size: 1.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .av-brand-txt {
+            flex: 1 1 340px;
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+            word-break: keep-all;
+        }
+
+        .av-brand-txt p {
+            margin: 0 0 1rem;
+        }
+
+        .av-swatch-group {
+            margin: 0 0 3rem;
+        }
+
+        .av-swatch-group h3 {
+            margin: 0 0 1.4rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .av-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+            gap: 1.4rem;
+        }
+
+        .av-swatch {
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .av-swatch b {
+            display: block;
+            font-size: 1.25rem;
+        }
+
+        .av-swatch span {
+            display: block;
+            color: rgba(66, 66, 66, 0.6);
+            font-family: 'Montserrat', 'Roboto Mono', monospace;
+            font-size: 1.15rem;
+        }
+
+        .av-swatch i {
+            display: block;
+            height: 6rem;
+            margin-bottom: 0.6rem;
+            border-radius: 8px;
+            border: 1px solid rgba(66, 66, 66, 0.15);
+        }
+
+        .av-logo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.4rem 4rem;
+            align-items: center;
+            margin-bottom: 2.4rem;
+            padding: 2.4rem;
+            background: #fff;
+            border: 1px solid rgba(66, 66, 66, 0.12);
+            border-radius: 12px;
+        }
+
+        .av-logo img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .av-logo-txt {
+            flex: 1 1 300px;
+            margin: 0;
+            font-size: 1.4rem;
+            color: rgba(66, 66, 66, 0.85);
+            word-break: keep-all;
+        }
+
+        main.wrap {
+            padding-top: 7rem;
+            padding-bottom: 3rem;
+        }
+
+        .av-logo-var {
+            margin: 0;
+            padding: 2rem;
+            background: #fff;
+            border: 1px solid rgba(66, 66, 66, 0.12);
+            border-radius: 12px;
+        }
+
+        .av-logo-var img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        .av-logo-var figcaption {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+            color: rgba(66, 66, 66, 0.6);
+        }
+
+        .case-lightbox-content img {
+            background: #fff;
+        }
+
+        @media screen and (max-width: 860px) {
+            .av-steps {
+                grid-template-columns: 1fr;
+                gap: 2.2rem;
+            }
+
+            .av-steps li:not(:last-child)::after {
+                content: '↓';
+                right: auto;
+                left: 50%;
+                top: auto;
+                bottom: -2rem;
+                transform: translateX(-50%);
+            }
+
+            .av-headline {
+                font-size: 1.8rem;
+                padding: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .case-header {
+                padding: 4.5rem 0 3rem;
+            }
+
+            .case-header h1 {
+                font-size: 2.6rem;
+            }
+
+            .case-meta {
+                gap: 2rem 3.5rem;
+            }
+
+            .av-section {
+                margin-bottom: 7rem;
+            }
+
+            .case-lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 3.8rem;
+                height: 3.8rem;
+                font-size: 2.2rem;
+            }
+
+            .case-lightbox-arrow {
+                width: 4rem;
+                height: 4rem;
+                font-size: 2.4rem;
+            }
+
+            .case-lightbox-arrow.prev {
+                left: 0.5rem;
+            }
+
+            .case-lightbox-arrow.next {
+                right: 0.5rem;
+            }
+        }
+
+        .case-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 3rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="case-header">
+        <div class="wrap">
+            <a class="back-link" href="../index.html#p5">← 포트폴리오로 돌아가기</a>
+            <span class="case-eyebrow">Publisher Project · 팀 프로젝트</span>
+            <h1>A.VIS</h1>
+            <p class="case-sub">AI 탑재형 일정관리 캘린더 앱 · 화면설계서</p>
+            <div class="case-meta">
+                <div><span>작업기간</span>
+                    <p>2023 (2week)</p>
+                </div>
+                <div><span>Tool</span>
+                    <p>Figma</p>
+                </div>
+                <div><span>디바이스</span>
+                    <p>Mobile(App)</p>
+                </div>
+                <div><span>담당</span>
+                    <p>팀 프로젝트 · 기획서, 스토리보드, 프로토타입 제작 주도</p>
+                </div>
+                <div><span>산출물</span>
+                    <p>기획서, 워크플로우, 스토리보드, 프로토타입, 로고</p>
+                </div>
+            </div>
+            <div class="case-links">
+                <a class="case-figma-link" href="https://www.figma.com/design/JW9A0csurBhRQyT1O8UbYK/A.V.I.S-%EC%9D%BC%EC%A0%95%EA%B4%80%EB%A6%AC-%EC%95%B1?node-id=228-3129" target="_blank" rel="noopener" aria-label="Figma 설계 문서, 새 창에서 열림">Figma 설계 문서 보기 ↗</a>
+                <a class="case-figma-link" href="https://drive.google.com/file/d/1eUraJM20Tnw48pkQOG80iGpOwTQSRxGC/view?usp=sharing" target="_blank" rel="noopener" aria-label="기획서, 새 창에서 열림">기획서 보기 ↗</a>
+            </div>
+        </div>
+    </header>
+    <main class="wrap">
+        <section class="av-section">
+            <h2>앱 콘셉트</h2>
+            <p class="av-lead">일정 정리에 드는 시간을 줄이고, 그렇게 생긴 여유를 개인의 발전으로 연결한다는 콘셉트로 기획했습니다.</p>
+            <p class="av-headline"><mark>개인</mark>의 시간을 <mark>밸런스</mark>있게 <mark>조절</mark>해주는 일정 관리 앱</p>
+            <ol class="av-steps">
+                <li>일정정리<span>개인의 시간 관리</span></li>
+                <li>시간 절약<span>Ai를 활용한 자동화</span></li>
+                <li>워라밸 밸런스<span>'개인'의 발전</span></li>
+            </ol>
+            <ul class="av-points">
+                <li>개인이 가지는 많은 역할을 구분하여 정리하고, 서로 겹치지 않게 함께 관리하도록 합니다.</li>
+                <li>메모 방식으로 한 칸에 한 번에 작성하거나 음성인식으로 기록해 번거로움을 줄이고, 자동으로 정리해 일정정리에 드는 시간을 줄입니다.</li>
+                <li>일정 관리로 시간을 효과적으로 활용해 워라밸을 맞추고, 여분의 시간으로 개인의 발전을 도모합니다.</li>
+            </ul>
+        </section>
+
+        <section class="av-section">
+            <h2>워크플로우</h2>
+            <p class="av-lead">앱 진입부터 홈, 캘린더, 스토어까지의 주요 흐름입니다. 분홍색은 핵심 3개 탭입니다.</p>
+            <div class="av-sheet" id="avWorkflow">
+                <figure><img src="../images/project/avis/workflow.jpg" alt="A.VIS 워크플로우: 앱, 스플래시, 로그인, 홈, 캘린더, 스토어와 마이페이지, 검색, 설정"><figcaption>앱 → 스플래시 → 로그인 → 홈 · 캘린더 · 스토어</figcaption></figure>
+            </div>
+        </section>
+
+        <section class="av-section">
+            <h2>스토리보드</h2>
+            <p class="av-lead">화면마다 번호 주석을 달아 동작과 이동 경로를 정리했습니다. 화면을 누르면 크게 볼 수 있습니다. 전체 스토리보드는 상단의 Figma 설계 문서에서 볼 수 있습니다.</p>
+            <div class="av-sheet" id="avStory">
+                <figure><img src="../images/project/avis/story-login.jpg" alt="스토리보드 0. 로그인에서 메인 진입까지"><figcaption><span>0</span>로그인 &gt; 메인</figcaption></figure>
+                <ul class="av-points">
+                    <li>스플래시는 0.3초 뒤 로그인 입력 창으로 이동합니다.</li>
+                    <li>아이디·비밀번호 입력에 더해 카카오와 구글 계정 연동으로 회원가입·로그인할 수 있고, 로그인 상태를 기억할 수 있습니다.</li>
+                </ul>
+            </div>
+            <div class="av-sheet">
+                <figure><img src="../images/project/avis/story-home-voice.jpg" alt="스토리보드 2. 홈에서 음성입력으로 일정 및 메모 추가"><figcaption><span>2</span>홈 &gt; 일정 및 메모 추가(음성입력)</figcaption></figure>
+                <ul class="av-points">
+                    <li>에이비스 로고를 탭하면 음성인식이 작동하고, 말한 내용이 일정과 메모로 추가됩니다.</li>
+                    <li>음성 대신 텍스트로 작성하는 화면으로 바꾸거나, 일정 추가를 취소하는 버튼을 둡니다.</li>
+                </ul>
+            </div>
+            <div class="av-sheet">
+                <figure><img src="../images/project/avis/story-calendar.jpg" alt="스토리보드 3. 캘린더 일정 및 메모 추가, 키보드 입력"><figcaption><span>3</span>캘린더 &gt; 일정 추가 &amp; 일정 추가 취소</figcaption></figure>
+                <ul class="av-points">
+                    <li>캘린더에서 날짜를 누르거나 + 버튼으로 일정 추가 화면으로 이동하고, 저장해 둔 템플릿으로도 입력할 수 있습니다.</li>
+                    <li>작성 중 취소하면 "입력을 취소하시겠습니까?" 확인 창을 거쳐 캘린더로 돌아갑니다.</li>
+                </ul>
+            </div>
+            <div class="av-sheet">
+                <figure><img src="../images/project/avis/story-store.jpg" alt="스토리보드 6. 스토어에서 결제관리와 구독완료"><figcaption><span>6</span>스토어 &gt; 결제관리 &gt; 구독완료</figcaption></figure>
+                <ul class="av-points">
+                    <li>정기 구독권(월·연 결제)과 캘린더 외관을 꾸미는 커스터마이징 아이템을 구매할 수 있습니다.</li>
+                    <li>구독하기를 누르면 결제 수단 선택 화면으로 이동하고, 결제가 끝나면 완료 안내 후 스토어로 돌아갑니다.</li>
+                </ul>
+            </div>
+            <p class="av-note">프로토타입은 <a href="../index.html#p5">메인 페이지의 A.VIS 카드</a>에서 직접 체험할 수 있습니다.</p>
+        </section>
+
+        <section class="av-section">
+            <h2>스타일 가이드</h2>
+            <p class="av-lead">브랜드 컬러와 로고의 의미를 정리한 기획서의 일부입니다.</p>
+            <div class="av-brand">
+                <div class="av-circles">
+                    <div class="av-circle"><i style="background:#EE685A;color:#fff">비비드<br>코랄</i>'개인'</div>
+                    <div class="av-circle"><i style="background:#F7F5E9;color:#C6483E">크림</i>'밸런스'</div>
+                    <div class="av-circle"><i style="background:#333;color:#fff">블랙</i>'중심'</div>
+                </div>
+                <div class="av-brand-txt">
+                    <p>비비드코랄은 독창적이고 강렬하지만 경쾌한 분위기로 목표를 향해 나아가는 진취적인 '개인'을 의미합니다.</p>
+                    <p>크림색의 바탕색은 그런 개인을 도와주는 무한한 가능성을 가진 에이비스 환경 자체를 의미합니다.</p>
+                    <p>크림색이 가지는 편안함과 블랙이 주는 안정감은 '개인'의 워크라이프의 조화로운 밸런스를 만들어줍니다.</p>
+                </div>
+            </div>
+            <div class="av-swatch-group">
+                <h3>브랜드 · 텍스트</h3>
+                <div class="av-swatches">
+                    <div class="av-swatch"><i style="background:#EE685A"></i><b>Accent</b><span>#EE685A</span></div><div class="av-swatch"><i style="background:#C6483E"></i><b>Primary</b><span>#C6483E</span></div><div class="av-swatch"><i style="background:#F59B95"></i><b>Secondary</b><span>#F59B95</span></div><div class="av-swatch"><i style="background:#F7F5E9"></i><b>BG 1</b><span>#F7F5E9</span></div><div class="av-swatch"><i style="background:#FFFFFF"></i><b>BG 2</b><span>#FFFFFF</span></div><div class="av-swatch"><i style="background:#333333"></i><b>Text 1</b><span>#333333</span></div><div class="av-swatch"><i style="background:#4C0D06"></i><b>Text 2</b><span>#4C0D06</span></div>
+                </div>
+            </div>
+            <div class="av-swatch-group">
+                <h3>보조 · 상태</h3>
+                <div class="av-swatches">
+                    <div class="av-swatch"><i style="background:#555555"></i><b>Dark</b><span>#555555</span></div><div class="av-swatch"><i style="background:#999999"></i><b>Gray</b><span>#999999</span></div><div class="av-swatch"><i style="background:#CCCCCC"></i><b>Light</b><span>#CCCCCC</span></div><div class="av-swatch"><i style="background:#FF2E00"></i><b>Danger</b><span>#FF2E00</span></div><div class="av-swatch"><i style="background:#FF8C00"></i><b>Warning</b><span>#FF8C00</span></div><div class="av-swatch"><i style="background:#4B5879"></i><b>Pending</b><span>#4B5879</span></div><div class="av-swatch"><i style="background:#FF503E"></i><b>Success</b><span>#FF503E</span></div>
+                </div>
+            </div>
+            <div class="av-logo">
+                <img src="../images/project/avis/logo-basic.png" alt="A.VIS 로고 기본형과 구성 가이드" width="260">
+                <img src="../images/project/avis/logo-mark.png" alt="A.VIS 로고" width="110">
+                <p class="av-logo-txt">A.V.I.S 로고는 음성 메시지를 바탕으로 한 디자인입니다. 파동 형태와 음파의 형상을 시각적으로 표현해, 음성 기술과 사용자 친화적인 AI 솔루션을 강조합니다.</p>
+            </div>
+            <figure class="av-logo-var"><img src="../images/project/avis/logo-variation.png" alt="A.VIS 로고 변형 4종"><figcaption>로고 변형</figcaption></figure>
+        </section>
+    </main>
+    <footer class="case-footer">
+        <a class="btn" href="../index.html#p5">포트폴리오로 돌아가기</a>
+        <a class="btn case-top-btn" href="#top">맨 위로 ↑</a>
+    </footer>
+    <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
+        <button type="button" class="case-lightbox-close" id="caseLightboxClose" aria-label="닫기">&times;</button>
+        <button type="button" class="case-lightbox-arrow prev" id="caseLightboxPrev" aria-label="이전 화면">&lsaquo;</button>
+        <button type="button" class="case-lightbox-arrow next" id="caseLightboxNext" aria-label="다음 화면">&rsaquo;</button>
+        <figure class="case-lightbox-content">
+            <img id="caseLightboxImg" src="" alt="">
+            <figcaption id="caseLightboxCaption"></figcaption>
+        </figure>
+    </div>
+    <script>
+        (function () {
+            var lightbox = document.getElementById('caseLightbox');
+            var lightboxImg = document.getElementById('caseLightboxImg');
+            var lightboxCaption = document.getElementById('caseLightboxCaption');
+            var items = [];
+            var current = -1;
+            function render() {
+                var it = items[current];
+                lightboxImg.src = it.src;
+                lightboxImg.alt = it.alt;
+                lightboxCaption.textContent = it.caption;
+            }
+            function openAt(i) {
+                current = (i + items.length) % items.length;
+                render();
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+            function closeLb() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+            }
+            document.getElementById('caseLightboxClose').addEventListener('click', closeLb);
+            document.getElementById('caseLightboxNext').addEventListener('click', function () { openAt(current + 1); });
+            document.getElementById('caseLightboxPrev').addEventListener('click', function () { openAt(current - 1); });
+            lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLb(); });
+            document.addEventListener('keydown', function (e) {
+                if (!lightbox.classList.contains('is-open')) return;
+                if (e.key === 'Escape') closeLb();
+                if (e.key === 'ArrowRight') openAt(current + 1);
+                if (e.key === 'ArrowLeft') openAt(current - 1);
+            });
+            var imgs = Array.prototype.slice.call(document.querySelectorAll('.av-sheet img'));
+            items = imgs.map(function (img) {
+                var cap = img.closest('figure').querySelector('figcaption');
+                return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || '', caption: cap ? cap.textContent.trim() : '' };
+            });
+            imgs.forEach(function (img, i) { img.addEventListener('click', function () { openAt(i); }); });
+            var top = document.querySelector('.case-top-btn');
+            if (top) top.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>
