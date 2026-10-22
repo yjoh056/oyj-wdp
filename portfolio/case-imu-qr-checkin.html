@@ -300,8 +300,19 @@
     <footer class="case-footer">
         <a class="btn" href="repro-imu-qr-checkin.html">재현 페이지 보기</a>
         <a class="btn" href="../index.html#imu1">포트폴리오로 돌아가기</a>
+        <a class="btn case-top-btn" href="#top">맨 위로 ↑</a>
     </footer>
 
+    <script>
+        (function () {
+            var top = document.querySelector('.case-top-btn');
+            if (!top) return;
+            top.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
 </body>
 
 </html>

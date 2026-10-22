@@ -599,6 +599,10 @@
         .case-footer {
             padding: 6rem 0 9rem;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -918,6 +922,7 @@
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#pp6">포트폴리오로 돌아가기</a>
+        <a class="btn case-top-btn" href="#top">맨 위로 ↑</a>
     </footer>
 
     <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
@@ -1024,6 +1029,16 @@
             initGroups('.case-logo-set');
             initGroups('.case-kiosk-flow-grid');
             initGroups('.case-gallery-grid');
+        })();
+    </script>
+    <script>
+        (function () {
+            var top = document.querySelector('.case-top-btn');
+            if (!top) return;
+            top.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         })();
     </script>
 </body>

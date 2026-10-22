@@ -353,6 +353,284 @@
             cursor: zoom-in;
         }
 
+
+        .case-credit,
+        .case-overview-lead,
+        .case-rules li,
+        .uf-steps li,
+        .comp-panel p,
+        .uf-link {
+            word-break: keep-all;
+        }
+
+        .case-credit {
+            margin: 3rem 0 0;
+            max-width: 640px;
+            font-size: 1.3rem;
+            color: rgba(66, 66, 66, 0.7);
+        }
+
+        .case-figma-link {
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid var(--txt-secondary);
+            padding-bottom: 0.1rem;
+        }
+
+        .case-figma-link:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .case-overview {
+            margin: 0 0 11rem;
+        }
+
+        .case-overview h2 {
+            margin: 0 0 1rem;
+            font-size: 2rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .case-overview-lead {
+            margin: 0 0 3rem;
+            max-width: 640px;
+            font-size: 1.5rem;
+            color: rgba(66, 66, 66, 0.75);
+            padding-left: 0.5rem;
+        }
+
+        .uf-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .uf-row {
+            display: grid;
+            grid-template-columns: 11.5rem 1fr;
+            gap: 1.6rem;
+            align-items: start;
+            padding: 1.8rem 2rem;
+            background: #fff;
+            border: 1px solid rgba(66, 66, 66, 0.12);
+            border-radius: 12px;
+        }
+
+        .uf-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .uf-name span {
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .uf-steps {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.7rem 0.5rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .uf-steps li {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .uf-steps li:not(:first-child)::before {
+            content: '→';
+            color: rgba(66, 66, 66, 0.35);
+        }
+
+        .uf-steps li > span {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: var(--bg-color-secondary);
+            border: 1px solid rgba(66, 66, 66, 0.14);
+        }
+
+        .uf-steps li.is-branch > span {
+            background: #fff;
+            border: 1px dashed var(--txt-secondary);
+        }
+
+        .uf-steps li.is-fail > span {
+            background: #fff;
+            border: 1px dashed rgba(66, 66, 66, 0.4);
+            color: rgba(66, 66, 66, 0.75);
+        }
+
+        .uf-steps li.is-end > span {
+            background: var(--txt-primary);
+            border-color: var(--txt-primary);
+            color: var(--bg-color);
+        }
+
+        .uf-link {
+            margin: 1.6rem 0 0;
+            padding-left: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--txt-secondary);
+        }
+
+        .case-rules {
+            list-style: none;
+            margin: 0 0 5rem;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem 1.4rem;
+        }
+
+        .case-rules li {
+            padding: 1.3rem 1.6rem;
+            background: #fff;
+            border: 1px solid rgba(66, 66, 66, 0.12);
+            border-radius: 10px;
+            font-size: 1.3rem;
+            line-height: 1.55;
+        }
+
+        .case-rules b {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--txt-secondary);
+        }
+
+        .case-comp {
+            margin: 0 0 6rem;
+        }
+
+        .case-comp h2 {
+            margin: 0 0 1rem;
+            font-size: 2rem;
+            font-weight: 800;
+            padding-left: 0.5rem;
+        }
+
+        .case-comp-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .case-comp-pair {
+            align-items: start;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.6rem;
+        }
+
+        .case-comp-pair>* {
+            min-width: 0;
+        }
+
+        .comp-panel {
+            border-radius: 12px;
+            padding: 2.4rem;
+            background: linear-gradient(160deg, #2d1f78 0%, #3d2a98 55%, #4b2f9f 100%);
+            color: #fff;
+        }
+
+        .comp-panel h3 {
+            margin: 0 0 1.4rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #d9cbff;
+        }
+
+        .comp-panel img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .comp-panel p {
+            margin: 1.4rem 0 0;
+            font-size: 1.2rem;
+            line-height: 1.55;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .comp-kbd-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.8rem 1.4rem;
+        }
+
+        .comp-kbd-grid figure {
+            margin: 0;
+        }
+
+        .comp-kbd-grid img {
+            cursor: zoom-in;
+        }
+
+        .comp-kbd-grid figcaption {
+            margin-top: 0.5rem;
+            font-size: 1.15rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .comp-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.4rem 3rem;
+        }
+
+        .comp-row img {
+            width: auto;
+            max-width: 100%;
+        }
+
+        .comp-btn-panel img,
+        .case-comp-pair .comp-panel img {
+            max-width: 32rem;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 860px) {
+            .uf-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .case-rules {
+                grid-template-columns: 1fr;
+            }
+
+            .case-comp-pair {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .comp-kbd-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .case-lightbox {
             display: none;
             position: fixed;
@@ -464,6 +742,10 @@
         .case-footer {
             padding: 6rem 0 9rem;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -524,6 +806,8 @@
                     <p>월그래픽, 홍보배너, 키오스크 UI/UX 4종, 패널, 굿즈</p>
                 </div>
             </div>
+            <p class="case-credit">캐릭터 일러스트는 전시 기존 사이트의 일러스트를 사용했습니다. 키오스크 UI/UX 설계와 화면 구성은 직접 작업했습니다.</p>
+            <a class="case-figma-link" href="https://www.figma.com/design/coWgV4aJEG2p0HKjydDsTL/%EA%B5%AD%EB%A6%BD%EC%A4%91%EC%95%99%EA%B3%BC%ED%95%99%EA%B4%80_%EC%84%A0%EC%9D%84%EB%84%98%EB%8A%94%EA%B3%BC%ED%95%99%EC%9D%8C%EC%95%85%ED%8E%B8?node-id=0-1" target="_blank" rel="noopener" aria-label="Figma 원본 화면설계서, 새 창에서 열림">Figma 원본 화면설계서 보기 ↗</a>
         </div>
     </header>
 
@@ -532,6 +816,60 @@
             <img src="../images/project/almaloco/poster.png" alt="선을 넘는 과학:음악편 키비주얼 포스터">
         </section>
 
+        <section class="case-overview">
+            <h2>전체 사용자 흐름</h2>
+            <p class="case-overview-lead">4종 키오스크의 진입부터 종료·자동 복귀까지의 흐름입니다. 점선은 분기와 예외 상태입니다.</p>
+            <div class="uf-rows">
+                <div class="uf-row">
+                    <div class="uf-name"><span>Kiosk 1</span>작곡 키오스크</div>
+                    <ol class="uf-steps">
+                        <li><span>시작</span></li>
+                        <li><span>닉네임 입력</span></li>
+                        <li><span>장르 선택</span></li>
+                        <li class="is-branch"><span>클래식 → 작곡가 스타일(1개)</span></li>
+                        <li class="is-branch"><span>가요 → 감정 키워드(1~3개)</span></li>
+                        <li><span>음악 생성</span></li>
+                        <li><span>완성곡 감상 · 저장</span></li>
+                        <li><span>QR 저장 · 공유</span></li>
+                        <li class="is-end"><span>20초 후 처음으로</span></li>
+                    </ol>
+                </div>
+                <div class="uf-row">
+                    <div class="uf-name"><span>Kiosk 2</span>뇌파측정 키오스크</div>
+                    <ol class="uf-steps">
+                        <li><span>시작</span></li>
+                        <li><span>측정기 착용 안내</span></li>
+                        <li><span>뇌파 측정(12초)</span></li>
+                        <li><span>결과 4종</span></li>
+                        <li class="is-fail"><span>측정 실패 → 착용 안내로</span></li>
+                    </ol>
+                </div>
+                <div class="uf-row">
+                    <div class="uf-name"><span>Kiosk 3</span>표정측정 키오스크</div>
+                    <ol class="uf-steps">
+                        <li><span>시작</span></li>
+                        <li><span>이어폰 착용 안내</span></li>
+                        <li><span>표정 분석(10초)</span></li>
+                        <li><span>결과 6종</span></li>
+                        <li class="is-end"><span>음악 종료 1분 후 처음으로</span></li>
+                        <li class="is-fail"><span>인식 실패 → 다시 시도</span></li>
+                    </ol>
+                </div>
+                <div class="uf-row">
+                    <div class="uf-name"><span>Kiosk 4</span>Music Showcase</div>
+                    <ol class="uf-steps">
+                        <li><span>시작</span></li>
+                        <li class="is-branch"><span>내 음악 찾기 → 검색 → 검색 결과</span></li>
+                        <li class="is-branch"><span>음악 리스트(5곡씩)</span></li>
+                        <li><span>항목 선택</span></li>
+                        <li><span>재생하기</span></li>
+                        <li><span>쇼케이스 재생</span></li>
+                        <li class="is-end"><span>종료 후 처음으로</span></li>
+                    </ol>
+                </div>
+            </div>
+            <p class="uf-link">Kiosk 4의 검색은 Kiosk 1(누구나 작곡가)에서 등록한 닉네임·음악 제목으로 이어집니다.</p>
+        </section>
         <section class="case-kiosk">
             <div class="case-kiosk-head">
                 <span class="case-kiosk-num">Kiosk 1</span>
@@ -609,6 +947,14 @@
                 </li>
             </ol>
             <p class="case-kiosk-note">음악제목이 랜덤으로 송출된다는 기술적 문제점을 보완하기 위한 타이틀 배치</p>
+            <h3 class="case-kiosk-subhead">동작 규칙 · 자동 복귀</h3>
+            <ul class="case-rules">
+                <li><b>닉네임 입력</b>조건에 맞지 않으면 입력 버튼 비활성화, 입력하면 활성화. 중복·금지어는 팝업으로 안내하고, 닉네임 뒤 (1)은 자동 생성 기호로 표기</li>
+                <li><b>선택 단계</b>장르는 클래식이면 작곡가 스타일(1개), 가요면 감정 키워드(1~3개)를 선택. 선택하면 컬러가 바뀌고 다음 버튼 활성화</li>
+                <li><b>처음으로 이동 시</b>입력 단계에서는 닉네임 삭제. 생성 중에는 음악 재생은 하지 않고 전송은 계속 진행</li>
+                <li><b>생성 완료 · 출력</b>완료되면 저장하기 버튼 노출 및 문구 변경. 클래식은 자동연주 피아노, 가요는 스피커로 송출(최대 1일 보관)</li>
+                <li><b>QR 화면</b>저장하기를 누르면 QR 화면으로 이동. 20초 카운트다운 후 처음 화면으로 자동 이동</li>
+            </ul>
 
             <h3 class="case-kiosk-subhead">예외 처리 팝업 &amp; 입력 설계</h3>
             <div class="case-kiosk-detail-grid">
@@ -670,6 +1016,12 @@
                 <li><figure><img src="../images/project/almaloco/kiosk2/k2-result-pink.png" alt="결과 화면 - 긴장된 상태"><figcaption>④ 결과 · 긴장</figcaption></figure></li>
             </ol>
             <p class="case-kiosk-note">측정 시간 동안 사용자 이탈을 방지하고 몰입감을 유지하기 위해 시각적 피드백이 있는 측정 화면과 로딩 게이지를 제공.<br>음악 감상 중 시각적 지루함을 줄이고 몰입감을 높이기 위해 회전하는 CD 애니메이션 적용.</p>
+            <h3 class="case-kiosk-subhead">동작 규칙 · 자동 복귀</h3>
+            <ul class="case-rules">
+                <li><b>측정</b>뇌파 측정 12초 후 결과 화면으로 이동. 결과는 CD 이미지가 회전하는 애니메이션으로 제공</li>
+                <li><b>측정 실패</b>"측정기를 다시 착용해볼까요?" 팝업에서 버튼을 누르면 착용 안내 단계로 이동</li>
+                <li><b>미반응 시</b>30초 이상 반응이 없으면 첫 화면으로 이동</li>
+            </ul>
         </section>
 
         <section class="case-kiosk">
@@ -705,6 +1057,12 @@
                 <li><figure><img src="../images/project/almaloco/kiosk3/k3-result-anger.png" alt="결과 화면 - 화남"><figcaption>④ 결과 · 화남</figcaption></figure></li>
             </ol>
             <p class="case-kiosk-note">측정 시간 동안 사용자 이탈을 방지하고 몰입감을 유지하기 위해 시각적 피드백이 있는 측정 화면과 로딩 게이지를 제공.<br>결과값에 따라 다른 색상과 게이지량에 차이를 두고 음량 게이지 형태의 애니메이션을 주어 음악을 들으면서 지루하지 않은 화면 구성.</p>
+            <h3 class="case-kiosk-subhead">동작 규칙 · 자동 복귀</h3>
+            <ul class="case-rules">
+                <li><b>분석</b>표정 분석 10초. 정면을 응시하도록 안내하고, 움직임이 많아 인식되지 않으면 재시도 화면 노출</li>
+                <li><b>결과</b>음악 종료 후 1분 뒤 처음 화면으로 자동 이동</li>
+                <li><b>미반응 시</b>착용 안내·인식 실패 화면에서 1분 후 처음으로 자동 이동</li>
+            </ul>
         </section>
 
         <section class="case-kiosk">
@@ -736,11 +1094,58 @@
                 <li><figure><img src="../images/project/almaloco/kiosk4/k4-showcase-playing.png" alt="대형 쇼케이스 재생 중 화면"><figcaption>⑥ 쇼케이스 재생 중</figcaption></figure></li>
             </ol>
             <p class="case-kiosk-note">사용자가 무대를 이용 중에 음악이 멈추지 않도록 조작 버튼을 제거하여 구성. 음악 재생 시간 동안 다른 사용자에게 남은 시간을 인지시킬 수 있도록 상단에 플레이 타임 게이지를 시각적으로 배치.<br>기다리는 동안 무대에 조명이 반짝이는 애니메이션을 적용하여 정적인 화면에 생동감을 부여하고 재생 중임을 직관적으로 전달.<br>음악이 끝날 때까지 되돌아갈 수 없는 구조와 터치 슬라이딩 UI를 고려하여, 선택 즉시 자동 재생되지 않도록 설정하고 '재생하기' 버튼을 별도로 노출하여 사용자 조작의 명확성과 편의성 향상.</p>
+            <h3 class="case-kiosk-subhead">동작 규칙 · 자동 복귀</h3>
+            <ul class="case-rules">
+                <li><b>목록</b>음악 리스트는 5곡씩 노출하고 스크롤로 이동. 한 번 터치하면 보라색 선택 상태, 한 번 더 누르면 재생</li>
+                <li><b>재생</b>음악이 끝나는 시간을 재생바로 안내. 재생 종료 후 처음 화면으로 자동 이동</li>
+                <li><b>검색</b>두 기기의 닉네임 중복 처리가 안 되므로, 같은 닉네임·제목이 2개 이상이면 검색 결과에 모두 노출</li>
+            </ul>
+        </section>
+        <section class="case-comp">
+            <h2>UI 컴포넌트 시트</h2>
+            <p class="case-overview-lead">4종 키오스크에서 공통으로 쓴 버튼, 키보드, 감정 아이콘, 진행 표시를 상태별로 정리한 Figma 컴포넌트입니다.</p>
+            <div class="case-comp-stack">
+                <div class="case-comp-pair">
+                    <div class="comp-panel">
+                        <h3>버튼 · 이동 / 진행</h3>
+                        <img src="../images/project/almaloco/components/btn-nav.png" alt="이동·진행 버튼: 다음(활성/비활성), 처음으로, 시작하기, 로딩">
+                        <p>다음(활성 · 비활성) · 처음으로 · 시작하기 · 로딩</p>
+                    </div>
+                    <div class="comp-panel">
+                        <h3>버튼 · 선택 (전 / 후)</h3>
+                        <img src="../images/project/almaloco/components/btn-choice.png" alt="선택 버튼: 키워드 선택 전/후, 장르 선택 전/후">
+                        <p>감정 키워드 · 장르 선택(선택 전 → 선택 완료)</p>
+                    </div>
+                </div>
+                <div class="comp-panel">
+                    <h3>한글 키보드 · 상태별</h3>
+                    <div class="comp-kbd-grid">
+                        <figure><img src="../images/project/almaloco/components/kbd-1.png" alt="한글 키보드 기본 상태"><figcaption>기본</figcaption></figure>
+                        <figure><img src="../images/project/almaloco/components/kbd-2.png" alt="한글 키보드 Shift 쌍자음·쌍모음 상태"><figcaption>Shift · 쌍자음/쌍모음</figcaption></figure>
+                        <figure><img src="../images/project/almaloco/components/kbd-3.png" alt="쌍자음·쌍모음 터치 시 하이라이트"><figcaption>Shift · 터치 피드백</figcaption></figure>
+                        <figure><img src="../images/project/almaloco/components/kbd-4.png" alt="키 터치 상태"><figcaption>키 터치</figcaption></figure>
+                    </div>
+                </div>
+                <div class="comp-panel">
+                    <h3>감정 아이콘 · 진행 표시</h3>
+                    <div class="comp-row">
+                        <div>
+                            <img src="../images/project/almaloco/components/emotions.png" alt="감정 아이콘 6종: 즐거움, 놀라움, 편안, 슬픔, 두려움, 화남">
+                            <p>즐거움 · 놀라움 · 편안 · 슬픔 · 두려움 · 화남</p>
+                        </div>
+                        <div>
+                            <img src="../images/project/almaloco/components/nav.png" alt="단계 진행 표시">
+                            <p>단계 진행 표시</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="case-footer">
         <a class="btn" href="../index.html#pp1">포트폴리오로 돌아가기</a>
+        <a class="btn case-top-btn" href="#top">맨 위로 ↑</a>
     </footer>
 
     <div class="case-lightbox" id="caseLightbox" aria-hidden="true">
@@ -827,6 +1232,17 @@
 
             initGroups('.case-kiosk-flow-grid');
             initGroups('.case-kiosk-detail-grid');
+            initGroups('.comp-kbd-grid');
+        })();
+    </script>
+    <script>
+        (function () {
+            var top = document.querySelector('.case-top-btn');
+            if (!top) return;
+            top.addEventListener('click', function (e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         })();
     </script>
 </body>
