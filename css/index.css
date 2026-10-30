@@ -1887,8 +1887,25 @@ section:last-of-type {
 }
 .project-wrap .more-toggle {
   align-self: center;
+  width: 40%;
+  min-width: 16rem;
+  margin-right: auto;
+  margin-left: auto;
   background: transparent;
+  border: 1px solid #dbdbdb;
+  box-shadow: none;
   font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 4.4rem;
+  color: #666;
+}
+.project-wrap .more-toggle:before {
+  background: #EDEDE4;
+}
+.project-wrap .more-toggle:hover {
+  border-color: #bdbdbd;
+  color: #424242;
 }
 @media screen and (min-width: 1201px) {
   .project-wrap .more-toggle {
@@ -1902,6 +1919,7 @@ section:last-of-type {
 }
 @media screen and (max-width: 700px) {
   .project-wrap .more-toggle {
+    width: 60%;
     margin-top: -11rem;
   }
 }
