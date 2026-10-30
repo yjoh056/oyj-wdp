@@ -441,3 +441,41 @@ resumeBtns.on('click', function () {
     resumeKind.css('font-weight', '');
   }
 });
+
+// Project 카드 "더보기" 접기/펼치기
+// - 접힌 카드(.project-more)는 기본 숨김, 버튼으로 펼침/접음
+// - 접힌 카드의 id(#p1 등)로 들어오면(화면설계서 → 돌아가기) 자동으로 펼치고 그 카드 위치로 이동
+function openProjectMore($more) {
+  $more.addClass('open');
+  $('[aria-controls="' + $more.attr('id') + '"]')
+    .attr('aria-expanded', 'true')
+    .text('접기');
+}
+function closeProjectMore($more) {
+  $more.removeClass('open');
+  const $btn = $('[aria-controls="' + $more.attr('id') + '"]');
+  $btn.attr('aria-expanded', 'false').text('더보기 (' + $btn.data('count') + ')');
+}
+$('.more-toggle').on('click', function () {
+  const $more = $('#' + $(this).attr('aria-controls'));
+  if ($more.hasClass('open')) {
+    closeProjectMore($more);
+    this.scrollIntoView({ block: 'center' });
+  } else {
+    openProjectMore($more);
+  }
+});
+function revealHashTarget() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  const $more = $(target).closest('.project-more');
+  if (!$more.length || $more.hasClass('open')) return;
+  openProjectMore($more);
+  // 펼친 뒤 레이아웃이 잡히면 해당 카드 위치로 이동
+  requestAnimationFrame(function () {
+    target.scrollIntoView();
+  });
+}
+$(window).on('load hashchange', revealHashTarget);

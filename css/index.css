@@ -1877,3 +1877,34 @@ section:last-of-type {
     word-break: keep-all;
   }
 }
+
+/* project: 더보기(접기/펼치기) */
+.project-wrap .project-more {
+  display: none;
+}
+.project-wrap .project-more.open {
+  display: contents;
+}
+.project-wrap .more-toggle {
+  align-self: center;
+  background: transparent;
+  font-family: inherit;
+}
+@media screen and (min-width: 1201px) {
+  .project-wrap .more-toggle {
+    margin-top: -15rem;
+  }
+}
+@media screen and (min-width: 701px) and (max-width: 1200px) {
+  .project-wrap .more-toggle {
+    margin-top: -6rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .project-wrap .more-toggle {
+    margin-top: -11rem;
+  }
+}
+.project-sub-infor .infor-item p {
+  word-break: keep-all;
+}
